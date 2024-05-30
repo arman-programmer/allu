@@ -94,8 +94,8 @@
                             <label class="select-sort__arrow">
                                 <select name="select-sort" class="select-sort">
                                     <option value="1">Подряд</option>
-                                    <option value="2">Цена, по возрастанию</option>
-                                    <option value="3">Цена, по убыванию</option>
+                                    {{--                                    <option value="2">Цена, по возрастанию</option>--}}
+                                    {{--                                    <option value="3">Цена, по убыванию</option>--}}
                                 </select>
                             </label>
                         </div>
