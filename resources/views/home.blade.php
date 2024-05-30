@@ -85,18 +85,18 @@
             </div> <!-- ::::::  End  Blog News   ::::::  -->
         </div>
         <div class="col-lg-9 col-xl-9">
-            <!-- ::::::  Start banner Section  ::::::  -->
-            <div class="banner banner--1">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="banner__box">
-                            <a href="#" class="banner__link">
-                                <img src="{{ asset('assets/banner.png') }}" alt="" class="banner__img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- ::::::  End banner Section  ::::::  -->
+            {{--            <!-- ::::::  Start banner Section  ::::::  -->--}}
+            {{--            <div class="banner banner--1">--}}
+            {{--                <div class="row">--}}
+            {{--                    <div class="col-12">--}}
+            {{--                        <div class="banner__box">--}}
+            {{--                            <a href="#" class="banner__link">--}}
+            {{--                                <img src="{{ asset('assets/banner.png') }}" alt="" class="banner__img">--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div> <!-- ::::::  End banner Section  ::::::  -->--}}
             <!-- ::::::  Start  Product Style - Default Section [2column]  ::::::  -->
             <div class="product product--1 swiper-outside-arrow-hover">
                 <div class="row">
