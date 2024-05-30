@@ -2267,13 +2267,7 @@ button.btn--block {
 .comment__wrapper {
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
-}
-
-@media (min-width: 576px) {
-    .comment__wrapper {
-        flex-direction: row;
-    }
+    flex-direction: row;
 }
 
 .comment__img {

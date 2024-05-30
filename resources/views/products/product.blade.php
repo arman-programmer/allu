@@ -29,7 +29,7 @@
             <div class="product-details">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="product-gallery-box">
+                        <div class="product-gallery-box m-b-30">
                             <div class="product-image--large overflow-hidden">
                                 @if($product -> images->isNotEmpty())
                                     @foreach($product -> images as $image)
@@ -43,7 +43,7 @@
                                 @endif
                             </div>
                             @if($product -> images->isNotEmpty())
-                                <div class="pos-relative m-t-30 m-b-30">
+                                <div class="pos-relative m-t-30">
                                     <div id="gallery-zoom"
                                          class="product-image--thumb product-image--thumb-horizontal overflow-hidden swiper-outside-arrow-hover m-lr-30">
                                         <div class="swiper-wrapper">
@@ -77,9 +77,9 @@
                                 <ul class="product__review m-t-10 m-b-15">
                                     @for ($i = 1; $i <= 5; $i++)
                                         @if ($i <=$averageRating)
-                                            <li class="product__review--fill"><i class="icon-star"></i></li>
+                                            <li class="product__review--fill"><i class="fa fa-star"></i></li>
                                         @else
-                                            <li class="product__review--blank"><i class="icon-star"></i></li>
+                                            <li class="product__review--blank"><i class="fa fa-star"></i></li>
                                         @endif
                                     @endfor
                                 </ul>
@@ -256,21 +256,19 @@
                                                                         @for ($i = 1; $i <= 5; $i++)
                                                                             @if ($i <=$review->stars)
                                                                                 <li class="product__review--fill"><i
-                                                                                        class="icon-star"></i></li>
+                                                                                        class="fa fa-star"></i></li>
                                                                             @else
                                                                                 <li class="product__review--blank"><i
-                                                                                        class="icon-star"></i></li>
+                                                                                        class="fa fa-star"></i></li>
                                                                             @endif
                                                                         @endfor
                                                                     </ul>
                                                                 </div>
                                                             </div>
-
                                                             <div class="para__content">
                                                                 <p class="para__text">{{ $review->text }}</p>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </li> <!-- End - Review Comment list-->
                                             @endforeach
@@ -389,15 +387,15 @@
                                         <div class="review-box m-t-25">
                                             <p>Оценка:
                                                 <span class="star-rating">
-                                            <label for="rate-1" style="--i:1"><i class="icon-star"></i></label>
+                                            <label for="rate-1" style="--i:1"><i class="fa fa-star"></i></label>
                                             <input type="radio" name="stars" id="rate-1" value="1">
-                                            <label for="rate-2" style="--i:2"><i class="icon-star"></i></label>
+                                            <label for="rate-2" style="--i:2"><i class="fa fa-star"></i></label>
                                             <input type="radio" name="stars" id="rate-2" value="2">
-                                            <label for="rate-3" style="--i:3"><i class="icon-star"></i></label>
+                                            <label for="rate-3" style="--i:3"><i class="fa fa-star"></i></label>
                                             <input type="radio" name="stars" id="rate-3" value="3">
-                                            <label for="rate-4" style="--i:4"><i class="icon-star"></i></label>
+                                            <label for="rate-4" style="--i:4"><i class="fa fa-star"></i></label>
                                             <input type="radio" name="stars" id="rate-4" value="4">
-                                            <label for="rate-5" style="--i:5"><i class="icon-star"></i></label>
+                                            <label for="rate-5" style="--i:5"><i class="fa fa-star"></i></label>
                                             <input type="radio" name="stars" id="rate-5" value="5">
                                         </span>
                                             </p>
