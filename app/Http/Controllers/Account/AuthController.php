@@ -29,6 +29,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors("Введите корректный номер")->withInput();
         }
         $this->userConfirmSave($request->phone);
+        return redirect()->route('confirm');
     }
 
     public function confirm(Request $request)

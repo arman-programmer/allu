@@ -22,7 +22,6 @@ trait LoginConfirm
             $user_confirm->status = 1;
             $user_confirm->updated_at = Carbon::now();
             $user_confirm->save();
-            return redirect()->route('confirm');
         } else {
             return redirect()->back()->withErrors('Повторите попытку');
         }
