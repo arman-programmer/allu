@@ -190,7 +190,7 @@ dl, ol, ul {
 }
 
 .float-4 {
-    width: 100%;
+    width: 50%;
 }
 
 @media (min-width: 576px) {
@@ -2014,7 +2014,7 @@ button.btn--block {
 }
 
 .product-image--large .img-fluid {
-    max-width: 100% !important;
+    width: 100% !important;
 }
 
 .product-image--gallery .img-responsive {
