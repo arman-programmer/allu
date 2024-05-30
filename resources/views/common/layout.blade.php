@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- ::::::::::::::Favicon icon::::::::::::::-->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/png">
-
     <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
 
     <!-- Vendor CSS Files -->
