@@ -56,6 +56,9 @@
                         <h5 class="section-content__title">В каталоге нет ни одного товара :(</h5>
                     @endif
                 </div>
+                <a href="{{ URL::previous() }}" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
+                    Назад
+                </a>
             @else
                 <!-- ::::::  Start Sort Box Section  ::::::  -->
                 <div class="sort-box">

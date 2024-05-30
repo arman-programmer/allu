@@ -1,13 +1,13 @@
 <!-- ::::::  Start  Footer Section  ::::::  -->
 <footer class="footer">
-    <div class="footer__top gray-bg p-tb-100 m-t-100">
+    <div class="footer__top gray-bg p-tb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="footer__about">
                         <div class="footer__logo">
                             <a href="/" class="footer__logo-link">
-                                <img src="{{ asset('assets/logo1.svg') }}" alt="" class="footer__logo-img">
+                                <img src="{{ asset('assets/logo1.svg') }}" alt="logo" class="footer__logo-img">
                             </a>
                         </div>
                         <div class="footer__text">
