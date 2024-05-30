@@ -202,9 +202,9 @@ class ProductAdminController extends Controller
         ]);
 
         if ($request->file()) {
-            $file = $request->file('file')->store('thumbs');
-
-            return response()->json(['success' => 'File uploaded successfully', 'file' => Storage::url($file)]);
+            $file = $request->file('file')->store('public/thumbs');
+            $url = Storage::url($file);
+            return response()->json(['success' => 'File uploaded successfully', 'file' => $url]);
         }
 
         return response()->json(['error' => 'File not uploaded'], 400);
