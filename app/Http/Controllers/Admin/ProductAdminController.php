@@ -202,13 +202,20 @@ class ProductAdminController extends Controller
         ]);
 
         if ($request->file()) {
-            $file = $request->file('file')->store('public/thumbs');
-            $url = Storage::url($file);
+            $file = $request->file('file');
+            $fileHash = md5_file($file->getPathname());
+            $fileName = $fileHash . '.' . $file->getClientOriginalExtension();
+            $filePath = 'public/productImages/' . $fileName;
 
-            return response()->json(['success' => 'File uploaded successfully', 'file' => $url]);
+            if (Storage::exists($filePath)) {
+                $url = Storage::url($filePath);
+                return response()->json(['success' => 'File already exists', 'file' => $url]);
+            } else {
+                $file->storeAs('public/productImages', $fileName);
+                $url = Storage::url($filePath);
+                return response()->json(['success' => 'File uploaded successfully', 'file' => $url]);
+            }
         }
-
         return response()->json(['error' => 'File not uploaded'], 400);
     }
-
 }

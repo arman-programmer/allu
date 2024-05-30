@@ -105,12 +105,14 @@
                                         <div class="product__img-box">
                                             <a href="{{ route('products.category', ['id' => $category->id]) }}"
                                                class="product__img--link">
+                                                <img class="product__img" src="
                                                 @if ($category->thumb)
-                                                    <img class="product__img" src="{{ $category->thumb }}" alt="">
+                                                    {{ $category->thumb }}
                                                 @else
-                                                    <img class="product__img"
-                                                         src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                                    {{ asset('assets/placeholder.svg') }}
                                                 @endif
+                                                " loading="lazy"
+                                                     alt="{{$category->name}}">
                                             </a>
                                         </div>
                                         <a href="{{ route('products.category', ['id' => $category->id]) }}"
