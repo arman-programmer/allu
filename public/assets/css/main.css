@@ -1188,21 +1188,6 @@ button.btn--block {
 /*****************************
 09 - Component - Product
 *****************************/
-.product--1 {
-    margin-top: 25px;
-}
-
-@media (min-width: 768px) {
-    .product--1 {
-        margin-top: 35px;
-    }
-}
-
-@media (min-width: 992px) {
-    .product--1 {
-        margin-top: 20px;
-    }
-}
 
 .product .swiper-outside-arrow-fix .m-t-50 {
     margin-top: 20px;
