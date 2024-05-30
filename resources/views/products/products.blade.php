@@ -81,7 +81,7 @@
                         </div>
                         @if($products->count() == 1)
                             <span>Отображается {{ $products->count() }} товар из {{ $products->total() }}.</span>
-                        @elseif($products->count() >= 2 || $products->count() <= 4)
+                        @elseif($products->count() > 1 ?? $products->count() < 5)
                             <span>Отображаются {{ $products->count() }} товара из {{ $products->total() }}.</span>
                         @else
                             <span>Отображаются {{ $products->count() }} товаров из {{ $products->total() }}.</span>

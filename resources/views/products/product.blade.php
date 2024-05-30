@@ -43,7 +43,7 @@
                                 @endif
                             </div>
                             @if($product -> images->isNotEmpty())
-                                <div class="pos-relative m-t-30">
+                                <div class="pos-relative m-t-30 m-b-30">
                                     <div id="gallery-zoom"
                                          class="product-image--thumb product-image--thumb-horizontal overflow-hidden swiper-outside-arrow-hover m-lr-30">
                                         <div class="swiper-wrapper">
@@ -53,7 +53,7 @@
                                                        data-image="{{ asset($image->link) }}">
                                                         <img class="img-fluid"
                                                              src="{{ asset($image->link) }}"
-                                                             alt="{{ asset($image->link) }}">
+                                                             alt="{{ $product->name }}">
                                                     </a>
                                                 </div>
                                             @endforeach
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="product-details-box">
+                        <div class="product-details-box m-b-30">
                             <h5 class="section-content__title">{{ $product->name }}</h5>
                             <span class="text-reference">{{ $averageRating }} звёзд ({{ $totalReviews }})</span>
                             <div class="review-box">
@@ -144,7 +144,7 @@
 
         <!-- Start Product Details Tab -->
         <div class="col-12">
-            <div class="border-around product-details-tab-area m-t-30 m-b-30">
+            <div class="border-around product-details-tab-area m-b-30">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-content--border">
