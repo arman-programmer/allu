@@ -29,7 +29,7 @@
             <div class="product-details">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="product-gallery-box m-b-60">
+                        <div class="product-gallery-box">
                             <div class="product-image--large overflow-hidden">
                                 @if($product -> images->isNotEmpty())
                                     @foreach($product -> images as $image)
@@ -144,7 +144,7 @@
 
         <!-- Start Product Details Tab -->
         <div class="col-12">
-            <div class="product product--1 border-around product-details-tab-area">
+            <div class="border-around product-details-tab-area m-t-30 m-b-30">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-content--border">
@@ -294,7 +294,7 @@
                 <div class="product product--1 swiper-outside-arrow-hover">
                     <div class="row">
                         <div class="col-12">
-                            <h5 class="section-content__title m-t-20 m-b-20">Возможно Вас также заинтересуют…</h5>
+                            <h5 class="section-content__title">Возможно Вас также заинтересуют…</h5>
                         </div>
                     </div>
                     <div class="row">
