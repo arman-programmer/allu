@@ -290,61 +290,65 @@
         </div> <!-- End Product Details Tab -->
         @if (!$recom->isEmpty())
             <!-- ::::::  Start  Product Style - Default Section  ::::::  -->
-            <div class="product product--1 swiper-outside-arrow-hover">
-                <div class="row">
-                    <div class="col-12">
-                        <h5 class="section-content__title m-t-20 m-b-20">Возможно Вас также заинтересуют…</h5>
+            <div class="col-12">
+                <div class="product product--1 swiper-outside-arrow-hover">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="section-content__title m-t-20 m-b-20">Возможно Вас также заинтересуют…</h5>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <div class="swiper-outside-arrow-fix pos-relative">
-                            <div class="product-default-slider-5grid overflow-hidden m-t-50">
-                                <div class="swiper-wrapper">
-                                    @foreach ($recom as $re)
-                                        <!-- Start Single Default Product -->
-                                        <div
-                                            class="product__box product__box--default product__box--border-hover swiper-slide text-center">
-                                            <div class="product__img-box">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="swiper-outside-arrow-fix pos-relative">
+                                <div class="product-default-slider-5grid overflow-hidden m-t-50">
+                                    <div class="swiper-wrapper">
+                                        @foreach ($recom as $re)
+                                            <!-- Start Single Default Product -->
+                                            <div
+                                                class="product__box product__box--default product__box--border-hover swiper-slide text-center">
+                                                <div class="product__img-box">
+                                                    <a href="{{ route('product', $re->id) }}"
+                                                       class="product__img--link">
+                                                        @if($re -> images->isNotEmpty())
+                                                            @foreach($re -> images as $image)
+                                                                @if($re->thumb == $image->count)
+                                                                    <img class="product__img" src="{{ $image->link }}"
+                                                                         alt="{{ $re->name }}">
+                                                                @endif
+                                                            @endforeach
+                                                        @else
+                                                            <img class="product__img"
+                                                                 src="{{ asset('assets/placeholder.svg') }}"
+                                                                 alt="{{ $re->name }}">
+                                                        @endif
+                                                    </a>
+                                                    <form
+                                                        action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 1]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <button type="submit"
+                                                                class="btn btn--box btn--small btn--gray btn--uppercase btn--weight btn--hover-zoom product__upper-btn">
+                                                            в корзину
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                                <div class="product__price m-t-10">
+                                                    <span class="product__price-reg">{{ $re->price }}</span>
+                                                </div>
                                                 <a href="{{ route('product', $re->id) }}"
-                                                   class="product__img--link">
-                                                    @if($re -> images->isNotEmpty())
-                                                        @foreach($re -> images as $image)
-                                                            @if($re->thumb == $image->count)
-                                                                <img class="product__img" src="{{ $image->link }}"
-                                                                     alt="{{ $re->name }}">
-                                                            @endif
-                                                        @endforeach
-                                                    @else
-                                                        <img class="product__img"
-                                                             src="{{ asset('assets/placeholder.svg') }}"
-                                                             alt="{{ $re->name }}">
-                                                    @endif
+                                                   class="product__link product__link--underline product__link--weight-light m-t-15">
+                                                    {{ $re->name }}
                                                 </a>
-                                                <form
-                                                    action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    <button type="submit"
-                                                            class="btn btn--box btn--small btn--gray btn--uppercase btn--weight btn--hover-zoom product__upper-btn">
-                                                        в корзину
-                                                    </button>
-                                                </form>
-                                            </div>
-                                            <div class="product__price m-t-10">
-                                                <span class="product__price-reg">{{ $re->price }}</span>
-                                            </div>
-                                            <a href="{{ route('product', $re->id) }}"
-                                               class="product__link product__link--underline product__link--weight-light m-t-15">
-                                                {{ $re->name }}
-                                            </a>
-                                        </div> <!-- End Single Default Product -->
-                                    @endforeach
-                                </div>
-                                <div class="swiper-buttons">
-                                    <!-- Add Arrows -->
-                                    <div class="swiper-button-next default__nav default__nav--next"><i
-                                            class="fal fa-chevron-right"></i></div>
-                                    <div class="swiper-button-prev default__nav default__nav--prev"><i
-                                            class="fal fa-chevron-left"></i></div>
+                                            </div> <!-- End Single Default Product -->
+                                        @endforeach
+                                    </div>
+                                    <div class="swiper-buttons">
+                                        <!-- Add Arrows -->
+                                        <div class="swiper-button-next default__nav default__nav--next"><i
+                                                class="fal fa-chevron-right"></i></div>
+                                        <div class="swiper-button-prev default__nav default__nav--prev"><i
+                                                class="fal fa-chevron-left"></i></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
