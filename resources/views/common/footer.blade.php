@@ -17,7 +17,8 @@
                             <li class="footer__address-item"><span>Адрес:</span> Абылай хана 55, Алматы.</li>
                             <li class="footer__address-item"><span>Позвоните нам: </span> <a
                                     href="tel:+7-771-909-36-55">+7 771 909 36 55</a></li>
-                            <li class="footer__address-item"><span>Поддержка: </span> <a href="mailto:it@shop.kz">it@shop.kz</a>
+                            <li class="footer__address-item"><span>Поддержка: </span> <a
+                                    href="mailto:berkutbayev.18@gmail.com">berkutbayev.18@gmail.com </a>
                             </li>
                         </ul>
                     </div>
