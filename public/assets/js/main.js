@@ -865,7 +865,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 });
 $(document).ready(function () {
-    $(".image-container img").each(function (key, item) {
+    $("img").each(function (key, item) {
         $(item).on("error", function () {
             showDefaultImage(this);
         }).attr('src', $(item).attr('src'));
