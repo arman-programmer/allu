@@ -13,6 +13,7 @@ use App\Models\Products\ProductReviews;
 use App\Models\Products\Products;
 use App\Models\Products\ProductSize;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductAdminController extends Controller
 {
@@ -203,7 +204,7 @@ class ProductAdminController extends Controller
         if ($request->file()) {
             $file = $request->file('file')->store('thumbs');
 
-            return response()->json(['success' => 'File uploaded successfully', 'file' => $file]);
+            return response()->json(['success' => 'File uploaded successfully', 'file' => Storage::url($file)]);
         }
 
         return response()->json(['error' => 'File not uploaded'], 400);
