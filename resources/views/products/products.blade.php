@@ -56,7 +56,8 @@
                         <h5 class="section-content__title">В каталоге нет ни одного товара :(</h5>
                     @endif
                 </div>
-                <a href="{{ URL::previous() }}" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
+                <a href="{{ URL::previous() }}"
+                   class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
                     Назад
                 </a>
             @else
@@ -67,19 +68,24 @@
                         <div class="sort-box__tab">
                             <ul class="sort-box__tab-list nav">
                                 <li>
-                                    <a class="sort-nav-link active" data-toggle="tab" href="#sort-list">
-                                        <i class="icon-list"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="sort-nav-link" data-toggle="tab" href="#sort-grid">
+                                    <a class="sort-nav-link active" data-toggle="tab" href="#sort-grid">
                                         <i class="icon-grid"></i>
                                     </a>
                                 </li>
-
+                                <li>
+                                    <a class="sort-nav-link" data-toggle="tab" href="#sort-list">
+                                        <i class="icon-list"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <span>Отображаются {{ $products->count() }} товаров из {{ $products->total() }}.</span>
+                        @if($products->count() == 1)
+                            <span>Отображается {{ $products->count() }} товар из {{ $products->total() }}.</span>
+                        @elseif($products->count() >= 2 || $products->count() <= 4)
+                            <span>Отображаются {{ $products->count() }} товара из {{ $products->total() }}.</span>
+                        @else
+                            <span>Отображаются {{ $products->count() }} товаров из {{ $products->total() }}.</span>
+                        @endif
                     </div> <!-- Start Sort Left Side -->
 
                     <div class="sort-box__right">
@@ -87,11 +93,9 @@
                         <div class="sort-box__option">
                             <label class="select-sort__arrow">
                                 <select name="select-sort" class="select-sort">
-                                    <option value="1">Relevance</option>
-                                    <option value="2">Name, A to Z</option>
-                                    <option value="3"> Name, Z to A</option>
-                                    <option value="4"> Price, low to high</option>
-                                    <option value="5">Price, high to low</option>
+                                    <option value="1">Подряд</option>
+                                    <option value="2">Цена, по возрастанию</option>
+                                    <option value="3">Цена, по убыванию</option>
                                 </select>
                             </label>
                         </div>
@@ -99,7 +103,7 @@
                 </div> <!-- ::::::  Start Sort Box Section  ::::::  -->
                 <div class="product-tab-area">
                     <div class="tab-content ">
-                        <div class="tab-pane show clearfix" id="sort-grid">
+                        <div class="tab-pane show clearfix active" id="sort-grid">
                             @if (!empty($sub))
                                 @foreach ($sub as $category)
                                     <!-- Start Single Default Product -->
@@ -145,7 +149,7 @@
                                                 @endforeach
                                             @else
                                                 <img class="product__img" src="{{ asset('assets/placeholder.svg') }}"
-                                                     alt="">
+                                                     alt="{{$product->name}}">
                                             @endif
                                         </a>
                                         <form
@@ -181,7 +185,7 @@
                                 </div> <!-- End Single Default Product -->
                             @endforeach
                         </div>
-                        <div class="tab-pane shop-list active" id="sort-list">
+                        <div class="tab-pane shop-list" id="sort-list">
                             @foreach ($products as $product)
                                 <!-- Start Single List Product -->
                                 <div class="product__box product__box--list">
@@ -261,7 +265,6 @@
                         </div>
                     </div>
                 </div>
-
                 {{ $products->links('common.paginator') }}
             @endif
         </div> <!-- Start Rightside - Content -->
