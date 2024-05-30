@@ -286,11 +286,11 @@
                         let newInputHidden = $('<input>', {
                             type: 'hidden',
                             name: 'image-' + imageCount,
-                            value: '/storage/app/public/' + response.file
+                            value: response.file
                         });
                         let newSpan = $('<span>', {class: 'form-imagecheck-figure'});
                         let newImg = $('<img>', {
-                            src: '/storage/app/public/' + response.file,
+                            src: response.file,
                             alt: 'Uploaded Image',
                             class: 'form-imagecheck-image'
                         });

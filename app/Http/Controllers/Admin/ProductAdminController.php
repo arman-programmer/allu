@@ -201,10 +201,9 @@ class ProductAdminController extends Controller
         ]);
 
         if ($request->file()) {
-            $fileName = time() . '_' . $request->file->getClientOriginalName();
-            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $file = $request->file('file')->store('thumbs');
 
-            return response()->json(['success' => 'File uploaded successfully', 'file' => $filePath]);
+            return response()->json(['success' => 'File uploaded successfully', 'file' => $file]);
         }
 
         return response()->json(['error' => 'File not uploaded'], 400);
