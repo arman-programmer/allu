@@ -3,6 +3,8 @@
 namespace App\Http\Traits;
 
 use App\Models\Account\UserConfirms;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
 trait LoginConfirm
@@ -15,9 +17,14 @@ trait LoginConfirm
         $code = mt_rand(1000, 9999);
         $user_confirm->code = $code;
         $user_confirm->session_id = Session::getId();
-//        $response = Http::get('https://api.mobizon.kz/service/message/sendsmsmessage?recipient=7' . $phone . '&text=Ваш+код+от+ALLU.kz:+' . $code . '%21&apiKey=kza34fad2b4a5af5ceb06322b4919a198bd41d6eb82ce0a579aef4326330e05c6a5b78');
-//        if ($response->ok()) {
-        $user_confirm->status = 1;
-        $user_confirm->save();
+        $response = Http::timeout(5)->get('https://api.mobizon.kz/service/message/sendsmsmessage?recipient=7' . $phone . '&text=Ваш+код+от+allu.kz: +' . $code . '%21&apiKey=kza34fad2b4a5af5ceb06322b4919a198bd41d6eb82ce0a579aef4326330e05c6a5b78');
+        if ($response->ok()) {
+            $user_confirm->status = 1;
+            $user_confirm->updated_at = Carbon::now();
+            $user_confirm->save();
+            return redirect()->route('confirm');
+        } else {
+            return redirect()->back()->withErrors('Повторите попытку');
+        }
     }
 }

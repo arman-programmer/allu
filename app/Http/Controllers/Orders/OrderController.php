@@ -105,7 +105,6 @@ class OrderController extends Controller
             }
         } else {
             $this->userConfirmSave($request->phone);
-            return redirect()->route('confirm');
         }
         return redirect()->route('home', ['id' => $order->id]);
     }
