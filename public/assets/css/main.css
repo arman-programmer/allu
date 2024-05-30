@@ -6098,7 +6098,7 @@ hr {
 
 .star-rating label:has(~ :checked) i {
     color: #0063d1;
-    text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+    text-shadow: 0 0 2px #ffffff, 0 0 10px #0063d1;
 }
 
 @keyframes jump {
