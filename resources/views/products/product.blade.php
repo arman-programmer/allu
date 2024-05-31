@@ -235,7 +235,7 @@
                                 <div
                                     class="tab-pane @if ($product->details->isEmpty() && $product->size == null) active @endif"
                                     id="product-review">
-                                    @if (!$reviews->isEmpty())
+                                    @if (!$product->reviews->isEmpty())
                                         <!-- Start - Review Comment -->
                                         <ul class="comment">
                                             @foreach ($product->reviews as $review)
