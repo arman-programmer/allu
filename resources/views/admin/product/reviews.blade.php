@@ -137,6 +137,7 @@
                                                         <form
                                                             action="{{ route('admin.product.review.delete', parameters: ['id' => $review->id]) }}"
                                                             method="post">
+                                                            @csrf
                                                             <button type="submit" class="dropdown-item">
                                                                 Удалить
                                                             </button>
