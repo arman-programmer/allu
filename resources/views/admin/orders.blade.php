@@ -58,8 +58,8 @@
                                             <span class="text-secondary">{{ $order->id }}</span>
                                         </td>
                                         <td>
-                                            {{--                                        <a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
-                                            {{ $order->user->name }}
+                                            {{--<a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
+                                            {{ $order->user->name ?? "чмо" }}
                                         </td>
                                         <td>
                                             <span class="flag flag-xs flag-country-us me-2"></span>
