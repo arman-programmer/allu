@@ -178,15 +178,16 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <input class="form-control" value="+7{{ $user->phone }}"
+                                                    <input class="form-control" value="+7{{ Auth::user()->phone }}"
                                                            disabled>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    @if($user->name)
+                                                    @if(Auth::user()->name)
                                                         <input name="name" class="form-control" type="text"
-                                                               placeholder="Ваше имя.." value="{{ $user->name }}">
+                                                               placeholder="Ваше имя.."
+                                                               value="{{ Auth::user()->name }}">
                                                     @else
                                                         <input name="name" class="form-control" type="text"
                                                                placeholder="Ваше имя..">
