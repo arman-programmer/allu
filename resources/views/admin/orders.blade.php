@@ -74,10 +74,10 @@
                                             87956621
                                         </td>
                                         <td>
-                                            15 Dec 2017
+                                            {{ $order->created_at }}
                                         </td>
                                         <td>
-                                            <span class="badge bg-success me-1"></span> Paid
+                                            <span class="badge bg-success me-1"></span> {{ $order->status }}
                                         </td>
                                         <td>
                                             $887
