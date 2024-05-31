@@ -40,7 +40,7 @@ class AccountController extends Controller
         $user->name = $name;
         $user->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Имя успешно обновлено!');
     }
 
 
