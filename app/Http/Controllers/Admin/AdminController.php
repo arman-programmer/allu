@@ -18,7 +18,7 @@ class AdminController extends Controller
     public function users()
     {
         $users = User::with('city', 'session')->get();
-        return view('admin.users', compact('users'));
+        return view('admin.users.users', compact('users'));
     }
 
     public function online()
