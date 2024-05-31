@@ -176,8 +176,6 @@
                                     <h4 class="account-title">Настройки аккаунта</h4>
                                     <div class="account-details">
                                         <div class="row">
-                                            <form action="{{ route('account.edit') }} method=" post
-                                            " >
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
                                                     <label>Ваш номер телефона</label>
@@ -188,25 +186,27 @@
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
                                                     <label>Ваше имя</label>
-                                                    @if(Auth::user()->name)
-                                                        <input name="name" class="form-control" type="text"
-                                                               placeholder="Ваше имя.."
-                                                               value="{{ Auth::user()->name }}">
-                                                    @else
-                                                        <input name="name" class="form-control" type="text"
-                                                               placeholder="Ваше имя..">
-                                                    @endif
+                                                    <form action="{{ route('login') }}" method="post" id="edit">
+                                                        @if(Auth::user()->name)
+                                                            <input name="name" class="form-control" type="text"
+                                                                   placeholder="Ваше имя.."
+                                                                   value="{{ Auth::user()->name }}">
+                                                        @else
+                                                            <input name="name" class="form-control" type="text"
+                                                                   placeholder="Ваше имя..">
+                                                        @endif
+                                                    </form>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <button type="submit"
+                                                    <button for="edit"
+                                                            type="submit"
                                                             class="btn btn--box btn--small btn--uppercase btn--blue">
                                                         Сохранить изменения
                                                     </button>
                                                 </div>
                                             </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
