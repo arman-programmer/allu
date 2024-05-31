@@ -32,7 +32,6 @@
                                 <tr>
                                     <th>№</th>
                                     <th>IP-адрес</th>
-                                    <th>Последняя активность</th>
                                     <th>Имя</th>
                                     <th>Город</th>
                                     <th>Роль</th>
@@ -46,11 +45,6 @@
                                         </td>
                                         <td>
                                             {{ $user->session->ip_address ?? null }}
-                                        </td>
-                                        <td>
-                                            @if($user->session->last_activity)
-                                                {{ date("Y-m-d H:i:s", $user->session->last_activity)}}
-                                            @endif
                                         </td>
                                         <td>
                                             {{ $user->name ?? null }}
