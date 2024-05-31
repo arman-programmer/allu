@@ -159,7 +159,7 @@
                     <div class="col-12">
                         <div class="section-content--border">
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-70 nav">
-                                @if (!$product->details->isEmpty())
+                                @if (!$product->details->isEmpty() || $product->details != null)
                                     <li>
                                         <a class="nav-link active" data-toggle="tab" href="#product-dis">
                                             Характеристики
@@ -201,7 +201,7 @@
                     <div class="col-md-12">
                         <div class="product-details-tab-box m-t-50">
                             <div class="tab-content">
-                                @if (!$product->details->isEmpty())
+                                @if (!$product->details->isEmpty() || $product->details != null)
                                     <!-- Start Tab - Product Details -->
                                     <div class="tab-pane show active" id="product-dis">
                                         <div class="product-dis__content">
@@ -312,159 +312,7 @@
                 </div>
             </div>
         </div> <!-- End Product Details Tab -->
-        @if (!$recom->isEmpty())
-            <!-- ::::::  Start  Product Style - Default Section  ::::::  -->
-            <div class="col-12">
-                <div class="product product--1 swiper-outside-arrow-hover">
-                    <div class="row">
-                        <div class="col-12">
-                            <h5 class="section-content__title">Возможно Вас также заинтересуют…</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="swiper-outside-arrow-fix pos-relative">
-                                <div class="product-default-slider-5grid overflow-hidden m-t-50">
-                                    <div class="swiper-wrapper">
-                                        @foreach ($recom as $re)
-                                            <!-- Start Single Default Product -->
-                                            <div
-                                                class="product__box product__box--default product__box--border-hover swiper-slide text-center">
-                                                <div class="product__img-box">
-                                                    <a href="{{ route('product', $re->id) }}"
-                                                       class="product__img--link">
-                                                        @if($re -> images->isNotEmpty())
-                                                            @foreach($re -> images as $image)
-                                                                @if($re->thumb == $image->count)
-                                                                    <img class="product__img" src="{{ $image->link }}"
-                                                                         alt="{{ $re->name }}">
-                                                                @endif
-                                                            @endforeach
-                                                        @else
-                                                            <img class="product__img"
-                                                                 src="{{ asset('assets/placeholder.svg') }}"
-                                                                 alt="{{ $re->name }}">
-                                                        @endif
-                                                    </a>
-                                                    <form
-                                                        action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <button type="submit"
-                                                                class="btn btn--box btn--small btn--gray btn--uppercase btn--weight btn--hover-zoom product__upper-btn">
-                                                            в корзину
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                                <div class="product__price m-t-10">
-                                                    <span class="product__price-reg">{{ $re->price }}</span>
-                                                </div>
-                                                <a href="{{ route('product', $re->id) }}"
-                                                   class="product__link product__link--underline product__link--weight-light">
-                                                    {{ $re->name }}
-                                                </a>
-                                            </div> <!-- End Single Default Product -->
-                                        @endforeach
-                                    </div>
-                                    <div class="swiper-buttons">
-                                        <!-- Add Arrows -->
-                                        <div class="swiper-button-next default__nav default__nav--next"><i
-                                                class="fal fa-chevron-right"></i></div>
-                                        <div class="swiper-button-prev default__nav default__nav--prev"><i
-                                                class="fal fa-chevron-left"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- ::::::  End  Product Style - Default Section  ::::::  -->
-        @endif
+        @include('modules.recommendation')
     </div>
-    <!-- Start Modal Review cart -->
-    <div class="modal fade" id="modalReview" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center">Оставить отзыв</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            @if (Auth::check())
-                                <div class="col-12 col-md-6">
-                                    <div class="modal-review-img">
-                                        @if($product -> images->isNotEmpty())
-                                            @foreach($product -> images as $image)
-                                                @if($product->thumb == $image->count)
-                                                    <img class="img-fluid  border-around" src="{{ $image->link }}"
-                                                         alt="{{ $product->name }}">
-                                                @endif
-                                            @endforeach
-                                        @else
-                                            <img class="img-fluid  border-around"
-                                                 src="{{ asset('assets/placeholder.svg') }}"
-                                                 alt="{{ $product->name }}">
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <span class="modal__product-title m-t-25">{{ $product->name }}</span>
-                                    <form action="{{ route('product.review.add', $product->id) }}" method="post"
-                                          class="form-box">
-                                        @csrf
-                                        <div class="review-box m-t-25">
-                                            <p>Оценка:
-                                                <span class="star-rating">
-                                            <label for="rate-1" style="--i:1"><i class="fa fa-star"></i></label>
-                                            <input type="radio" name="stars" id="rate-1" value="1">
-                                            <label for="rate-2" style="--i:2"><i class="fa fa-star"></i></label>
-                                            <input type="radio" name="stars" id="rate-2" value="2">
-                                            <label for="rate-3" style="--i:3"><i class="fa fa-star"></i></label>
-                                            <input type="radio" name="stars" id="rate-3" value="3">
-                                            <label for="rate-4" style="--i:4"><i class="fa fa-star"></i></label>
-                                            <input type="radio" name="stars" id="rate-4" value="4">
-                                            <label for="rate-5" style="--i:5"><i class="fa fa-star"></i></label>
-                                            <input type="radio" name="stars" id="rate-5" value="5">
-                                        </span>
-                                            </p>
-                                        </div>
-                                        @if (Auth::user()->name === null)
-                                            <div class="form-box__single-group">
-                                                <label for="form-name">Ваше имя*</label>
-                                                <input type="text" id="form-name" name="name">
-                                            </div>
-                                        @endif
-                                        <div class="form-box__single-group">
-                                            <label for="form-review">Ваш комментарий</label>
-                                            <textarea id="form-review" name="text" rows="5"></textarea>
-                                        </div>
-                                        <div
-                                            class="from-box__buttons d-flex justify-content-between d-flex-warp align-items-center">
-                                            <button
-                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-20 m-r-10"
-                                                type="submit">Отправить
-                                            </button>
-                                            <button
-                                                class="btn btn--box btn--small btn--gray btn--uppercase btn--weight m-t-20"
-                                                type="button" data-dismiss="modal" aria-label="Close">Отмена
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            @else
-                                <div class="col-12">
-                                    <p class="text-center">Для оставления отзыва необходимо <a
-                                            href="{{ route('login') }}">авторизоваться</a></p>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Quickview cart -->
+    @include('modules.modal_review')
 @endsection

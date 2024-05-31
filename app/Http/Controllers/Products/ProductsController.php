@@ -35,12 +35,12 @@ class ProductsController extends Controller
     public function product($id)
     {
         $product = Products::with(['size', 'details', 'images', 'country', 'manufacturer', 'reviews'])->find($id);
-        $recom = Products::inRandomOrder()->with(['images'])->take(5)->get();
+        $recommendations = Products::inRandomOrder()->with(['images'])->take(5)->get();
         $totalReviews = $product->reviews->count();
         $averageRating = round($product->reviews->avg('stars'), 2);
         $city = City::find($product->city_id)->name;
         $category = Category::find($product->category_id);
-        return view('products.product', compact('product', 'recom', 'totalReviews', 'averageRating', 'city', 'category'));
+        return view('products.product', compact('product', 'recommendations', 'totalReviews', 'averageRating', 'city', 'category'));
     }
 
     public function reviewAdd(Request $request, $productId)
