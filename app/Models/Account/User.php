@@ -15,4 +15,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\City');
     }
+
+    public function session()
+    {
+        return $this->belongsTo('App\Models\Session', 'id', 'user_id');
+    }
 }
