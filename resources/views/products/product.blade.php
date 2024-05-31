@@ -225,7 +225,6 @@
                                                             <td class="product-dis__text">{{ $product->size->length }}</td>
                                                         </tr>
                                                     @endif
-
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -181,13 +181,13 @@
                                             <span class="product__price-del">{{ $product->old_price }}</span>
                                         @endif
 
-                                        <span class="product__price-reg">{{ $product->price }} тг</span>
+                                        <span class="product__price-reg">{{ $product->price }} тг</span><br>
                                         @if ($product->stock <= 0)
                                             <span class="product__price">Нет в наличии</span>
                                         @endif
                                     </div>
                                     <a href="{{ route('product', ['id' => $product->id]) }}"
-                                       class="product__link product__link--underline product__link--weight-light m-t-15">
+                                       class="product__link product__link--underline product__link--weight-light">
                                         {{$product->name}}
                                     </a>
                                 </div> <!-- End Single Default Product -->

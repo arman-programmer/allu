@@ -10,8 +10,9 @@
                 <form action="{{ route('posts.search') }}" method="get" class="form-box__single-group">
                     @csrf
                     <div class="d-flex">
-                        <input name="search" type="search" placeholder="Введите ключевое слово">
-                        <button class="btn btn--submit btn--blue btn--uppercase btn--weight " type="submit"><i class="fal fa-search"></i></button>
+                        <input class="form-control" name="search" type="search" placeholder="Введите ключевое слово">
+                        <button class="btn btn--submit btn--blue btn--uppercase btn--weight " type="submit"><i
+                                class="fal fa-search"></i></button>
                     </div>
                 </form>
             </div>
@@ -23,16 +24,16 @@
             </div>
             <ul class="sidebar__post list-space--medium">
                 @foreach ($random as $post)
-                <li class="d-flex align-items-center">
-                    <a class="sidebar__post-img" href="{{ route('post', $post->id) }}">
-                        <div class="img-responsive">
-                            <img src="{{ $post->image }}" alt="">
+                    <li class="d-flex align-items-center">
+                        <a class="sidebar__post-img" href="{{ route('post', $post->id) }}">
+                            <div class="img-responsive">
+                                <img src="{{ $post->image }}" alt="">
+                            </div>
+                        </a>
+                        <div class="sidebar__post-content">
+                            <a class="link--gray" href="{{ route('post', $post->id) }}">{{ $post->title }}</a>
                         </div>
-                    </a>
-                    <div class="sidebar__post-content">
-                        <a class="link--gray" href="{{ route('post', $post->id) }}">{{ $post->title }}</a>
-                    </div>
-                </li>
+                    </li>
                 @endforeach
             </ul>
         </div> <!-- End Single Sidebar Widget -->
