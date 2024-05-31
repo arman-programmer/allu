@@ -65,19 +65,19 @@
                                             Carlson Limited
                                         </td>
                                         <td>
-                                            87956621
+                                            {{ $order->address }}
                                         </td>
                                         <td>
                                             87956621
                                         </td>
                                         <td>
-                                            87956621
+                                            {{ $order->comment }}
                                         </td>
                                         <td>
                                             @php
                                                 $datetime = $order->created_at;
                                                 $dateTimeObj = new DateTime($datetime);
-                                                $date = $dateTimeObj->format('d.m.Y');
+                                                $date = $dateTimeObj->format('d.m.y');
                                                 $time = $dateTimeObj->format('H:i');
                                             @endphp
                                             {{ $date }}
