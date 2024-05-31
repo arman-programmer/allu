@@ -64,7 +64,7 @@
                         <p>В каталоге нет ни одного товара :(</p>
                     @endif
                     <a href="{{ URL::previous() }}"
-                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
+                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight color-white m-t-10">
                         Назад
                     </a>
                 </div>
