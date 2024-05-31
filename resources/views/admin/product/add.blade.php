@@ -35,10 +35,10 @@
                                         <div class="col-8">
                                             <label class="form-label">Имя </label>
                                             <input name="name" type="text" class="form-control">
-                                        </div>
-                                        <div class="col-8">
-                                            <label class="form-label">Наличие </label>
-                                            <input name="stock" type="text" class="form-control">
+                                            <div class="mb-3">
+                                                <label class="form-label">Наличие </label>
+                                                <input name="stock" type="text" class="form-control">
+                                            </div>
                                         </div>
                                         <div class="col-4">
                                             <label class="form-label">Город </label>
