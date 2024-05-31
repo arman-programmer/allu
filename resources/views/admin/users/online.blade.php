@@ -11,7 +11,7 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        Заказы
+                        Сессии
                     </h2>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Заказы</h3>
+                            <h3 class="card-title">Онлайн</h3>
                         </div>
                         <div class="table-responsive">
                             <table class="table card-table table-vcenter text-nowrap datatable">
