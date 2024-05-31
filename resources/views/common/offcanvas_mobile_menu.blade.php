@@ -4,16 +4,14 @@
     <div class="offcanvas-inner">
         <form action="{{ route('city') }}" method="POST">
             @csrf
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ $current_city }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    @foreach($cities as $city)
-                        <button type="submit" class="dropdown-item" name="city" value="{{ $city }}">{{ $city }}</button>
-                    @endforeach
-                </div>
+            <button class="btn btn-primary btn-lg dropdown-toggle m-b-30" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ $current_city }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @foreach($cities as $city)
+                    <button type="submit" class="dropdown-item" name="city" value="{{ $city }}">{{ $city }}</button>
+                @endforeach
             </div>
         </form>
         <div class="offcanvas-menu m-b-30">
