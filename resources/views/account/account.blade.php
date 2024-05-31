@@ -176,14 +176,18 @@
                                     <h4 class="account-title">Настройки аккаунта</h4>
                                     <div class="account-details">
                                         <div class="row">
+                                            <form action="{{ route('account.edit') }} method=" post
+                                            " >
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
+                                                    <label>Ваш номер телефона</label>
                                                     <input class="form-control" value="+7{{ Auth::user()->phone }}"
                                                            disabled>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
+                                                    <label>Ваше имя</label>
                                                     @if(Auth::user()->name)
                                                         <input name="name" class="form-control" type="text"
                                                                placeholder="Ваше имя.."
@@ -196,11 +200,13 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <button class="btn btn--box btn--small btn--uppercase btn--blue">
+                                                    <button type="submit"
+                                                            class="btn btn--box btn--small btn--uppercase btn--blue">
                                                         Сохранить изменения
                                                     </button>
                                                 </div>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

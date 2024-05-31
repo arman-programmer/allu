@@ -30,6 +30,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/account', [AccountController::class, 'index'])->name('account');
+    Route::post('/account/edit', [AccountController::class, 'edit'])->name('account.edit');
     Route::post('/account/address/delete/{id}', [AccountController::class, 'deleteAddress'])->name('account.address.delete');
     Route::post('/account/address/edit/{id}', [AccountController::class, 'editAddress'])->name('account.address.edit');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
