@@ -6,15 +6,15 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="/" class="footer__logo-link">
+                            <a href="{{ route('home') }}" class="footer__logo-link">
                                 <img src="{{ asset('assets/logo1.svg') }}" alt="logo" class="footer__logo-img">
                             </a>
                         </div>
                         <div class="footer__text">
-                            <p>Мы стараемся сделать мир лучше и улучшить сервис</p>
+                            <p>Сайт работает в тестовом режиме. Мы стараемся улучшить сервис!</p>
                         </div>
                         <ul class="footer__address">
-                            <li class="footer__address-item"><span>Адрес:</span> Абылай хана 55, Алматы.</li>
+                            <li class="footer__address-item"><span>Время работы: </span> <a>c 10:00 до 18:00</a></li>
                             <li class="footer__address-item"><span>Позвоните нам: </span> <a
                                     href="tel:+7-771-909-36-55">+7 771 909 36 55</a></li>
                             <li class="footer__address-item"><span>Поддержка: </span> <a
@@ -81,16 +81,9 @@
             </div>
             <hr>
             <div class="row align-items-center">
-                <div class="col-lg-8 col-12">
+                <div class="col-12">
                     <div class="footer__copyright-text">
-                        <p>itShop.kz © 2021 | Радиодетали в Казахстане</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-12">
-                    <div class="footer__payment">
-                        <a href="https://hasthemes.com/" class="footer__payment-link">
-                            <img src="assets/img/company-logo/payment.png" alt="" class="footer__payment-img">
-                        </a>
+                        <p>ALLU.kz © 2024 | Интернет-магазин</p>
                     </div>
                 </div>
             </div>
