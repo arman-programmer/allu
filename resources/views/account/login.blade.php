@@ -21,7 +21,7 @@
                     @csrf
                     <div class="form-box__single-group">
                         <label for="phone">Введите номер телефона:</label>
-                        <input type="phone" name="phone" id="phone" class="form-box__single-group_input"
+                        <input type="phone" name="phone" id="phone" class="form-box__single-group_input tel"
                                placeholder="+7(777)777-77-77"
                                value="{{ old('phone') ?? ''}}" required>
                         @if ($errors->any())
