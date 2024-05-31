@@ -67,7 +67,10 @@
                                 <div class="my-account-dashboard account-wrapper">
                                     <h4 class="account-title">Панель управления</h4>
                                     <div class="welcome-dashboard m-t-30">
-                                        <p>Здраствуйте! Ваш номер телефона: +7{{ Auth::user()->phone }}</p>
+                                        @if(Auth::user()->name)
+                                            <p>Здраствуйте! {{ Auth::user()->name }}</p>
+                                        @endif
+                                        <p>Ваш номер телефона: +7{{ Auth::user()->phone }}</p>
                                         <form action="{{ route('logout') }}" method="post" class="d-inline">
                                             @csrf
                                             <p>
@@ -197,14 +200,8 @@
                                                                    placeholder="Ваше имя..">
                                                         @endif
                                                     </form>
-                                                    @if (session('success'))
-                                                        <div class="alert alert-success">
-                                                            {{ session('success') }}
-                                                        </div>
-                                                    @endif
-
                                                     @if ($errors->any())
-                                                        <div class="alert alert-danger">
+                                                        <div class="alert alert-danger m-t-30">
                                                             <ul>
                                                                 @foreach ($errors->all() as $error)
                                                                     <li>{{ $error }}</li>
