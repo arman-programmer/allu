@@ -186,7 +186,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
                                                     <label>Ваше имя</label>
-                                                    <form action="{{ route('login') }}" method="post" id="edit">
+                                                    <form action="{{ route('account.edit') }}" method="post" id="edit">
                                                         @csrf
                                                         @if(Auth::user()->name)
                                                             <input name="name" class="form-control" type="text"
