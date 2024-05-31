@@ -1,6 +1,6 @@
-@extends('admin/common/layout')
+@extends('admin.common.layout')
 @section('title')
-    Страны
+    Производители
 @endsection
 
 @section('main_content')
@@ -10,12 +10,12 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        Страны
+                        Производители
                     </h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('admin.country.add') }}" class="btn btn-primary d-inline-block">
+                        <a href="{{ route('admin.manufacturer.add') }}" class="btn btn-primary d-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                  stroke-linecap="round" stroke-linejoin="round">
@@ -37,7 +37,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Страны</h3>
+                            <h3 class="card-title">Производители</h3>
                         </div>
                         <div class="table-responsive">
                             <table class="table card-table table-vcenter text-nowrap datatable">
@@ -52,20 +52,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($countries as $country)
+                                @foreach($manufacturers as $manufacturer)
                                     <tr>
                                         <td>
-                                            <span class="text-secondary">{{ $country->id }}</span>
+                                            <span class="text-secondary">{{ $manufacturer->id }}</span>
                                         </td>
                                         <td>
-                                            {{ $country->name ?? null }}
+                                            {{ $manufacturer->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $country->products->count() ?? null }}
+                                            {{ $manufacturer->products->count() ?? null }}
                                         </td>
                                         <td>
                                             @php
-                                                $datetime = $country->updated_at;
+                                                $datetime = $manufacturer->updated_at;
                                                 $dateTimeObj = new DateTime($datetime);
                                                 $date = $dateTimeObj->format('d.m.y');
                                                 $time = $dateTimeObj->format('H:i');
@@ -76,7 +76,7 @@
                                         </td>
                                         <td>
                                             @php
-                                                $datetime = $country->created_at;
+                                                $datetime = $manufacturer->created_at;
                                                 $dateTimeObj = new DateTime($datetime);
                                                 $date = $dateTimeObj->format('d.m.y');
                                                 $time = $dateTimeObj->format('H:i');
@@ -93,7 +93,7 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end" style="">
                                                     <form
-                                                        action="{{ route('admin.country.delete', parameters: ['id' => $country->id]) }}"
+                                                        action="{{ route('admin.manufacturer.delete', parameters: ['id' => $manufacturer->id]) }}"
                                                         method="post">
                                                         @csrf
                                                         <button type="submit" class="dropdown-item">

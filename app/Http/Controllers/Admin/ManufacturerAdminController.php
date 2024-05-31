@@ -12,7 +12,7 @@ class ManufacturerAdminController extends Controller
     public function manufacturers()
     {
         $manufacturers = Manufacturers::with('products')->get();
-        return view('admin.manufacturers', compact('manufacturers'));
+        return view('admin.manufacturer.list', compact('manufacturers'));
     }
 
     public function manufacturerDelete($id)

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CountryAdminController;
 use App\Http\Controllers\Admin\ManufacturerAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
+use App\Http\Controllers\Admin\ReviewAdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Account\AuthController;
 use App\Http\Controllers\Account\CartController;
@@ -88,10 +89,10 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/product/delete/{id}', [ProductAdminController::class, 'delete'])->name('admin.product.delete');
     Route::post('/admin/product/upload/image', [ProductAdminController::class, 'upload'])->name('upload.file');
 
-    Route::get('/admin/product/reviews', [AdminController::class, 'reviews'])->name('admin.product.reviews');
-    Route::post('/admin/product/review/on/{id}', [AdminController::class, 'reviewOn'])->name('admin.product.review.on');
-    Route::post('/admin/product/review/off/{id}', [AdminController::class, 'reviewOff'])->name('admin.product.review.off');
-    Route::post('/admin/product/review/delete/{id}', [AdminController::class, 'reviewDelete'])->name('admin.product.review.delete');
+    Route::get('/admin/product/reviews', [ReviewAdminController::class, 'reviews'])->name('admin.product.reviews');
+    Route::post('/admin/product/review/on/{id}', [ReviewAdminController::class, 'reviewOn'])->name('admin.product.review.on');
+    Route::post('/admin/product/review/off/{id}', [ReviewAdminController::class, 'reviewOff'])->name('admin.product.review.off');
+    Route::post('/admin/product/review/delete/{id}', [ReviewAdminController::class, 'reviewDelete'])->name('admin.product.review.delete');
 
     Route::get('/admin/categories', [CategoryAdminController::class, 'categories'])->name('admin.categories');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
