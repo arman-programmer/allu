@@ -55,7 +55,7 @@
                                             <span class="text-secondary">{{ $review->id }}</span>
                                         </td>
                                         <td>
-                                            {{ $review->product->name ?? null }}
+                                            <a href="{{ route('product', parameters: ['id' => $review->product->id]) }}">{{ $review->product->name ?? null }}</a>
                                         </td>
                                         <td>
                                             {{ $review->user->name ?? null }}
