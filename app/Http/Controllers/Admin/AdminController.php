@@ -23,6 +23,6 @@ class AdminController extends Controller
     public function online()
     {
         $onlines = Session::with('user.city', 'city')->get();
-        return view('admin.online', compact('onlines'));
+        return view('admin.users.online', compact('onlines'));
     }
 }
