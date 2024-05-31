@@ -18,6 +18,6 @@ class User extends Authenticatable
 
     public function session()
     {
-        return $this->belongsTo('App\Models\Session', 'id', 'user_id');
+        return $this->belongsTo('App\Models\Account\Session', 'id', 'user_id');
     }
 }
