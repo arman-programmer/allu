@@ -64,6 +64,8 @@ class ProductAdminController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
+        $product->old_price = $request->input('old_price');
+        $product->fact_price = $request->input('fact_price');
         $product->stock = $request->input('stock');
         $product->category_id = $request->input('category');
         $product->country_id = $request->input('country');

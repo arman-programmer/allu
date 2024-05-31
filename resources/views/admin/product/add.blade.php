@@ -34,8 +34,11 @@
                                     <div class="row mb-3">
                                         <div class="col-8">
                                             <label class="form-label">Имя </label>
-                                            <input name="name" type="text" class="form-control"
-                                                   placeholder="Название товара">
+                                            <input name="name" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-8">
+                                            <label class="form-label">Наличие </label>
+                                            <input name="stock" type="text" class="form-control">
                                         </div>
                                         <div class="col-4">
                                             <label class="form-label">Город </label>
@@ -54,21 +57,24 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Описание </label>
-                                        <textarea name="description" class="form-control" data-bs-toggle="autosize"
-                                                  placeholder="Описание товара">
-                                        </textarea>
+                                        <textarea name="description" class="form-control"
+                                                  data-bs-toggle="autosize"></textarea>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-4">
                                             <label class="form-label">Цена </label>
-                                            <input name="price" type="text" class="form-control"
-                                                   placeholder="Цена товара">
+                                            <input name="price" type="text" class="form-control">
                                         </div>
                                         <div class="col-4">
-                                            <label class="form-label">Наличие </label>
-                                            <input name="stock" type="text" class="form-control"
-                                                   placeholder="Количество">
+                                            <label class="form-label">Старая цена </label>
+                                            <input name="old_price" type="text" class="form-control">
                                         </div>
+                                        <div class="col-4">
+                                            <label class="form-label">Факт. цена </label>
+                                            <input name="fact_price" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
                                         <div class="col-4">
                                             <div class="form-label">Категория</div>
                                             <select name="category" class="form-select">
@@ -78,9 +84,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <div class="form-label">Страна</div>
                                             <select name="country" class="form-select">
                                                 <option value="">--не выбрано--</option>
@@ -89,7 +93,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <div class="form-label">Производитель</div>
                                             <select name="manufacturer" class="form-select">
                                                 <option value="">--не выбрано--</option>
@@ -103,23 +107,19 @@
                                     <div class="row mb-3">
                                         <div class="col-3">
                                             <label class="form-label">Длина </label>
-                                            <input name="length" type="text" class="form-control"
-                                                   placeholder="Длина">
+                                            <input name="length" type="text" class="form-control">
                                         </div>
                                         <div class="col-3">
                                             <label class="form-label">Ширина </label>
-                                            <input name="width" type="text" class="form-control"
-                                                   placeholder="Ширина">
+                                            <input name="width" type="text" class="form-control">
                                         </div>
                                         <div class="col-3">
                                             <label class="form-label">Высота </label>
-                                            <input name="height" type="text" class="form-control"
-                                                   placeholder="Высота">
+                                            <input name="height" type="text" class="form-control">
                                         </div>
                                         <div class="col-3">
                                             <label class="form-label">Вес </label>
-                                            <input name="weight" type="text" class="form-control"
-                                                   placeholder="Вес">
+                                            <input name="weight" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -143,15 +143,13 @@
                                             <label class="form-label">Атрибут </label>
                                             <input name="attr1"
                                                    type="text"
-                                                   class="form-control mb-1"
-                                                   placeholder="Атрибут">
+                                                   class="form-control mb-1">
                                         </div>
                                         <div class="col-6">
                                             <label class="form-label">Значение </label>
                                             <input name="val1"
                                                    type="text"
-                                                   class="form-control mb-1"
-                                                   placeholder="Значение">
+                                                   class="form-control mb-1">
                                         </div>
                                     </div>
                                 </div>
@@ -255,13 +253,13 @@
                 const newAttrDiv = document.createElement('div');
                 newAttrDiv.className = 'col-6';
                 newAttrDiv.innerHTML = `
-            <input name="attr${index}" type="text" class="form-control mb-1" placeholder="Атрибут">
+            <input name="attr${index}" type="text" class="form-control mb-1">
         `;
 
                 const newValDiv = document.createElement('div');
                 newValDiv.className = 'col-6';
                 newValDiv.innerHTML = `
-            <input name="val${index}" type="text" class="form-control mb-1" placeholder="Значение">
+            <input name="val${index}" type="text" class="form-control mb-1">
         `;
 
                 container.appendChild(newAttrDiv);
@@ -279,13 +277,13 @@
                     const newAttrDiv = document.createElement('div');
                     newAttrDiv.className = 'col-6';
                     newAttrDiv.innerHTML = `
-                <input name="attr${index}" type="text" class="form-control mb-1" placeholder="Атрибут">
+                <input name="attr${index}" type="text" class="form-control mb-1">
             `;
 
                     const newValDiv = document.createElement('div');
                     newValDiv.className = 'col-6';
                     newValDiv.innerHTML = `
-                <input name="val${index}" type="text" class="form-control mb-1" placeholder="Значение">
+                <input name="val${index}" type="text" class="form-control mb-1">
             `;
 
                     container.appendChild(newAttrDiv);
