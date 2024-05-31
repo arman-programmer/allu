@@ -58,14 +58,15 @@
                                             <span class="text-secondary">{{ $order->id }}</span>
                                         </td>
                                         <td>
-                                            <a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a>
+                                            {{--                                        <a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
+                                            {{ $order->user->name }}
                                         </td>
                                         <td>
                                             <span class="flag flag-xs flag-country-us me-2"></span>
                                             Carlson Limited
                                         </td>
                                         <td>
-                                            {{ $order->address }}
+                                            {{ $order->address->name }}
                                         </td>
                                         <td>
                                             87956621

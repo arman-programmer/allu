@@ -10,7 +10,7 @@ class OrderAdminController extends Controller
 {
     public function orders()
     {
-        $orders = Orders::with('address')->get();
+        $orders = Orders::with('address', 'user')->get();
         return view('admin.orders', compact(
             'orders',
         ));

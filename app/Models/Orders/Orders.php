@@ -6,6 +6,7 @@ use App\Models\Account\Addresses;
 use App\Models\Products\Products;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Orders extends Model
 {
@@ -16,5 +17,10 @@ class Orders extends Model
     public function address()
     {
         return $this->belongsTo(Addresses::class, 'address_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(Auth::class, 'user_id', 'id');
     }
 }
