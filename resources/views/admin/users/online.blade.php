@@ -48,7 +48,7 @@
                                             {{ $online->ip_address ?? null }}
                                         </td>
                                         <td>
-                                            {{ \Carbon\Carbon::createFromTimestamp($online->last_activity)->toDateTimeString() ?? null}}
+                                            {{ date("Y-m-d H:i:s", $online->last_activity) ?? null}}
                                         </td>
                                         <td>
                                             {{ $online->user->name ?? null }}
