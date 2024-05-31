@@ -59,19 +59,19 @@
                                         </td>
                                         <td>
                                             {{--<a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
-                                            {{ $order->user->name ?? "имя" }}
+                                            {{ $order->user->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->address->city->name ?? "город" }}
+                                            {{ $order->address->city->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->address->name ?? "адрес" }}
+                                            {{ $order->address->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->user->phone ?? "номер" }}
+                                            {{ $order->user->phone ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->comment }}
+                                            {{ $order->comment ?? null }}
                                         </td>
                                         <td>
                                             @php
@@ -94,8 +94,8 @@
                                             <span class="dropdown">
                                                 <button class="btn dropdown-toggle align-text-top"
                                                         data-bs-boundary="viewport"
-                                                        data-bs-toggle="dropdown">Actions</button>
-                                                <div class="dropdown-menu dropdown-menu-end">
+                                                        data-bs-toggle="dropdown"></button>
+                                                <div class="dropdown-menu dropdown-menu-start">
                                                     <a class="dropdown-item" href="#">
                                                       Action
                                                     </a>
