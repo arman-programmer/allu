@@ -18,12 +18,14 @@
                                 <span class="wishlist-item-count pos-absolute">3</span>
                             </a>
                         </div>  End Header Wishlist Box -->
-                        @if(Auth::user()->role == "admin")
-                            <div class="header__wishlist pos-relative">
-                                <a href="{{ route('admin.home') }}" class="header__wishlist-link">
-                                    <i class="fa fa-person-dolly"></i>
-                                </a>
-                            </div>
+                        @if(Auth::check())
+                            @if(Auth::user()->role == "admin")
+                                <div class="header__wishlist pos-relative">
+                                    <a href="{{ route('admin.home') }}" class="header__wishlist-link">
+                                        <i class="fa fa-person-dolly"></i>
+                                    </a>
+                                </div>
+                            @endif
                         @endif
                         <div class="header-add-cart pos-relative m-l-20">
                             <a href="#offcanvas-add-cart__box"

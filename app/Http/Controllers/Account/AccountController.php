@@ -47,6 +47,6 @@ class AccountController extends Controller
     public function deleteAddress($id)
     {
         Addresses::destroy($id);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Адрес успешно удалён!');
     }
 }
