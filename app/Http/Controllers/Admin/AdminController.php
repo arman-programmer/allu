@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Account\Session;
 use App\Models\Account\User;
 use App\Models\Products\Category;
+use App\Models\Products\ProductReviews;
 use App\Models\Products\Products;
 
 class AdminController extends Controller
@@ -32,7 +33,7 @@ class AdminController extends Controller
 
     public function reviews()
     {
-        return view('admin.product.reviews');
+        $reviews = ProductReviews::with('user', 'product')->get();
+        return view('admin.product.reviews', compact('reviews'));
     }
-
 }
