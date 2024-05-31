@@ -3,6 +3,7 @@
 use App\Http\Controllers\Account\AccountController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryAdminController;
+use App\Http\Controllers\Admin\CountryAdminController;
 use App\Http\Controllers\Admin\ManufacturerAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
@@ -86,6 +87,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/product/off/{id}', [ProductAdminController::class, 'off'])->name('admin.product.off');
     Route::post('/admin/product/delete/{id}', [ProductAdminController::class, 'delete'])->name('admin.product.delete');
     Route::post('/admin/product/upload/image', [ProductAdminController::class, 'upload'])->name('upload.file');
+
     Route::get('/admin/product/reviews', [AdminController::class, 'reviews'])->name('admin.product.reviews');
     Route::post('/admin/product/review/on/{id}', [AdminController::class, 'reviewOn'])->name('admin.product.review.on');
     Route::post('/admin/product/review/off/{id}', [AdminController::class, 'reviewOff'])->name('admin.product.review.off');
@@ -94,8 +96,10 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin/categories', [CategoryAdminController::class, 'categories'])->name('admin.categories');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
     Route::post('/admin/category/off/{id}', [CategoryAdminController::class, 'off'])->name('admin.category.off');
+
     Route::get('/admin/manufacturers', [ManufacturerAdminController::class, 'manufacturers'])->name('admin.manufacturers');
-    Route::post('/admin/manufacturer/delete/{id}', [AdminController::class, 'manufacturerDelete'])->name('admin.manufacturer.delete');
-    Route::get('/admin/countries', [AdminController::class, 'countries'])->name('admin.countries');
-    Route::post('/admin/country/delete/{id}', [AdminController::class, 'countryDelete'])->name('admin.country.delete');
+    Route::post('/admin/manufacturer/delete/{id}', [ManufacturerAdminController::class, 'manufacturerDelete'])->name('admin.manufacturer.delete');
+
+    Route::get('/admin/countries', [CountryAdminController::class, 'countries'])->name('admin.countries');
+    Route::post('/admin/country/delete/{id}', [CountryAdminController::class, 'countryDelete'])->name('admin.country.delete');
 });

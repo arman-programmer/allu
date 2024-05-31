@@ -61,19 +61,4 @@ class AdminController extends Controller
         $review->delete();
         return redirect()->back();
     }
-
-    public function countries()
-    {
-        $countries = Countries::with('products')->get();
-        return view('admin.countries', compact('countries'));
-    }
-
-    public function countryDelete($id)
-    {
-        $country = Countries::where('id', $id)->first();
-        Products::where('country_id', $country->id)->update(['country_id' => null]);
-        $country->delete();
-        return redirect()->back();
-    }
-
 }
