@@ -178,7 +178,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <input class="form-control" type="phone" value="{{ $user->phone }}"
+                                                    <input class="form-control" value="+7{{ $user->phone }}"
                                                            disabled>
                                                 </div>
                                             </div>
