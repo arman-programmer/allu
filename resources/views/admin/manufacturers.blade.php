@@ -80,7 +80,7 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end" style="">
                                                     <form
-                                                        action="{{ route('admin.manufacturer.delete', parameters: ['id' => $review->id]) }}"
+                                                        action="{{ route('admin.manufacturer.delete', parameters: ['id' => $manufacturer->id]) }}"
                                                         method="post">
                                                         @csrf
                                                         <button type="submit" class="dropdown-item">
