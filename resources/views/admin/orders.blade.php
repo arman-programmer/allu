@@ -66,7 +66,7 @@
                                             Carlson Limited
                                         </td>
                                         <td>
-                                            {{ $order->address->name }}
+                                            {{ $order->address->name ?? "чмо" }}
                                         </td>
                                         <td>
                                             87956621
