@@ -31,12 +31,11 @@
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Пользователь</th>
                                     <th>IP-адрес</th>
+                                    <th>Последняя активность</th>
+                                    <th>Пользователь</th>
                                     <th>Город</th>
                                     <th>Агент</th>
-                                    <th>Последняя активность</th>
-                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +54,7 @@
                                             {{ $online->user->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $online->city->name ?? null }}
+                                            {{ $online->user->city->name ?? null }}
                                         </td>
                                         <td>
                                             {{ $online->user_agent ?? null }}
