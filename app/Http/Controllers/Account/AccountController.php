@@ -24,10 +24,25 @@ class AccountController extends Controller
 
     public function edit(Request $request)
     {
-        Auth::user()->name = $request->get('name');
-        Auth::user()->save();
+        // Валидация входных данных
+        $request->validate([
+            'name' => ['required', 'string', 'max:20', 'regex:/^[\p{L}\s]*$/u']
+        ], [
+            'name.required' => 'Имя обязательно для заполнения.',
+            'name.string' => 'Имя должно быть строкой.',
+            'name.max' => 'Имя не должно превышать 20 символов.',
+            'name.regex' => 'Имя должно содержать только буквы и пробелы.'
+        ]);
+
+        // Обновление имени пользователя
+        $name = $request->input('name');
+        $user = Auth::user();
+        $user->name = $name;
+        $user->save();
+
         return redirect()->back();
     }
+
 
     public function deleteAddress($id)
     {
