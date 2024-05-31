@@ -20,7 +20,7 @@ class ProductAdminController extends Controller
     public function products()
     {
         $products = Products::with(['Category', 'images'])->paginate(20);
-        return view('admin.products', compact('products'));
+        return view('admin.product.products', compact('products'));
     }
 
     public function add()
