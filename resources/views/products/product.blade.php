@@ -83,8 +83,19 @@
                                         @endif
                                     @endfor
                                 </ul>
-                                <a href="#modalReview" data-toggle="modal" class="link--gray link--icon-left m-b-5"><i
-                                        class="fal fa-edit"></i> Оставить отзыв</a>
+                                <a href="#modalReview" data-toggle="modal" class="link--gray link--icon-left m-b-5">
+                                    <i class="fal fa-edit"></i>
+                                    Оставить отзыв
+                                </a>
+                                @if(Auth::check())
+                                    @if(Auth::user()->role == "admin")
+                                        <a href="{{ route('admin.product.edit', parameters: ['id'=>$product->id]) }}"
+                                           class="link--gray link--icon-left m-b-5">
+                                            <i class="fal fa-edit"></i>
+                                            Редактировать
+                                        </a>
+                                    @endif
+                                @endif
                             </div>
                             <div class="product__price">
                                 @if ($product->old_price)
