@@ -334,7 +334,7 @@
                                                     <span class="product__price-reg">{{ $re->price }}</span>
                                                 </div>
                                                 <a href="{{ route('product', $re->id) }}"
-                                                   class="product__link product__link--underline product__link--weight-light m-t-15">
+                                                   class="product__link product__link--underline product__link--weight-light">
                                                     {{ $re->name }}
                                                 </a>
                                             </div> <!-- End Single Default Product -->
