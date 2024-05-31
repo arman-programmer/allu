@@ -56,10 +56,14 @@
                         <h5 class="section-content__title">В каталоге нет ни одного товара :(</h5>
                     @endif
                 </div>
-                <a href="{{ URL::previous() }}"
-                   class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
-                    Назад
-                </a>
+                <div class="page-not-found text-center m-t-40">
+                    <img class="banner__img" src="{{ asset('assets/mushroom.jpg') }}" alt="">
+                    <p>Возможно продукт был удален, либо нету</p>
+                    <a href="{{ URL::previous() }}"
+                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
+                        Назад
+                    </a>
+                </div>
             @else
                 <!-- ::::::  Start Sort Box Section  ::::::  -->
                 <div class="sort-box">

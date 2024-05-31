@@ -6092,7 +6092,7 @@ hr {
 
 .star-rating label:is(:hover, :has(~ :hover)) i {
     transform: scale(1.35);
-    color: #fffdba;
+    color: #0063d1;
     animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
 }
 
