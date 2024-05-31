@@ -55,10 +55,10 @@
                                             <span class="text-secondary">{{ $review->id }}</span>
                                         </td>
                                         <td>
-                                            {{ $review->user->name ?? null }}
+                                            {{ $review->product->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $review->product->name ?? null }}
+                                            {{ $review->user->name ?? null }}
                                         </td>
                                         <td>
                                             {{ $review->stars ?? null }}
@@ -72,21 +72,26 @@
                                         <td>
                                             {{ $review->created_at ?? null }}
                                         </td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                        data-bs-boundary="viewport"
-                                                        data-bs-toggle="dropdown">
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-start">
-                                                    <a class="dropdown-item" href="#">
-                                                      Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                      Another action
-                                                    </a>
+                                        <td>
+                                            <div class="btn-list flex-nowrap">
+                                                <a href="#" class="btn">
+                                                    Edit
+                                                </a>
+                                                <div class="dropdown">
+                                                    <button class="btn dropdown-toggle align-text-top"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Actions
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                                        <a class="dropdown-item" href="#">
+                                                            Action
+                                                        </a>
+                                                        <a class="dropdown-item" href="#">
+                                                            Another action
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </span>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
