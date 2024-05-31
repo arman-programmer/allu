@@ -74,9 +74,25 @@
                                         </td>
                                         <td>
                                             <div class="btn-list flex-nowrap">
-                                                <a href="#" class="btn">
-                                                    Edit
-                                                </a>
+                                                @if($review->status == 0)
+                                                    <form
+                                                        action="{{ route('admin.product.review.on', parameters: ['id' => $review->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn">
+                                                            Включить
+                                                        </button>
+                                                    </form>
+                                                @else
+                                                    <form
+                                                        action="{{ route('admin.product.review.off', parameters: ['id' => $review->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn">
+                                                            Отключить
+                                                        </button>
+                                                    </form>
+                                                @endif
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown" aria-expanded="false">
