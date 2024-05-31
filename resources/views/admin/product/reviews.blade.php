@@ -62,15 +62,8 @@
                                         </td>
                                         <td>
                                             {{ $review->stars ?? null }}
-                                            <span class="gl-star-rating gl-star-rating--ltr" data-star-rating="">
-                                                <select id="rating-color-primary">
-                                                    <option value="">Select a rating</option>
-                                                    <option value="5">Excellent</option>
-                                                    <option value="4">Very Good</option>
-                                                    <option value="3" selected="">Average</option>
-                                                    <option value="2">Poor</option>
-                                                    <option value="1">Terrible</option>
-                                                </select>
+                                            @foreach($review->stars)
+                                                <span class="gl-star-rating gl-star-rating--ltr" data-star-rating="">
                                                 <span class="gl-star-rating--stars" data-rating="5">
                                                     <span data-index="0" data-value="1" class="gl-active">
                                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -87,6 +80,7 @@
                                                     </span>
                                                 </span>
                                             </span>
+                                            @endforeach
                                         </td>
                                         <td>
                                             {{ $review->text ?? null }}
