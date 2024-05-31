@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function users()
     {
         $users = User::with('city', 'session')->get();
-        return view('admin.users.users', compact('users'));
+        return view('admin.users.list', compact('users'));
     }
 
     public function online()
@@ -29,7 +29,6 @@ class AdminController extends Controller
         $onlines = Session::with('user.city', 'city')
             ->orderBy('last_activity', 'desc')
             ->get();
-
         return view('admin.users.online', compact('onlines'));
     }
 }
