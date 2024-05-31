@@ -14,7 +14,7 @@
                         Привет,
                     </div>
                     <h2 class="page-title">
-                        {{ Auth::user->name }}!
+                        {{ Auth::user()->name }}!
                     </h2>
                 </div>
                 <!-- Page title actions -->
