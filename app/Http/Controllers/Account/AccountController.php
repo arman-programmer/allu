@@ -17,7 +17,8 @@ class AccountController extends Controller
         $addresses = Addresses::where('user_id', $user)->get();
         return view('account.account', compact(
             'addresses',
-            'orders'
+            'orders',
+            'user'
         ));
     }
 

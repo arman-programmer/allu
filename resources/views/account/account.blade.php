@@ -176,34 +176,21 @@
                                     <h4 class="account-title">Настройки аккаунта</h4>
                                     <div class="account-details">
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <input type="text" placeholder="Имя">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="text" placeholder="Эл.почта">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <h5 class="title">Изменить пароль</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-box__single-group">
-                                                    <input type="password" placeholder="Старый пароль">
+                                                    <input class="form-control" type="phone" value="{{ $user->phone }}"
+                                                           disabled>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-box__single-group">
-                                                    <input type="password" placeholder="Новый пароль">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-box__single-group">
-                                                    <input type="password" placeholder="Повторите новый пароль">
+                                                    @if($user->name)
+                                                        <input name="name" class="form-control" type="text"
+                                                               placeholder="Ваше имя.." value="{{ $user->name }}">
+                                                    @else
+                                                        <input name="name" class="form-control" type="text"
+                                                               placeholder="Ваше имя..">
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
