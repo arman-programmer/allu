@@ -17,5 +17,4 @@ class Orders extends Model
     {
         return $this->belongsTo(Addresses::class, 'address_id', 'id');
     }
-    public function
 }
