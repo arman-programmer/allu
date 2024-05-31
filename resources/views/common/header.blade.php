@@ -76,7 +76,7 @@
                             <span class="wishlist-item-count pos-absolute yellow-bg">3</span>
                         </a>
                     </div> End Header Wishlist Box -->
-                    @if(Auth::role == "admin")
+                    @if(Auth::user()->role == "admin")
                         <div class="header__wishlist pos-relative">
                             <a href="{{ route('admin.home') }}" class="header__wishlist-link">
                                 <i class="fa fa-person-dolly white-color"></i>
