@@ -46,16 +46,19 @@
                                             <span class="text-secondary">{{ $loop->iteration }}</span>
                                         </td>
                                         <td>
-                                            {{ $online->user->name ?? null }}
-                                        </td>
-                                        <td>
                                             {{ $online->ip_address ?? null }}
                                         </td>
                                         <td>
-                                            {{ $online->user_agent ?? null }}
+                                            {{ \Carbon\Carbon::createFromTimestamp($online->last_activity)->toDateTimeString() ?? null}}
                                         </td>
                                         <td>
-                                            {{ \Carbon\Carbon::createFromTimestamp($online->last_activity)->toDateTimeString() ?? null}}
+                                            {{ $online->user->name ?? null }}
+                                        </td>
+                                        <td>
+                                            {{ $online->city->name ?? null }}
+                                        </td>
+                                        <td>
+                                            {{ $online->user_agent ?? null }}
                                         </td>
                                     </tr>
                                 @endforeach

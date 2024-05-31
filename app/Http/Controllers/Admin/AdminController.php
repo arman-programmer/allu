@@ -22,7 +22,11 @@ class AdminController extends Controller
 
     public function online()
     {
-        $onlines = Session::with('user.city', 'city')->get();
+        $onlines = Session::with('user.city', 'city')
+            ->orderBy('last_activity', 'desc')
+            ->get();
+
         return view('admin.users.online', compact('onlines'));
     }
+
 }
