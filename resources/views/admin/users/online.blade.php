@@ -55,7 +55,7 @@
                                             {{ $online->user_agent ?? null }}
                                         </td>
                                         <td>
-                                            {{ Carbon::createFromTimestamp($session->last_activity)->toDateTimeString() ?? null}}
+                                            {{ \Carbon\Carbon::createFromTimestamp($session->last_activity)->toDateTimeString() ?? null}}
                                         </td>
                                     </tr>
                                 @endforeach
