@@ -3,6 +3,7 @@
 namespace App\Models\Orders;
 
 use App\Models\Account\Addresses;
+use App\Models\Account\User;
 use App\Models\Products\Products;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +22,6 @@ class Orders extends Model
 
     public function user()
     {
-        return $this->belongsTo(Auth::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
