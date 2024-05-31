@@ -386,7 +386,7 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <span class="modal__product-title m-t-25">{{ $product->name }}</span>
-                                    <form action="{{ route('product.review', $product->id) }}" method="post"
+                                    <form action="{{ route('product.review.add', $product->id) }}" method="post"
                                           class="form-box">
                                         @csrf
                                         <div class="review-box m-t-25">
