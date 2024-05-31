@@ -112,17 +112,10 @@ class AuthController extends Controller
     {
         $session_id = $request->session()->getId();
         $user_confirm = UserConfirms::where('session_id', $session_id)->first();
-        $code = $user_confirm->code;
         $phone = $user_confirm->phone;
-        $response = Http::timeout(5)->get('https://api.mobizon.kz/service/message/sendsmsmessage?recipient=7' . $phone . '&text=Ваш+код+от+allu.kz: +' . $code . '%21&apiKey=kza34fad2b4a5af5ceb06322b4919a198bd41d6eb82ce0a579aef4326330e05c6a5b78');
-        if ($response->ok()) {
-            $user_confirm->status = 1;
-            $user_confirm->updated_at = Carbon::now();
-            $user_confirm->save();
-            return redirect()->route('confirm');
-        } else {
-            return redirect()->back()->withErrors('Произошла ошибка на сервере');
-        }
+        $user_confirm->delete();
+        $this->userConfirmSave($phone);
+        return redirect()->route('confirm');
     }
 
     public function logout()
