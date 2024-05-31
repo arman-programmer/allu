@@ -183,10 +183,11 @@
                                                            disabled>
                                                 </div>
                                             </div>
-                                            <form action="{{ route('login') }}" method="post">
-                                                <div class="col-md-6">
-                                                    <div class="form-box__single-group">
-                                                        <label>Ваше имя</label>
+                                            <div class="col-md-6">
+                                                <div class="form-box__single-group">
+                                                    <label>Ваше имя</label>
+                                                    <form action="{{ route('login') }}" method="post" id="edit">
+                                                        @csrf
                                                         @if(Auth::user()->name)
                                                             <input name="name" class="form-control" type="text"
                                                                    placeholder="Ваше имя.."
@@ -195,17 +196,18 @@
                                                             <input name="name" class="form-control" type="text"
                                                                    placeholder="Ваше имя..">
                                                         @endif
-                                                    </div>
+                                                    </form>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-box__single-group">
-                                                        <button type="submit"
-                                                                class="btn btn--box btn--small btn--uppercase btn--blue">
-                                                            Сохранить изменения
-                                                        </button>
-                                                    </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-box__single-group">
+                                                    <button type="submit"
+                                                            form="edit"
+                                                            class="btn btn--box btn--small btn--uppercase btn--blue">
+                                                        Сохранить изменения
+                                                    </button>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
