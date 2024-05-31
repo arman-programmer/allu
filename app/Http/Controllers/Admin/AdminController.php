@@ -39,7 +39,7 @@ class AdminController extends Controller
 
     public function reviewOn($id)
     {
-        $review = ProductReviews::where('id', $id)->find();
+        $review = ProductReviews::where('id', $id)->first();
         $review->status = 1;
         $review->save();
         return redirect()->back();
@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     public function reviewOff($id)
     {
-        $review = ProductReviews::where('id', $id)->find();
+        $review = ProductReviews::where('id', $id)->first();
         $review->status = 0;
         $review->save();
         return redirect()->back();
