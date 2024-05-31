@@ -43,7 +43,7 @@
                                 @foreach($onlines as $online)
                                     <tr>
                                         <td>
-                                            <span class="text-secondary">{{ $loop->iter }}</span>
+                                            <span class="text-secondary">{{ $loop->iteration }}</span>
                                         </td>
                                         <td>
                                             {{ $online->user->name ?? null }}
