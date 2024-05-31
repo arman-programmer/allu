@@ -24,7 +24,8 @@ class AccountController extends Controller
 
     public function edit(Request $request)
     {
-        dd($request->all());
+        Auth::user()->name = $request->get('name');
+        Auth::user()->save();
         return redirect()->back();
     }
 
