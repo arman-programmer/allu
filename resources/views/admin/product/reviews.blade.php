@@ -131,14 +131,18 @@
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Actions
+                                                        Действия
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end" style="">
+                                                        <form
+                                                            action="{{ route('admin.product.review.delete', parameters: ['id' => $review->id]) }}"
+                                                            method="post">
+                                                            <button type="submit" class="dropdown-item">
+                                                                Удалить
+                                                            </button>
+                                                        </form>
                                                         <a class="dropdown-item" href="#">
-                                                            Action
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            Another action
+                                                            Изменить
                                                         </a>
                                                     </div>
                                                 </div>

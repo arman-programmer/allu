@@ -52,4 +52,11 @@ class AdminController extends Controller
         $review->save();
         return redirect()->back();
     }
+
+    public function reviewDelete($id)
+    {
+        $review = ProductReviews::where('id', $id)->first();
+        $review->delete();
+        return redirect()->back();
+    }
 }

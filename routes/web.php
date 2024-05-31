@@ -88,6 +88,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin/product/reviews', [AdminController::class, 'reviews'])->name('admin.product.reviews');
     Route::post('/admin/product/review/on/{id}', [AdminController::class, 'reviewOn'])->name('admin.product.review.on');
     Route::post('/admin/product/review/off/{id}', [AdminController::class, 'reviewOff'])->name('admin.product.review.off');
+    Route::post('/admin/product/review/delete/{id}', [AdminController::class, 'reviewDelete'])->name('admin.product.review.delete');
 
     Route::get('/admin/categories', [CategoryAdminController::class, 'categories'])->name('admin.categories');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
