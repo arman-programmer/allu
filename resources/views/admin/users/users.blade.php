@@ -48,9 +48,7 @@
                                             {{ $user->session->ip_address ?? null }}
                                         </td>
                                         <td>
-                                            @if($user->session->last_activity != null)
-                                                {{ date("Y-m-d H:i:s", $user->session->last_activity)}}
-                                            @endif
+
                                         </td>
                                         <td>
                                             {{ $user->name ?? null }}
