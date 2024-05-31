@@ -3,6 +3,7 @@
 use App\Http\Controllers\Account\AccountController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryAdminController;
+use App\Http\Controllers\Admin\ManufacturerAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\MainController;
@@ -93,7 +94,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin/categories', [CategoryAdminController::class, 'categories'])->name('admin.categories');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
     Route::post('/admin/category/off/{id}', [CategoryAdminController::class, 'off'])->name('admin.category.off');
-    Route::get('/admin/manufacturers', [AdminController::class, 'manufacturers'])->name('admin.manufacturers');
+    Route::get('/admin/manufacturers', [ManufacturerAdminController::class, 'manufacturers'])->name('admin.manufacturers');
     Route::post('/admin/manufacturer/delete/{id}', [AdminController::class, 'manufacturerDelete'])->name('admin.manufacturer.delete');
     Route::get('/admin/countries', [AdminController::class, 'countries'])->name('admin.countries');
     Route::post('/admin/country/delete/{id}', [AdminController::class, 'countryDelete'])->name('admin.country.delete');

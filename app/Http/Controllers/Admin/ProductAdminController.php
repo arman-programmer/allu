@@ -34,7 +34,6 @@ class ProductAdminController extends Controller
             'countries',
             'manufacturers',
             'categories'
-
         ));
     }
 

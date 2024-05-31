@@ -1,6 +1,7 @@
 @extends('admin.common.layout')
+
 @section('title')
-    Главная
+    Товары
 @endsection
 
 @section('main_content')
