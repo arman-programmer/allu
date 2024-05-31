@@ -18,21 +18,26 @@
                                 <span class="wishlist-item-count pos-absolute">3</span>
                             </a>
                         </div>  End Header Wishlist Box -->
-
-                        <!-- Start Header Add Cart Box -->
+                        @if(Auth::role == "admin")
+                            <div class="header__wishlist pos-relative">
+                                <a href="{{ route('admin.home') }}" class="header__wishlist-link">
+                                    <i class="fa fa-person-dolly"></i>
+                                </a>
+                            </div>
+                        @endif
                         <div class="header-add-cart pos-relative m-l-20">
                             <a href="#offcanvas-add-cart__box"
                                class="header__wishlist-link offcanvas--open-checkout offcanvas-toggle">
                                 <i class="icon-shopping-cart"></i>
                                 <span class="wishlist-item-count pos-absolute">
-                                            @if ($products != null)
+                                    @if ($products != null)
                                         {{ count($products) }}
                                     @else
                                         0
                                     @endif
-                                        </span>
+                                </span>
                             </a>
-                        </div> <!-- End Header Add Cart Box -->
+                        </div>
 
                         <a href="#offcanvas-mobile-menu" class="offcanvas-toggle m-l-20"><i
                                 class="icon-menu"></i></a>

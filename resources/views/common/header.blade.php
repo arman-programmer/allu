@@ -76,11 +76,13 @@
                             <span class="wishlist-item-count pos-absolute yellow-bg">3</span>
                         </a>
                     </div> End Header Wishlist Box -->
-                    <div class="header__wishlist pos-relative">
-                        <a href="{{ route('admin.home') }}" class="header__wishlist-link">
-                            <i class="fa fa-person-dolly"></i>
-                        </a>
-                    </div>
+                    @if(Auth::role == "admin")
+                        <div class="header__wishlist pos-relative">
+                            <a href="{{ route('admin.home') }}" class="header__wishlist-link">
+                                <i class="fa fa-person-dolly white-color"></i>
+                            </a>
+                        </div>
+                    @endif
                     <div class="header-add-cart pos-relative m-l-40">
                         <a href="#offcanvas-add-cart__box" class="header__wishlist-link offcanvas-toggle">
                             <i class="icon-shopping-cart white-color"></i>
