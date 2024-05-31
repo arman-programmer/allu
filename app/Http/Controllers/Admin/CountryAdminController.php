@@ -9,17 +9,22 @@ use Illuminate\Http\Request;
 
 class CountryAdminController extends Controller
 {
-    public function countries()
+    public function index()
     {
         $countries = Countries::with('products')->get();
         return view('admin.country.list', compact('countries'));
     }
 
-    public function countryDelete($id)
+    public function delete($id)
     {
         $country = Countries::where('id', $id)->first();
         Products::where('country_id', $country->id)->update(['country_id' => null]);
         $country->delete();
         return redirect()->back();
+    }
+
+    public function add()
+    {
+        return view('admin.country.add');
     }
 }
