@@ -71,6 +71,8 @@ Route::post('/update-cart', [CartController::class, 'updateCart'])->name('update
 
 Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'home'])->name('admin.home');
+    Route::get('/admin/users/', [AdminController::class, 'users'])->name('admin.users');
+    Route::get('/admin/users/online', [AdminController::class, 'online'])->name('admin.users.online');
 
     Route::get('/admin/orders', [OrderAdminController::class, 'orders'])->name('admin.orders');
 

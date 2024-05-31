@@ -30,81 +30,32 @@
                             <table class="table card-table table-vcenter text-nowrap datatable">
                                 <thead>
                                 <tr>
-                                    <th class="w-1">№
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick"
-                                             width="24"
-                                             height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                            <path d="M6 15l6 -6l6 6"/>
-                                        </svg>
-                                    </th>
-                                    <th>Покупатель</th>
+                                    <th>№</th>
+                                    <th>Пользователь</th>
+                                    <th>IP-адрес</th>
                                     <th>Город</th>
-                                    <th>Адрес</th>
-                                    <th>Телефон</th>
-                                    <th>Комментарии</th>
-                                    <th>Создан</th>
-                                    <th>Статус</th>
-                                    <th>Сумма</th>
+                                    <th>Агент</th>
+                                    <th>Последняя активность</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($orders as $order)
+                                @foreach($onlines as $online)
                                     <tr>
                                         <td>
-                                            <span class="text-secondary">{{ $order->id }}</span>
+                                            <span class="text-secondary">{{ $loop->iter }}</span>
                                         </td>
                                         <td>
-                                            {{--<a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
-                                            {{ $order->user->name ?? null }}
+                                            {{ $online->user->name ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->address->city->name ?? null }}
+                                            {{ $online->ip_address ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->address->name ?? null }}
+                                            {{ $online->user_agent ?? null }}
                                         </td>
                                         <td>
-                                            {{ $order->user->phone ?? null }}
-                                        </td>
-                                        <td>
-                                            {{ $order->comment ?? null }}
-                                        </td>
-                                        <td>
-                                            @php
-                                                $datetime = $order->created_at;
-                                                $dateTimeObj = new DateTime($datetime);
-                                                $date = $dateTimeObj->format('d.m.y');
-                                                $time = $dateTimeObj->format('H:i');
-                                            @endphp
-                                            {{ $date }}
-                                            <br>
-                                            {{ $time }}
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-success me-1"></span> {{ $order->status }}
-                                        </td>
-                                        <td>
-                                            $887
-                                        </td>
-                                        <td class="text-end">
-                                            <span class="dropdown">
-                                                <button class="btn dropdown-toggle align-text-top"
-                                                        data-bs-boundary="viewport"
-                                                        data-bs-toggle="dropdown">
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-start">
-                                                    <a class="dropdown-item" href="#">
-                                                      Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                      Another action
-                                                    </a>
-                                                </div>
-                                            </span>
+                                            {{ Carbon::createFromTimestamp($session->last_activity)->toDateTimeString() ?? null}}
                                         </td>
                                     </tr>
                                 @endforeach
