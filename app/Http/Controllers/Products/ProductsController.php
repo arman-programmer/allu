@@ -50,6 +50,7 @@ class ProductsController extends Controller
         $review->text = $request->text;
         $review->user_id = auth()->id();
         $review->product_id = $productId;
+        $review->status = 0;
         $review->stars = $request->stars;
         $review->save();
 

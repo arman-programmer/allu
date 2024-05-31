@@ -14,7 +14,6 @@
             <div class="d-flex">
                 <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" data-bs-toggle="tooltip"
                    data-bs-placement="bottom" aria-label="Enable dark mode" data-bs-original-title="Enable dark mode">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                          stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -24,7 +23,6 @@
                 </a>
                 <a href="?theme=light" class="nav-link px-0 hide-theme-light" data-bs-toggle="tooltip"
                    data-bs-placement="bottom" aria-label="Enable light mode" data-bs-original-title="Enable light mode">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/sun -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                          stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -37,7 +35,6 @@
                 <div class="nav-item dropdown d-flex me-3">
                     <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
                        aria-label="Show notifications">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                              stroke-linejoin="round">
@@ -56,8 +53,9 @@
                             <div class="list-group list-group-flush list-group-hoverable">
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
-                                        <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-red d-block"></span></div>
+                                        <div class="col-auto">
+                                            <span class="status-dot status-dot-animated bg-red d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 1</a>
                                             <div class="d-block text-secondary text-truncate mt-n1">
@@ -66,7 +64,6 @@
                                         </div>
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
-                                                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted"
                                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                                      stroke="currentColor" fill="none" stroke-linecap="round"
@@ -90,7 +87,6 @@
                                         </div>
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions show">
-                                                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-yellow"
                                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                                      stroke="currentColor" fill="none" stroke-linecap="round"
@@ -114,7 +110,6 @@
                                         </div>
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
-                                                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted"
                                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                                      stroke="currentColor" fill="none" stroke-linecap="round"
@@ -129,8 +124,9 @@
                                 </div>
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
-                                        <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-green d-block"></span></div>
+                                        <div class="col-auto">
+                                            <span class="status-dot status-dot-animated bg-green d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 4</a>
                                             <div class="d-block text-secondary text-truncate mt-n1">
@@ -139,7 +135,6 @@
                                         </div>
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
-                                                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted"
                                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                                      stroke="currentColor" fill="none" stroke-linecap="round"
@@ -171,29 +166,36 @@
                             <span class="nav-link-icon d-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                     stroke-linecap="round" stroke-linejoin="round"><path stroke="none"
-                                                                                          d="M0 0h24v24H0z"
-                                                                                          fill="none"/><path
-                                        d="M5 12l-2 0l9 -9l9 9l-2 0"/><path
-                                        d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path
-                                        d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg>
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"/>
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/>
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/>
+                                </svg>
                             </span>
-                            <span class="nav-link-title">Главная</span>
+                            <span class="nav-link-title">
+                                Главная
+                            </span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                            data-bs-auto-close="outside" role="button" aria-expanded="false">
-                    <span class="nav-link-icon d-inline-block">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                           stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                           stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path
-                              d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"/><path d="M12 12l8 -4.5"/><path
-                              d="M12 12l0 9"/><path d="M12 12l-8 -4.5"/><path d="M16 5.25l-8 4.5"/></svg>
-                    </span>
+                            <span class="nav-link-icon d-inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                     viewBox="0 0 24 24"
+                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                     stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"/>
+                                    <path d="M12 12l8 -4.5"/>
+                                    <path d="M12 12l0 9"/>
+                                    <path d="M12 12l-8 -4.5"/>
+                                    <path d="M16 5.25l-8 4.5"/>
+                                </svg>
+                            </span>
                             <span class="nav-link-title">
-                      Каталог
-                    </span>
+                                Каталог
+                            </span>
                         </a>
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
@@ -204,7 +206,7 @@
                                     <a class="dropdown-item" href="{{ route('admin.categories') }}">
                                         Категории
                                     </a>
-                                    <a class="dropdown-item" href="/">
+                                    <a class="dropdown-item" href="{{ route('admin.product.reviews') }}">
                                         Отзывы
                                         <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                     </a>
@@ -226,8 +228,7 @@
                                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                                      stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <path
-                                        d="M9 11l3 3l8 -8"/>
+                                    <path d="M9 11l3 3l8 -8"/>
                                     <path
                                         d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"/>
                                 </svg>
@@ -260,7 +261,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
-                                    <a class="dropdown-item active" href="{{ route('admin.users.online') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.users.online') }}">
                                         Онлайн
                                     </a>
                                     <a class="dropdown-item" href="{{ route('admin.users') }}">
@@ -277,11 +278,16 @@
                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                       viewBox="0 0 24 24"
                                       stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                      stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path
-                                         d="M4 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/><path
-                                         d="M4 13m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/><path
-                                         d="M14 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/><path
-                                         d="M14 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/></svg>
+                                      stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                     <path
+                                         d="M4 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                     <path
+                                         d="M4 13m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                     <path
+                                         d="M14 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                     <path
+                                         d="M14 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                 </svg>
                             </span>
                             <span class="nav-link-title">
                                 Блог
@@ -290,7 +296,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
-                                    <a class="dropdown-item active" href="./layout-horizontal.html">
+                                    <a class="dropdown-item" href="./layout-horizontal.html">
                                         Посты
                                     </a>
                                     <a class="dropdown-item" href="./layout-boxed.html">
@@ -338,46 +344,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">
-                            <span class="nav-link-icon d-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none"
-                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round"
-                                     class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag">
-                                    <path stroke="none"
-                                          d="M0 0h24v24H0z"
-                                          fill="none"/>
-                                    <path
-                                        d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"/>
-                                    <path d="M9 11v-5a3 3 0 0 1 6 0v5"/>
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Магазин
-                            </span>
-                        </a>
-                    </li>
                 </ul>
-                <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-                    <form action="./" method="get" autocomplete="off" novalidate>
-                        <div class="input-icon">
-                            <span class="input-icon-addon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                         viewBox="0 0 24 24"
-                                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                         stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/>
-                                        <path d="M21 21l-6 -6"/>
-                                    </svg>
-                            </span>
-                            <input type="text" value="" class="form-control" placeholder="Поиск..."
-                                   aria-label="Search in website">
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>

@@ -30,4 +30,9 @@ class AdminController extends Controller
         return view('admin.users.online', compact('onlines'));
     }
 
+    public function reviews()
+    {
+        return view('admin.product.reviews');
+    }
+
 }
