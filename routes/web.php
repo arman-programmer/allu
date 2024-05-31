@@ -98,8 +98,9 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
     Route::post('/admin/category/off/{id}', [CategoryAdminController::class, 'off'])->name('admin.category.off');
 
-    Route::get('/admin/manufacturers', [ManufacturerAdminController::class, 'manufacturers'])->name('admin.manufacturers');
-    Route::post('/admin/manufacturer/delete/{id}', [ManufacturerAdminController::class, 'manufacturerDelete'])->name('admin.manufacturer.delete');
+    Route::get('/admin/manufacturers', [ManufacturerAdminController::class, 'index'])->name('admin.manufacturers');
+    Route::post('/admin/manufacturer/add', [ManufacturerAdminController::class, 'add'])->name('admin.manufacturer.delete');
+    Route::post('/admin/manufacturer/delete/{id}', [ManufacturerAdminController::class, 'delete'])->name('admin.manufacturer.delete');
 
     Route::get('/admin/countries', [CountryAdminController::class, 'countries'])->name('admin.countries');
     Route::post('/admin/country/delete/{id}', [CountryAdminController::class, 'countryDelete'])->name('admin.country.delete');

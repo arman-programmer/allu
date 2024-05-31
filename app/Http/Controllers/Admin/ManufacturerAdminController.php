@@ -9,17 +9,22 @@ use Illuminate\Http\Request;
 
 class ManufacturerAdminController extends Controller
 {
-    public function manufacturers()
+    public function index()
     {
         $manufacturers = Manufacturers::with('products')->get();
         return view('admin.manufacturer.list', compact('manufacturers'));
     }
 
-    public function manufacturerDelete($id)
+    public function delete($id)
     {
         $manufacturer = Manufacturers::where('id', $id)->first();
         Products::where('manufacturer_id', $manufacturer->id)->update(['manufacturer_id' => null]);
         $manufacturer->delete();
         return redirect()->back();
+    }
+
+    public function add()
+    {
+        return view('admin.manufacturer.add');
     }
 }
