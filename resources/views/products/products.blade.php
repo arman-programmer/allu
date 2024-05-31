@@ -56,9 +56,13 @@
                         <h5 class="section-content__title">В каталоге нет ни одного товара :(</h5>
                     @endif
                 </div>
-                <div class="page-not-found text-center m-t-40">
+                <div class="page-not-found text-center m-t-30">
                     <img class="banner__img" src="{{ asset('assets/mushroom.jpg') }}" alt="">
-                    <p>Возможно продукт был удален, либо нету</p>
+                    @if (!empty($search))
+                        <p>По вашему запросу "{{ $search }}" ничего не найдено :(</p>
+                    @else
+                        <p>В каталоге нет ни одного товара :(</p>
+                    @endif
                     <a href="{{ URL::previous() }}"
                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
                         Назад
