@@ -67,10 +67,22 @@
                                             {{ $review->text ?? null }}
                                         </td>
                                         <td>
-                                            {{ $review->status ?? null }}
+                                            @if($review->status == 1)
+                                                <span class="badge bg-success me-1"></span>
+                                            @else
+                                                <span class="badge bg-danger me-1"></span>
+                                            @endif
                                         </td>
                                         <td>
-                                            {{ $review->created_at ?? null }}
+                                            @php
+                                                $datetime = $review->created_at;
+                                                $dateTimeObj = new DateTime($datetime);
+                                                $date = $dateTimeObj->format('d.m.y');
+                                                $time = $dateTimeObj->format('H:i');
+                                            @endphp
+                                            {{ $date }}
+                                            <br>
+                                            {{ $time }}
                                         </td>
                                         <td>
                                             <div class="btn-list flex-nowrap">
