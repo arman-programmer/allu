@@ -59,17 +59,16 @@
                                         </td>
                                         <td>
                                             {{--<a href="" class="text-reset" tabindex="-1">Design Works</a>--}}
-                                            {{ $order->user->name ?? "чмо" }}
+                                            {{ $order->user->name ?? "имя" }}
                                         </td>
                                         <td>
-                                            <span class="flag flag-xs flag-country-us me-2"></span>
-                                            Carlson Limited
+                                            {{ $order->address->city_id ?? "адрес" }}
                                         </td>
                                         <td>
-                                            {{ $order->address->name ?? "чмо" }}
+                                            {{ $order->address->name ?? "адрес" }}
                                         </td>
                                         <td>
-                                            87956621
+                                            {{ $order->user->phone ?? "номер" }}
                                         </td>
                                         <td>
                                             {{ $order->comment }}
