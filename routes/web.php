@@ -3,6 +3,7 @@
 use App\Http\Controllers\Account\AccountController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryAdminController;
+use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Account\AuthController;
@@ -71,7 +72,7 @@ Route::post('/update-cart', [CartController::class, 'updateCart'])->name('update
 Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'home'])->name('admin.home');
 
-    Route::get('/admin/orders', [OrderController::class, 'orders'])->name('admin.orders');
+    Route::get('/admin/orders', [OrderAdminController::class, 'orders'])->name('admin.orders');
 
     Route::get('/admin/products', [ProductAdminController::class, 'products'])->name('admin.products');
     Route::get('/admin/product/add/', [ProductAdminController::class, 'add'])->name('admin.product.add');
