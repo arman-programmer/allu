@@ -238,14 +238,14 @@
                                     @if (!$reviews->isEmpty())
                                         <!-- Start - Review Comment -->
                                         <ul class="comment">
-                                            @foreach ($reviews as $review)
+                                            @foreach ($product->reviews as $review)
                                                 <!-- Start - Review Comment list-->
                                                 <li class="comment__list">
                                                     <div class="comment__wrapper">
                                                         <div class="comment__img">
                                                             <img
                                                                 src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
-                                                                alt="">
+                                                                alt="user">
                                                         </div>
                                                         <div class="comment__content">
                                                             <div class="comment__content-top">
@@ -370,11 +370,17 @@
                             @if (Auth::check())
                                 <div class="col-12 col-md-6">
                                     <div class="modal-review-img">
-                                        @if ($product->thumb != null)
-                                            <img class="img-fluid  border-around" src="{{ $product->thumb }}" alt="">
+                                        @if($product -> images->isNotEmpty())
+                                            @foreach($product -> images as $image)
+                                                @if($product->thumb == $image->count)
+                                                    <img class="img-fluid  border-around" src="{{ $image->link }}"
+                                                         alt="{{ $product->name }}">
+                                                @endif
+                                            @endforeach
                                         @else
                                             <img class="img-fluid  border-around"
-                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                                 src="{{ asset('assets/placeholder.svg') }}"
+                                                 alt="{{ $product->name }}">
                                         @endif
                                     </div>
                                 </div>

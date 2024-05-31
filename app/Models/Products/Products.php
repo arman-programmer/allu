@@ -24,7 +24,6 @@ class Products extends Model
     public function images()
     {
         return $this->hasMany(ProductImages::class, 'product_id');
-
     }
 
     public function country()
@@ -35,5 +34,10 @@ class Products extends Model
     public function manufacturer()
     {
         return $this->belongsTo(Manufacturers::class, 'manufacturer_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(ProductReviews::class, 'product_id', 'id');
     }
 }

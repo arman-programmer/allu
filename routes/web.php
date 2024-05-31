@@ -54,7 +54,7 @@ Route::get('/post/{id}', [PostsController::class, 'post'])->name('post');
 Route::get('/posts/search', [PostsController::class, 'search'])->name('posts.search');
 
 Route::get('/product/{id}', [ProductsController::class, 'product'])->name('product');
-Route::post('/product/{id}/review', [ProductsController::class, 'review'])->name('product.review');
+Route::post('/product/{id}/review', [ProductsController::class, 'reviewAdd'])->name('product.review.add');
 
 Route::get('/products/category/{id}', [ProductsController::class, 'products'])->name('products.category');
 Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
