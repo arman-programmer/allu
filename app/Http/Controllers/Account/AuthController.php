@@ -85,7 +85,7 @@ class AuthController extends Controller
         $user = User::where('phone', $phone)->first();
         if ($user) {
             if ($user->name) {
-                $text = "Добро пожаловать " . $user->name;
+                $text = "Добро пожаловать " . $user->name . "!";
             } else {
                 $text = "Добро пожаловать!";
             }

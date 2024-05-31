@@ -11,7 +11,7 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        Tables
+                        Заказы
                     </h2>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                             <table class="table card-table table-vcenter text-nowrap datatable">
                                 <thead>
                                 <tr>
-                                    <th class="w-1">No.
+                                    <th class="w-1">№
                                         <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick"
                                              width="24"
@@ -42,7 +42,9 @@
                                     </th>
                                     <th>Покупатель</th>
                                     <th>Город</th>
+                                    <th>Адрес</th>
                                     <th>Телефон</th>
+                                    <th>Комментарии</th>
                                     <th>Создан</th>
                                     <th>Статус</th>
                                     <th>Сумма</th>
@@ -50,264 +52,53 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><span class="text-secondary">001401</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-us me-2"></span>
-                                        Carlson Limited
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        15 Dec 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid
-                                    </td>
-                                    <td>$887</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001402</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">UX Wireframes</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-gb me-2"></span>
-                                        Adobe
-                                    </td>
-                                    <td>
-                                        87956421
-                                    </td>
-                                    <td>
-                                        12 Apr 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-warning me-1"></span> Pending
-                                    </td>
-                                    <td>$1200</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001403</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">New Dashboard</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-de me-2"></span>
-                                        Bluewolf
-                                    </td>
-                                    <td>
-                                        87952621
-                                    </td>
-                                    <td>
-                                        23 Oct 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-warning me-1"></span> Pending
-                                    </td>
-                                    <td>$534</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001404</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing Page</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-br me-2"></span>
-                                        Salesforce
-                                    </td>
-                                    <td>
-                                        87953421
-                                    </td>
-                                    <td>
-                                        2 Sep 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
-                                    </td>
-                                    <td>$1500</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001405</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a>
-                                    </td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-pl me-2"></span>
-                                        Printic
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        29 Jan 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-danger me-1"></span> Paid Today
-                                    </td>
-                                    <td>$648</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001406</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales Presentation</a>
-                                    </td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-br me-2"></span>
-                                        Tabdaq
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        4 Feb 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
-                                    </td>
-                                    <td>$300</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001407</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo & Print</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-us me-2"></span>
-                                        Apple
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        22 Mar 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid Today
-                                    </td>
-                                    <td>$2500</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="text-secondary">001408</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a></td>
-                                    <td>
-                                        <span class="flag flag-xs flag-country-pl me-2"></span>
-                                        Tookapic
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        13 May 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid Today
-                                    </td>
-                                    <td>$940</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
+                                @foreach($orders as $order)
+                                    <tr>
+                                        <td>
+                                            <span class="text-secondary">{{ $order->id }}</span>
+                                        </td>
+                                        <td>
+                                            <a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a>
+                                        </td>
+                                        <td>
+                                            <span class="flag flag-xs flag-country-us me-2"></span>
+                                            Carlson Limited
+                                        </td>
+                                        <td>
+                                            87956621
+                                        </td>
+                                        <td>
+                                            87956621
+                                        </td>
+                                        <td>
+                                            87956621
+                                        </td>
+                                        <td>
+                                            15 Dec 2017
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-success me-1"></span> Paid
+                                        </td>
+                                        <td>
+                                            $887
+                                        </td>
+                                        <td class="text-end">
+                                            <span class="dropdown">
+                                                <button class="btn dropdown-toggle align-text-top"
+                                                        data-bs-boundary="viewport"
+                                                        data-bs-toggle="dropdown">Actions</button>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">
+                                                      Action
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                      Another action
+                                                    </a>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
