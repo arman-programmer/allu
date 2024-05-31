@@ -1,6 +1,6 @@
 <!-- ::::::  Start  Footer Section  ::::::  -->
 <footer class="footer">
-    <div class="footer__top gray-bg p-tb-100">
+    <div class="footer__top gray-bg p-t-100">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-4">
