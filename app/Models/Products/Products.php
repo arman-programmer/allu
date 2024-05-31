@@ -21,18 +21,18 @@ class Products extends Model
         return $this->hasMany(ProductDetail::class, 'product_id');
     }
 
-    public function country()
-    {
-        return $this->belongsTo(Countries::class, 'country_id');
-    }
-
     public function images()
     {
         return $this->hasMany(ProductImages::class, 'product_id');
 
     }
 
-    public function manufacturers()
+    public function country()
+    {
+        return $this->belongsTo(Countries::class, 'country_id');
+    }
+
+    public function manufacturer()
     {
         return $this->belongsTo(Manufacturers::class, 'manufacturer_id');
     }

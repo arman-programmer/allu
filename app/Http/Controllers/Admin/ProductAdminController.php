@@ -40,7 +40,7 @@ class ProductAdminController extends Controller
 
     public function edit($id)
     {
-        $product = Products::where('id', $id)->with(['category', 'size', 'details', 'images'])->first();
+        $product = Products::where('id', $id)->with(['category', 'size', 'details', 'images', 'manufacturer', 'country'])->first();
         $categories = Category::all();
         $cities = City::all();
         $countries = Countries::all();
