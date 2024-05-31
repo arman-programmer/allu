@@ -83,7 +83,7 @@ class AdminController extends Controller
 
     public function countryDelete($id)
     {
-        $country = Manufacturers::where('id', $id)->first();
+        $country = Countries::where('id', $id)->first();
         $country->delete();
         return redirect()->back();
     }
