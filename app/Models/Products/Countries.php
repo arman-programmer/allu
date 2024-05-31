@@ -10,4 +10,9 @@ class Countries extends Model
     use HasFactory;
 
     protected $table = 'product_countries';
+
+    public function products()
+    {
+        return $this->hasMany('App\Models\Products\Products', 'country_id', 'id');
+    }
 }

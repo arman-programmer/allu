@@ -210,10 +210,10 @@
                                         Отзывы
                                         <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                     </a>
-                                    <a class="dropdown-item" href="/">
+                                    <a class="dropdown-item" href="{{ route('admin.manufacturers') }}">
                                         Производители
                                     </a>
-                                    <a class="dropdown-item" href="/">
+                                    <a class="dropdown-item" href="{{ route('admin.countries') }}">
                                         Страны
                                     </a>
                                 </div>

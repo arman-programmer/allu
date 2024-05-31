@@ -144,7 +144,6 @@
                                             </button>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -161,24 +160,41 @@
                         <div class="section-content--border">
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-70 nav">
                                 @if (!$product->details->isEmpty())
-                                    <li><a class="nav-link active" data-toggle="tab"
-                                           href="#product-dis">Характеристики</a></li>
+                                    <li>
+                                        <a class="nav-link active" data-toggle="tab" href="#product-dis">
+                                            Характеристики
+                                        </a>
+                                    </li>
                                     @if ($product->size != null || $product->size != 0)
-                                        <li><a class="nav-link" data-toggle="tab" href="#product-sizes">Габариты</a>
+                                        <li>
+                                            <a class="nav-link" data-toggle="tab" href="#product-sizes">
+                                                Габариты
+                                            </a>
                                         </li>
                                     @endif
-                                    <li><a class="nav-link" data-toggle="tab" href="#product-review">Отзывы</a></li>
+                                    <li>
+                                        <a class="nav-link" data-toggle="tab" href="#product-review">Отзывы</a>
+                                    </li>
                                 @else
                                     @if ($product->size != null || $product->size != 0)
-                                        <li><a class="nav-link active" data-toggle="tab"
-                                               href="#product-sizes">Габариты</a></li>
-                                        <li><a class="nav-link" data-toggle="tab" href="#product-review">Отзывы</a></li>
+                                        <li>
+                                            <a class="nav-link active" data-toggle="tab" href="#product-sizes">
+                                                Габариты
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" data-toggle="tab" href="#product-review">
+                                                Отзывы
+                                            </a>
+                                        </li>
                                     @else
-                                        <li><a class="nav-link active" data-toggle="tab"
-                                               href="#product-review">Отзывы</a></li>
+                                        <li>
+                                            <a class="nav-link active" data-toggle="tab" href="#product-review">
+                                                Отзывы
+                                            </a>
+                                        </li>
                                     @endif
                                 @endif
-
                             </ul>
                         </div>
                     </div>

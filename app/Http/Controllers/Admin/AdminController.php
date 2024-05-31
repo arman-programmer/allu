@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Account\Session;
 use App\Models\Account\User;
 use App\Models\Products\Category;
+use App\Models\Products\Countries;
+use App\Models\Products\Manufacturers;
 use App\Models\Products\ProductReviews;
 use App\Models\Products\Products;
 
@@ -58,5 +60,17 @@ class AdminController extends Controller
         $review = ProductReviews::where('id', $id)->first();
         $review->delete();
         return redirect()->back();
+    }
+
+    public function manufacturers()
+    {
+        $manufacturers = Manufacturers::with('products')->get();
+        return view('admin.manufacturers', compact('manufacturers'));
+    }
+
+    public function countries()
+    {
+        $countries = Countries::with('products')->get();
+        return view('admin.countries', compact('countries'));
     }
 }
