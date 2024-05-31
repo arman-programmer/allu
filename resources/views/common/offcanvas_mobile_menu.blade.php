@@ -2,23 +2,20 @@
 <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
     <button class="offcanvas__close offcanvas-close">&times;</button>
     <div class="offcanvas-inner">
-        <div class="offcanvas-userpanel m-b-30">
-            <ul>
-                <li class="offcanvas-userpanel__role">
-                    <form action="{{ route('city') }}" method="POST">
-                        @csrf
-                        <p>{{ $current_city }}</p>
-                        <ul class="user-sub-menu">
-                            @foreach($cities as $city)
-                                <li>
-                                    <button type="submit" name="city" value="{{ $city }}">{{ $city }}</button>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </form>
-                </li>
-            </ul>
-        </div>
+        <form action="{{ route('city') }}" method="POST">
+            @csrf
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ $current_city }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    @foreach($cities as $city)
+                        <button type="submit" class="dropdown-item" name="city" value="{{ $city }}">{{ $city }}</button>
+                    @endforeach
+                </div>
+            </div>
+        </form>
         <div class="offcanvas-menu m-b-30">
             <h4>Меню:</h4>
             <ul>
