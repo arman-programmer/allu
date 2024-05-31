@@ -62,7 +62,7 @@
                                             {{ $order->user->name ?? "имя" }}
                                         </td>
                                         <td>
-                                            {{ $order->address->city_id ?? "адрес" }}
+                                            {{ $order->address->city->name ?? "город" }}
                                         </td>
                                         <td>
                                             {{ $order->address->name ?? "адрес" }}
