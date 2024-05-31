@@ -91,20 +91,25 @@
                                             $887
                                         </td>
                                         <td class="text-end">
-                                            <span class="dropdown">
+                                            <div class="dropdown">
                                                 <button class="btn dropdown-toggle align-text-top"
-                                                        data-bs-boundary="viewport"
-                                                        data-bs-toggle="dropdown">
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Действия
                                                 </button>
-                                                <div class="dropdown-menu dropdown-menu-start">
+                                                <div class="dropdown-menu dropdown-menu-end" style="">
+                                                    <form
+                                                        action=""
+                                                        method="post">
+                                                        @csrf
+                                                        <button type="submit" class="dropdown-item">
+                                                            Удалить
+                                                        </button>
+                                                    </form>
                                                     <a class="dropdown-item" href="#">
-                                                      Action
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                      Another action
+                                                        Изменить
                                                     </a>
                                                 </div>
-                                            </span>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

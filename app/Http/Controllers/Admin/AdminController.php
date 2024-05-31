@@ -68,9 +68,23 @@ class AdminController extends Controller
         return view('admin.manufacturers', compact('manufacturers'));
     }
 
+    public function manufacturerDelete($id)
+    {
+        $manufacturer = Manufacturers::where('id', $id)->first();
+        $manufacturer->delete();
+        return redirect()->back();
+    }
+
     public function countries()
     {
         $countries = Countries::with('products')->get();
         return view('admin.countries', compact('countries'));
+    }
+
+    public function countryDelete($id)
+    {
+        $country = Manufacturers::where('id', $id)->first();
+        $country->delete();
+        return redirect()->back();
     }
 }
