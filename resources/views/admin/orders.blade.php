@@ -74,7 +74,15 @@
                                             87956621
                                         </td>
                                         <td>
-                                            {{ $order->created_at }}
+                                            @php
+                                                $datetime = $order->created_at;
+                                                $dateTimeObj = new DateTime($datetime);
+                                                $date = $dateTimeObj->format('d.m.Y');
+                                                $time = $dateTimeObj->format('H:i');
+                                            @endphp
+                                            {{ $date }}
+                                            <br>
+                                            {{ $time }}
                                         </td>
                                         <td>
                                             <span class="badge bg-success me-1"></span> {{ $order->status }}
