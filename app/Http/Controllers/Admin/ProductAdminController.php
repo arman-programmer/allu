@@ -127,6 +127,16 @@ class ProductAdminController extends Controller
                 // Получение ссылки на изображение
                 $imageLink = $value;
 
+                // Проверка наличия изображения в базе данных
+                $existingImage = ProductImages::where('product_id', $product->id)
+                    ->where('link', $imageLink)
+                    ->first();
+
+                // Если изображение уже существует, переход к следующему
+                if ($existingImage) {
+                    continue;
+                }
+
                 // Создание новой записи для изображения
                 $productImage = new ProductImages();
                 $productImage->product_id = $product->id;
