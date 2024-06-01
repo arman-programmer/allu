@@ -198,11 +198,6 @@
                         <img class="pic-1" src="images/img-1.jpg">
                     </a>
                     <span class="product-discount-label">-33%</span>
-                    <ul class="product-links">
-                        <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                        <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
-                        <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                    </ul>
                 </div>
                 <div class="product-content">
                     <ul class="rating">
@@ -212,9 +207,11 @@
                         <li class="far fa-star"></li>
                         <li class="far fa-star"></li>
                     </ul>
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h5 class="title"><a href="#">Men's Blazer</a></h5>
                     <div class="price"><span>$90.00</span> $66.00</div>
-                    <a class="add-to-cart" href="#">add to cart</a>
+                    <button type="submit" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-l-20">
+                        В корзину
+                    </button>
                 </div>
             </div>
         </div>
