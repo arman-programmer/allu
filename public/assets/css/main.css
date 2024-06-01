@@ -6149,7 +6149,7 @@ hr {
 
 .product-grid .product-discount-label {
     color: #fff;
-    background: #78a206;
+    background: #0063d1;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
@@ -6198,7 +6198,7 @@ hr {
 
 .product-grid .product-links li a:hover {
     color: #fff;
-    background: #78a206;
+    background: #0063d1;
     box-shadow: 1px 1px 30px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -6246,7 +6246,7 @@ hr {
 }
 
 .product-grid .rating li {
-    color: #78a206;
+    color: #0063d1;
     font-size: 14px;
 }
 
@@ -6267,11 +6267,11 @@ hr {
 }
 
 .product-grid .title a:hover {
-    color: #78a206;
+    color: #0063d1;
 }
 
 .product-grid .price {
-    color: #78a206;
+    color: #0063d1;
     font-size: 17px;
     font-weight: 600;
     display: block;
@@ -6290,7 +6290,7 @@ hr {
 
 .product-grid .add-to-cart {
     color: #fff;
-    background-color: #78a206;
+    background-color: #0063d1;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
