@@ -185,6 +185,11 @@
                                                        type="text"
                                                        class="form-control mb-1"
                                                        value="{{ $detail->name }}">
+                                                @if($loop->last)
+                                                    <input name="attr{{ $loop->iteration + 1 }}"
+                                                           type="text"
+                                                           class="form-control mb-1">
+                                                @endif
                                             @endforeach
 
                                         </div>
@@ -195,6 +200,11 @@
                                                        type="text"
                                                        class="form-control mb-1"
                                                        value="{{ $detail->value }}">
+                                                @if($loop->last)
+                                                    <input name="val{{ $loop->iteration + 1 }}"
+                                                           type="text"
+                                                           class="form-control mb-1">
+                                                @endif
                                             @endforeach
                                         </div>
                                     </div>

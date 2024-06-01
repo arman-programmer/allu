@@ -302,6 +302,7 @@
                                     @else
                                         <h5>Пока нет отзывов</h5>
                                     @endif
+                                    
                                     <a href="#modalReview" data-toggle="modal"
                                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-30">Оставить
                                         отзыв</a>
