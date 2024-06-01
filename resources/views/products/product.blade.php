@@ -312,7 +312,7 @@
                 </div>
             </div>
         </div> <!-- End Product Details Tab -->
-        @include('modules.recommendation')
+        @include('products.modules.recommendation')
     </div>
-    @include('modules.modal_review')
+    @include('products.modules.modal_review')
 @endsection
