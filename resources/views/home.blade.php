@@ -209,7 +209,7 @@
                     </ul>
                     <h5 class="title"><a href="#">Men's Blazer</a></h5>
                     <div class="price"><span>$90.00</span> $66.00</div>
-                    <button type="submit" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-l-20">
+                    <button type="submit" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-20">
                         В корзину
                     </button>
                 </div>
