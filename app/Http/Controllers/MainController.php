@@ -36,7 +36,7 @@ class MainController extends Controller
                 'phone' => $phone,
             ]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Мы вам перезвоним!');
     }
 
     public function changeCity(Request $request)
@@ -50,6 +50,6 @@ class MainController extends Controller
         } else {
             $request->session()->put('city_id', $city->id);
         }
-        return redirect()->back();
+        return redirect()->back()->with('success', $city_name . ' теперь ваш город');
     }
 }

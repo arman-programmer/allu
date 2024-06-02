@@ -877,10 +877,4 @@ function showDefaultImage(img) {
     $(img).off("error");
 }
 
-const toasts = new Toasts({
-    width: 300,
-    timing: 'ease',
-    duration: '.5s',
-    dimOld: false,
-    position: 'bottom-right' // top-left | top-center | top-right | bottom-left | bottom-center | bottom-right
-});
+const toasts = new Toasts();

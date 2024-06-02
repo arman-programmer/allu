@@ -61,13 +61,13 @@
 <script src="{{ asset('assets/js/jquery.elevateZoom-3.0.8.min.js') }}"></script>
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.9') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.10') }}"></script>
 
 @if ($errors->any())
     <script>
         @foreach ($errors->all() as $error)
         toasts.push({
-            title: 'Ошибка :(',
+            title: 'Ошибка',
             content: '{{ $error }}',
             style: 'error'
         });
