@@ -52,7 +52,7 @@
 <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 <!-- Plugins JS Files -->
-<script src="{{ asset('assets/js/Toasts.js?v=') }}"></script>
+<script src="{{ asset('assets/js/Toasts.js?v=1.0') }}"></script>
 <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('assets/js/material-scrolltop.js') }}"></script>
