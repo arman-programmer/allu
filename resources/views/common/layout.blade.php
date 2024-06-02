@@ -42,19 +42,65 @@
 </main> <!-- ::::::  End  Main Container Section  ::::::  -->
 
 @include('common.footer')
+<script>
+    const toasts = new Toasts({
+        width: 300,
+        timing: 'ease',
+        duration: '.5s',
+        dimOld: false,
+        position: 'top-right' // top-left | top-center | top-right | bottom-left | bottom-center | bottom-right
+    });
 
+    toasts.push({
+        title: 'Dark Toast',
+        content: 'Click me to visit CodeShack!',
+        style: 'dark',
+        closeButton: false,
+        link: 'https://codeshack.io',
+        linkTarget: '_blank',
+        onOpen: toast => {
+            console.log(toast);
+        },
+        onClose: toast => {
+            console.log(toast);
+        }
+    });
+
+    toasts.push({
+        title: 'Success Toast',
+        content: 'My notification description.',
+        style: 'success'
+    });
+
+    toasts.push({
+        title: 'Verified Toast',
+        content: 'My notification description.',
+        style: 'verified'
+    });
+
+    toasts.push({
+        title: 'Error Toast',
+        content: 'My notification description.',
+        style: 'error'
+    });
+
+    toasts.push({
+        title: 'Toast',
+        content: 'My notification description.'
+    });
+
+    // Press SPACE to add a custom toast
+    window.onkeyup = event => {
+        if (event.key == ' ') {
+            toasts.push({
+                title: 'Custom ' + (toasts.numToasts + 1),
+                content: 'Custom description ' + (toasts.numToasts + 1) + '.'
+            });
+        }
+    };
+</script>
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
-@if ($errors->any())
-    <div id="snackbar">Some text some message..</div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            @foreach ($errors->all() as $error)
-            toaster();
-            @endforeach
-        });
-    </script>
-@endif
 <!-- ::::::::::::::All Javascripts Files here ::::::::::::::-->
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
@@ -63,6 +109,7 @@
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 
 <!-- Plugins JS Files -->
+<script src="{{ asset('assets/js/toasts.js') }}"></script>
 <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('assets/js/material-scrolltop.js') }}"></script>

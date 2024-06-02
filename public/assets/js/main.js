@@ -876,14 +876,3 @@ function showDefaultImage(img) {
     $(img).attr('src', '/assets/placeholder.svg');
     $(img).off("error");
 }
-
-/******************************************************
- * Toaster
- ******************************************************/
-function toaster() {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    setTimeout(function () {
-        x.className = x.className.replace("show", "");
-    }, 3000);
-}
