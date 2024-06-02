@@ -50,7 +50,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             @foreach ($errors->all() as $error)
-            toaster('error');
+            toaster();
             @endforeach
         });
     </script>

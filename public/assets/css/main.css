@@ -6296,48 +6296,52 @@ hr {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    right: 0;
+    bottom: 30px;
+    position: fixed;
 }
 
 @-webkit-keyframes fadein {
     from {
-        bottom: 0;
+        right: -300px; /* Adjust the value to match the width of your snackbar */
         opacity: 0;
     }
     to {
-        bottom: 30px;
+        right: 0;
         opacity: 1;
     }
 }
 
 @keyframes fadein {
     from {
-        bottom: 0;
+        right: -300px; /* Adjust the value to match the width of your snackbar */
         opacity: 0;
     }
     to {
-        bottom: 30px;
+        right: 0;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        bottom: 30px;
+        right: 0;
         opacity: 1;
     }
     to {
-        bottom: 0;
+        right: -300px; /* Adjust the value to match the width of your snackbar */
         opacity: 0;
     }
 }
 
 @keyframes fadeout {
     from {
-        bottom: 30px;
+        right: 0;
         opacity: 1;
     }
     to {
-        bottom: 0;
+        right: -300px; /* Adjust the value to match the width of your snackbar */
         opacity: 0;
     }
 }
+
