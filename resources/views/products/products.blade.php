@@ -159,13 +159,9 @@
                                                 <ul class="rating">
                                                     @for ($i = 1; $i <= 5; $i++)
                                                         @if ($i <= $averageRating)
-                                                            <li class="product__review--fill">
-                                                                <i class="fa fa-star"></i>
-                                                            </li>
+                                                            <li class="fas fa-star"></li>
                                                         @else
-                                                            <li class="product__review--blank">
-                                                                <i class="fa fa-star"></i>
-                                                            </li>
+                                                            <li class="far fa-star"></li>
                                                         @endif
                                                     @endfor
                                                     <li class="far">{{ $averageRating }}
