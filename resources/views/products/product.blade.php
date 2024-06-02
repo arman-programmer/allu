@@ -201,6 +201,7 @@
                     <div class="col-md-12">
                         <div class="product-details-tab-box m-t-50">
                             <div class="tab-content">
+                                {{ dd($product->details) }}
                                 @if (!$product->details->isEmpty() || $product->details != null)
                                     <!-- Start Tab - Product Details -->
                                     <div class="tab-pane show active" id="product-dis">
@@ -302,7 +303,7 @@
                                     @else
                                         <h5>Пока нет отзывов</h5>
                                     @endif
-                                    
+
                                     <a href="#modalReview" data-toggle="modal"
                                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-30">Оставить
                                         отзыв</a>
