@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/venobox.min.css') }}">
 
     <!-- Main Style CSS File -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.15') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.16') }}">
 </head>
 <body>
 <header>
@@ -72,7 +72,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.7') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.8') }}"></script>
 </body>
 
 </html>
