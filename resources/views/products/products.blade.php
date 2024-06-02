@@ -153,9 +153,12 @@
                                                 @endif
                                             </div>
                                             <div class="product-content">
+                                                @php
+                                                    $averageRating = round($product->reviews->avg('stars'), 2);
+                                                @endphp
                                                 <ul class="rating">
                                                     @for ($i = 1; $i <= 5; $i++)
-                                                        @if ($i <=$averageRating)
+                                                        @if ($i <= $averageRating)
                                                             <li class="product__review--fill">
                                                                 <i class="fa fa-star"></i>
                                                             </li>
@@ -165,7 +168,7 @@
                                                             </li>
                                                         @endif
                                                     @endfor
-                                                    <li class="far">{{ round($product->reviews->avg('stars'), 2) }}
+                                                    <li class="far">{{ $averageRating }}
                                                         ({{ $product->reviews->count()}})
                                                     </li>
                                                 </ul>
