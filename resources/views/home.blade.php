@@ -144,7 +144,7 @@
             <!-- Start Single CMS box -->
             <div class="cms__content">
                 <div class="cms__icon">
-                    <img class="cms__icon-img" src="assets/img/icon/cms/icon1.png" alt="">
+                    <img class="cms__icon-img" src="{{ asset('assets/icon1.png') }}" alt="">
                 </div>
                 <div class="cms__text">
                     <h6 class="cms__title">Бесплатная доставка </h6>
@@ -156,7 +156,7 @@
         <div class="col-md-3 col-sm-6 col-12">
             <div class="cms__content">
                 <div class="cms__icon">
-                    <img class="cms__icon-img" src="assets/img/icon/cms/icon2.png" alt="">
+                    <img class="cms__icon-img" src="{{ asset('assets/icon2.png') }}" alt="">
                 </div>
                 <div class="cms__text">
                     <h6 class="cms__title">Удобный способ оплаты</h6>
@@ -168,7 +168,7 @@
         <div class="col-md-3 col-sm-6 col-12">
             <div class="cms__content">
                 <div class="cms__icon">
-                    <img class="cms__icon-img" src="assets/img/icon/cms/icon3.png" alt="">
+                    <img class="cms__icon-img" src="{{ asset('assets/icon3.png') }}" alt="">
                 </div>
                 <div class="cms__text">
                     <h6 class="cms__title">Возврат денег</h6>
@@ -180,7 +180,7 @@
         <div class="col-md-3 col-sm-6 col-12">
             <div class="cms__content">
                 <div class="cms__icon">
-                    <img class="cms__icon-img" src="assets/img/icon/cms/icon4.png" alt="">
+                    <img class="cms__icon-img" src="{{ asset('assets/icon4.png') }}" alt="">
                 </div>
                 <div class="cms__text">
                     <h6 class="cms__title">24/7 Центр поддержки</h6>
@@ -189,32 +189,4 @@
             </div>
         </div> <!-- End Single CMS box -->
     </div><!-- ::::::  End CMS Section  ::::::  -->
-
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <img class="pic-1" src="images/img-1.jpg">
-                    </a>
-                    <span class="product-discount-label">-33%</span>
-                </div>
-                <div class="product-content">
-                    <ul class="rating">
-                        <li class="fas fa-star"></li>
-                        <li class="fas fa-star"></li>
-                        <li class="fas fa-star"></li>
-                        <li class="far fa-star"></li>
-                        <li class="far fa-star"></li>
-                        <li>4.5 (65)</li>
-                    </ul>
-                    <h5 class="title"><a href="#">Men's Blazer</a></h5>
-                    <div class="price"><span>$90.00</span> $66.00</div>
-                    <button type="submit" class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-20">
-                        В корзину
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
