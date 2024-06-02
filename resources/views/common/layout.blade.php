@@ -46,8 +46,11 @@
 
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
-<!-- ::::::::::::::All Javascripts Files here ::::::::::::::-->
 
+<div class="toast-overlay" id="toast-overlay">
+</div>
+
+<!-- ::::::::::::::All Javascripts Files here ::::::::::::::-->
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/modernizr-3.7.1.min.js') }}"></script>
@@ -64,7 +67,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.1') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.2') }}"></script>
 </body>
 
 </html>
