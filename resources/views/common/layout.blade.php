@@ -27,7 +27,6 @@
 </head>
 
 <body>
-<ul class="notifications"></ul>
 <header>
     @include('common.header')
     @include('common.header_mobile')
@@ -39,6 +38,7 @@
 <!-- ::::::  Start  Main Container Section  ::::::  -->
 <main id="main-container" class="main-container">
     <div class="container">
+        <ul class="notifications"></ul>
         @yield('main_content')
     </div>
 </main> <!-- ::::::  End  Main Container Section  ::::::  -->
