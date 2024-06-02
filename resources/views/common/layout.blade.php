@@ -80,6 +80,9 @@
         toasts.push({
             title: 'Успешно!',
             content: '{{ session('success') }}',
+            @if(session('success') == "Товар добавлен в корзину!")
+            link: "{{ route('cart') }}",
+            @endif
             style: 'success'
         });
     </script>
