@@ -48,6 +48,9 @@
                                             <input type="radio" name="stars" id="rate-5" value="5">
                                         </span>
                                         </p>
+                                        @error('stars')
+                                        <div class="text-danger m-t-10">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     @if (Auth::user()->name === null)
                                         <div class="form-box__single-group">
@@ -58,6 +61,9 @@
                                     <div class="form-box__single-group">
                                         <label for="form-review">Ваш комментарий</label>
                                         <textarea id="form-review" name="text" rows="5"></textarea>
+                                        @error('text')
+                                        <div class="text-danger m-t-10">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div
                                         class="from-box__buttons d-flex justify-content-between d-flex-warp align-items-center">

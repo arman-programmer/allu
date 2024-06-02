@@ -48,16 +48,28 @@ class ProductsController extends Controller
 
     public function reviewAdd(Request $request, $productId)
     {
+        $messages = [
+            'text.required' => 'Пожалуйста, введите текст отзыва.',
+            'text.max' => 'Текст отзыва не должен превышать 100 символов.',
+            'stars.required' => 'Пожалуйста, выберите оценку.',
+        ];
+
+        $validatedData = $request->validate([
+            'text' => 'required|max:100',
+            'stars' => 'required|integer|min:1|max:5',
+        ], $messages);
+
         $review = new ProductReviews();
-        $review->text = $request->text;
+        $review->text = $validatedData['text'];
         $review->user_id = auth()->id();
         $review->product_id = $productId;
         $review->status = 0;
-        $review->stars = $request->stars;
+        $review->stars = $validatedData['stars'];
         $review->save();
 
         return redirect()->back()->with('success', 'Отзыв успешно добавлен');
     }
+
 
     public function search(Request $request)
     {

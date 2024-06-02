@@ -166,7 +166,7 @@
                                         </a>
                                     </li>
                                 @endif
-                                @if (!$product->size->isEmpty())
+                                @if ($product->size != null || $product->size != 0)
                                     <li>
                                         <a class="nav-link" data-toggle="tab" href="#product-sizes">
                                             Габариты
