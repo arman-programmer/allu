@@ -159,14 +159,14 @@
                     <div class="col-12">
                         <div class="section-content--border">
                             <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-70 nav">
-                                @if (!$product->details->isEmpty() || $product->details != null)
+                                @if (!$product->details->isEmpty())
                                     <li>
                                         <a class="nav-link" data-toggle="tab" href="#product-dis">
                                             Характеристики
                                         </a>
                                     </li>
                                 @endif
-                                @if ($product->size != null || $product->size != 0)
+                                @if (!$product->size->isEmpty())
                                     <li>
                                         <a class="nav-link" data-toggle="tab" href="#product-sizes">
                                             Габариты
