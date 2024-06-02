@@ -50,7 +50,6 @@
 @if ($errors->any())
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('Errors exist');
             @foreach ($errors->all() as $error)
             createToast('error');
             @endforeach
@@ -74,7 +73,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.5') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.6') }}"></script>
 </body>
 
 </html>

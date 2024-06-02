@@ -922,3 +922,6 @@ const createToast = (id) => {
     // Setting a timeout to remove the toast after the specified duration
     toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
 };
+
+// Ensure createToast is globally available
+window.createToast = createToast;
