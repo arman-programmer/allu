@@ -50,7 +50,6 @@ Route::post('/cart/update/', [CartController::class, 'update'])->name('cart.upda
 
 Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [OrderController::class, 'create'])->name('checkout.create');
-
 Route::get('/checkout/follow/{id}', [OrderController::class, 'follow'])->name('checkout.follow');
 
 Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
@@ -58,12 +57,11 @@ Route::get('/post/{id}', [PostsController::class, 'post'])->name('post');
 Route::get('/posts/search', [PostsController::class, 'search'])->name('posts.search');
 
 Route::get('/product/{id}', [ProductsController::class, 'product'])->name('product');
-Route::post('/product/{id}/review', [ProductsController::class, 'reviewAdd'])->name('product.review.add');
-
-Route::get('/products/category/{id}', [ProductsController::class, 'products'])->name('products.category');
+Route::get('/products/category/{id}', [ProductsController::class, 'category'])->name('products.category');
 Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
 Route::get('/products/country/{id}', [ProductsController::class, 'country'])->name('products.country');
 Route::get('/products/manufacturer/{id}', [ProductsController::class, 'manufacturer'])->name('products.manufacturer');
+Route::post('/product/{id}/review', [ProductsController::class, 'reviewAdd'])->name('product.review.add');
 
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/contact', 'contact')->name('contact');

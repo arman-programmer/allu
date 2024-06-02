@@ -18,7 +18,7 @@ class ProductsController extends Controller
 {
     use CurrentCity;
 
-    public function products(Request $request, $id)
+    public function category(Request $request, $id)
     {
         $current_city = $this->getCurrentCity();
         $sortField = $request->input('sort_field', 'id');
