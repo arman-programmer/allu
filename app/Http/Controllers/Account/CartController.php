@@ -40,7 +40,8 @@ class CartController extends Controller
             $userCart->quantity = $userCart->exists ? $userCart->quantity + $request->quantity : $request->quantity;
             $userCart->save();
         }
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Товар добавлен в корзину!');
+
     }
 
 
