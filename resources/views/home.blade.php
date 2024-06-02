@@ -206,6 +206,7 @@
                         <li class="fas fa-star"></li>
                         <li class="far fa-star"></li>
                         <li class="far fa-star"></li>
+                        <li>4.5 (65)</li>
                     </ul>
                     <h5 class="title"><a href="#">Men's Blazer</a></h5>
                     <div class="price"><span>$90.00</span> $66.00</div>

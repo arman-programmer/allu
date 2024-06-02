@@ -6115,9 +6115,8 @@ hr {
 
 
 .product-grid {
-    font-family: 'Poppins', sans-serif;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 14px;
     border: 1px solid #e7e7e7;
     overflow: hidden;
     transition: all 0.4s ease-out;
@@ -6204,7 +6203,6 @@ hr {
     line-height: 18px;
     padding: 5px 10px;
     white-space: nowrap;
-    display: none;
     transform: translateX(-50%);
     position: absolute;
     left: 50%;
@@ -6259,6 +6257,7 @@ hr {
 
 .product-grid .title a:hover {
     color: #0063d1;
+    text-decoration: none;
 }
 
 .product-grid .price {
