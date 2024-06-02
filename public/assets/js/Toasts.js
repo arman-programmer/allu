@@ -1,18 +1,16 @@
 "use strict";
 
 class Toasts {
-
     constructor(options) {
         let defaults = {
             position: 'bottom-right',
             stack: [],
             offsetX: 20,
-            offsetY: 60,
+            offsetY: 80,
             gap: 20,
             numToasts: 0,
             duration: '.5s',
             timing: 'ease',
-            dismissAfter: '3s',
             dimOld: true
         };
         this.options = Object.assign(defaults, options);

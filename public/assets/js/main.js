@@ -877,4 +877,6 @@ function showDefaultImage(img) {
     $(img).off("error");
 }
 
-const toasts = new Toasts();
+const toasts = new Toasts({
+    dismissAfter: '3s',
+});
