@@ -41,11 +41,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [MainController::class, 'home'])->name('home');
-Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
-Route::post('/cart/add/{product_id}/{quantity}', [CartController::class, 'addToCart'])->name('addToCart');
-Route::post('/cart/remove/{product_id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
-Route::post('/cart/update/', [CartController::class, 'updateCart'])->name('updateCart');
-Route::get('/cart/сlear', [CartController::class, 'clearCart'])->name('clearCart');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add/{product_id}/{quantity}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove/{product_id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::get('/cart/сlear', [CartController::class, 'clear'])->name('cart.clear');
+Route::post('/cart/update/', [CartController::class, 'update'])->name('cart.update');
 
 Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [OrderController::class, 'create'])->name('checkout.create');
@@ -70,7 +71,6 @@ Route::view('/about', 'about')->name('about');
 
 Route::post('/city', [MainController::class, 'changeCity'])->name('city');
 Route::post('/call', [MainController::class, 'call'])->name('call');
-Route::post('/update-cart', [CartController::class, 'updateCart'])->name('update.cart');
 
 Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'home'])->name('admin.home');
@@ -89,12 +89,12 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/product/delete/{id}', [ProductAdminController::class, 'delete'])->name('admin.product.delete');
     Route::post('/admin/product/upload/image', [ProductAdminController::class, 'upload'])->name('upload.file');
 
-    Route::get('/admin/product/reviews', [ReviewAdminController::class, 'reviews'])->name('admin.product.reviews');
-    Route::post('/admin/product/review/on/{id}', [ReviewAdminController::class, 'reviewOn'])->name('admin.product.review.on');
-    Route::post('/admin/product/review/off/{id}', [ReviewAdminController::class, 'reviewOff'])->name('admin.product.review.off');
-    Route::post('/admin/product/review/delete/{id}', [ReviewAdminController::class, 'reviewDelete'])->name('admin.product.review.delete');
+    Route::get('/admin/product/reviews', [ReviewAdminController::class, 'index'])->name('admin.product.reviews');
+    Route::post('/admin/product/review/on/{id}', [ReviewAdminController::class, 'on'])->name('admin.product.review.on');
+    Route::post('/admin/product/review/off/{id}', [ReviewAdminController::class, 'off'])->name('admin.product.review.off');
+    Route::post('/admin/product/review/delete/{id}', [ReviewAdminController::class, 'delete'])->name('admin.product.review.delete');
 
-    Route::get('/admin/categories', [CategoryAdminController::class, 'categories'])->name('admin.categories');
+    Route::get('/admin/categories', [CategoryAdminController::class, 'index'])->name('admin.categories');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
     Route::post('/admin/category/off/{id}', [CategoryAdminController::class, 'off'])->name('admin.category.off');
 

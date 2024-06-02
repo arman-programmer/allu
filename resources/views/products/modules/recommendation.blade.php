@@ -33,7 +33,7 @@
                                                 @endif
                                             </a>
                                             <form
-                                                action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 1]) }}"
+                                                action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
                                                 method="post">
                                                 @csrf
                                                 <button type="submit"

@@ -64,7 +64,7 @@
                                 id="subtotal-{{ $product['id'] }}">{{ $product['price'] * $product['quantity'] }} тг
                             </td>
                             <td class="product-remove">
-                                <form action="{{ route('removeFromCart', ['product_id' => $product['id']]) }}"
+                                <form action="{{ route('cart.remove', ['product_id' => $product['id']]) }}"
                                       method="post">
                                     @csrf
                                     <button type="submit"><i class="fa fa-times"></i></button>
@@ -91,7 +91,7 @@
                     @endif
                 </div>
                 <div class="cart-table-button--right">
-                    <a href="{{ route('clearCart') }}"
+                    <a href="{{ route('cart.clear') }}"
                        class="btn btn--box btn--large btn--gray btn--uppercase btn--weight m-t-20">
                         Очистить корзину
                     </a>
@@ -161,7 +161,7 @@
                 var productId = $(this).data('product-id');
                 var quantity = $(this).val();
                 $.ajax({
-                    url: "{{ route('update.cart') }}",
+                    url: "{{ route('cart.update') }}",
                     method: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}',

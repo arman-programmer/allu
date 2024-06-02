@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 class ReviewAdminController extends Controller
 {
-    public function reviews()
+    public function index()
     {
         $reviews = ProductReviews::with('user', 'product')->get();
         return view('admin.product.review.list', compact('reviews'));
     }
 
-    public function reviewOn($id)
+    public function on($id)
     {
         $review = ProductReviews::where('id', $id)->first();
         $review->status = 1;
@@ -22,7 +22,7 @@ class ReviewAdminController extends Controller
         return redirect()->back();
     }
 
-    public function reviewOff($id)
+    public function off($id)
     {
         $review = ProductReviews::where('id', $id)->first();
         $review->status = 0;
@@ -30,7 +30,7 @@ class ReviewAdminController extends Controller
         return redirect()->back();
     }
 
-    public function reviewDelete($id)
+    public function delete($id)
     {
         $review = ProductReviews::where('id', $id)->first();
         $review->delete();

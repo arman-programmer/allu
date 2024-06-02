@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class CategoryAdminController extends Controller
 {
-    public function categories()
+    public function index()
     {
         $categories = Category::with('subCategory')
             ->withCount('products')

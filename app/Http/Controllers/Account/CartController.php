@@ -14,7 +14,19 @@ class CartController extends Controller
 {
     use GetCartTrait;
 
-    public function addToCart(Request $request)
+    public function index()
+    {
+        $products = $this->getCartItems();
+        $total = $products[1];
+        $products = $products[0];
+        if ($products != null) {
+            return view('account.cart', compact('products', 'total'));
+        } else {
+            return view('account.cart_empty', compact('products', 'total'));
+        }
+    }
+
+    public function add(Request $request)
     {
 
         if (!Auth::check()) {
@@ -45,7 +57,7 @@ class CartController extends Controller
     }
 
 
-    public function updateCart(Request $request)
+    public function update(Request $request)
     {
         $productId = $request->product_id;
         $quantity = $request->quantity;
@@ -88,20 +100,7 @@ class CartController extends Controller
         ]);
     }
 
-
-    public function showCart()
-    {
-        $products = $this->getCartItems();
-        $total = $products[1];
-        $products = $products[0];
-        if ($products != null) {
-            return view('account.cart', compact('products', 'total'));
-        } else {
-            return view('account.cart_empty', compact('products', 'total'));
-        }
-    }
-
-    public function removeFromCart(Request $request)
+    public function remove(Request $request)
     {
         if (!Auth::check()) {
             $id = $request->product_id;
@@ -118,7 +117,7 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Товар удалён с корзины!');
     }
 
-    public function clearCart(Request $request)
+    public function clear(Request $request)
     {
         if (!Auth::check()) {
             $request->session()->forget('cart');

@@ -35,7 +35,7 @@
                            class="offcanvas-add-cart__link">{{ $product->name }}</a>
                         <span class="offcanvas-add-cart__price">{{ $product->price }} тг</span>
                     </div>
-                    <form action="{{ route('removeFromCart', ['product_id' => $product['id']]) }}" method="post">
+                    <form action="{{ route('cart.remove', ['product_id' => $product['id']]) }}" method="post">
                         @csrf
                         <button type="submit" class="offcanvas-add-cart__item-dismiss pos-absolute">&times;</button>
                     </form>
@@ -58,7 +58,7 @@
                 </li> <!-- End Single Add Cart Checkout Info-->
             </ul> <!-- End offcanvas Add Cart Checkout Info-->
             <div class="offcanvas-add-cart__btn-checkout">
-                <a href="{{ route('clearCart') }}"
+                <a href="{{ route('cart.clear') }}"
                    class="btn btn--block btn--box btn--gray btn--large btn--uppercase btn--weight m-b-20">Очистить
                     корзину</a>
                 <a href="{{ route('cart') }}"

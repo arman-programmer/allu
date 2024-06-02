@@ -131,7 +131,7 @@
                                     <span class="product-var__text">Количество</span>
                                     <div class="product-quantity-box">
                                         <form
-                                            action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 'placeholder']) }}"
+                                            action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 'placeholder']) }}"
                                             method="post">
                                             @csrf
                                             <div class="quantity">
