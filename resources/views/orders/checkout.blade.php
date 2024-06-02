@@ -96,6 +96,11 @@
                 </div>
                 @error('address')
                 <div class="text-danger">{{ $message }}</div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        showToast("{{ $message }}", "danger", 5000);
+                    });
+                </script>
                 @enderror
                 <div class="form-box__single-group">
                     <label>Примечание к заказу</label>
