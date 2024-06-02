@@ -23,18 +23,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/venobox.min.css') }}">
 
     <!-- Main Style CSS File -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.14') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.15') }}">
 </head>
 <body>
-<ul class="notifications">
-    <li class="toast error">
-        <div class="column">
-            <i class="fa-solid fa-circle-xmark"></i>
-            <span>Error: This is an error toast.</span>
-        </div>
-        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
-    </li>
-</ul>
 <header>
     @include('common.header')
     @include('common.header_mobile')
@@ -55,10 +46,11 @@
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
 @if ($errors->any())
+    <div id="snackbar">Some text some message..</div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             @foreach ($errors->all() as $error)
-            createToast('error');
+            toaster('error');
             @endforeach
         });
     </script>
@@ -80,7 +72,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.6') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.7') }}"></script>
 </body>
 
 </html>
