@@ -70,7 +70,7 @@
                 </div>
             @else
                 <!-- ::::::  Start Sort Box Section  ::::::  -->
-                <div class="sort-box">
+                <div class="sort-box m-b-15">
                     <!-- Start Sort Left Side -->
                     <div class="sort-box__left">
                         <div class="sort-box__tab">
@@ -159,23 +159,25 @@
                                                     <li class="fas fa-star"></li>
                                                     <li class="far fa-star"></li>
                                                     <li class="far fa-star"></li>
-                                                    <li class="far">4.5 (65)</li>
+                                                    <li class="far">{{ round($product->reviews->avg('stars'), 2) }}
+                                                        ({{ $product->reviews->count()}})
+                                                    </li>
                                                 </ul>
                                                 <h5 class="title">
                                                     <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
                                                 </h5>
                                                 <div class="price">
                                                     @if($product->old_price != null)
-                                                        <span>$90.00</span>
+                                                        <span>{{ $product->old_price }} тг.</span>
                                                     @endif
-                                                    {{ $product->price }}
+                                                    {{ $product->price }} тг.
                                                 </div>
                                                 <form
                                                     action="{{ route('addToCart', ['product_id' => $product->id, 'quantity' => 1]) }}"
                                                     method="post">
                                                     @csrf
                                                     <button type="submit"
-                                                            class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-20">
+                                                            class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
                                                         В корзину
                                                     </button>
                                                 </form>

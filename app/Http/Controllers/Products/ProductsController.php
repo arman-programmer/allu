@@ -23,8 +23,11 @@ class ProductsController extends Controller
         $current_city = $this->getCurrentCity();
         $sortField = $request->input('sort_field', 'id');
         $sortDirection = $request->input('sort_direction', 'asc');
-        $products = Products::where('category_id', $id)->where('status', 1)
-            ->where('city_id', $current_city)->orderBy($sortField, $sortDirection)
+        $products = Products::where('category_id', $id)
+            ->where('status', 1)
+            ->where('city_id', $current_city)
+            ->orderBy($sortField, $sortDirection)
+            ->with('reviews')
             ->paginate(16);
         $categories = Category::where('status', 1)->get();
         $category = $categories->where('id', $id)->first();
