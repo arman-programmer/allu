@@ -881,56 +881,48 @@ function showDefaultImage(img) {
  * Toaster
  ******************************************************/
 
-// script.js
+const notifications = document.querySelector(".notifications"),
+    buttons = document.querySelectorAll(".buttons .btn");
 
-let icon = {
-    success:
-        '<span class="material-symbols-outlined">task_alt</span>',
-    danger:
-        '<span class="material-symbols-outlined">error</span>',
-    warning:
-        '<span class="material-symbols-outlined">warning</span>',
-    info:
-        '<span class="material-symbols-outlined">info</span>',
-};
-
-const showToast = (
-    message = "Sample Message",
-    toastType = "info",
-    duration = 5000) => {
-    if (
-        !Object.keys(icon).includes(toastType))
-        toastType = "info";
-
-    let box = document.createElement("div");
-    box.classList.add(
-        "toast", `toast-${toastType}`);
-    box.innerHTML = ` <div class="toast-content-wrapper">
-					<div class="toast-icon">
-					${icon[toastType]}
-					</div>
-					<div class="toast-message">${message}</div>
-					<div class="toast-progress"></div>
-					</div>`;
-    duration = duration || 5000;
-    box.querySelector(".toast-progress").style.animationDuration =
-        `${duration / 1000}s`;
-
-    let toastAlready =
-        document.body.querySelector(".toast");
-    if (toastAlready) {
-        toastAlready.remove();
+// Object containing details for different types of toasts
+const toastDetails = {
+    timer: 5000,
+    success: {
+        icon: 'fa-circle-check',
+        text: 'Success: This is a success toast.',
+    },
+    error: {
+        icon: 'fa-circle-xmark',
+        text: 'Error: This is an error toast.',
+    },
+    warning: {
+        icon: 'fa-triangle-exclamation',
+        text: 'Warning: This is a warning toast.',
+    },
+    info: {
+        icon: 'fa-circle-info',
+        text: 'Info: This is an information toast.',
     }
+}
 
-    document.body.appendChild(box)
-};
+const removeToast = (toast) => {
+    toast.classList.add("hide");
+    if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
+    setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+}
 
-let submit =
-    document.querySelector(".custom-toast.success-toast");
-let information =
-    document.querySelector(".custom-toast.info-toast");
-let failed =
-    document.querySelector(".custom-toast.danger-toast");
-let warn =
-    document.querySelector(".custom-toast.warning-toast");
-
+const createToast = (id) => {
+    // Getting the icon and text for the toast based on the id passed
+    const {icon, text} = toastDetails[id];
+    const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+    toast.className = `toast ${id}`; // Setting the classes for the toast
+    // Setting the inner HTML for the toast
+    toast.innerHTML = `<div class="column">
+                         <i class="fa-solid ${icon}"></i>
+                         <span>${text}</span>
+                      </div>
+                      <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+    notifications.appendChild(toast); // Append the toast to the notification ul
+    // Setting a timeout to remove the toast after the specified duration
+    toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+}

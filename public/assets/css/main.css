@@ -6276,130 +6276,138 @@ hr {
 
 /*  Toaster  */
 
-.toast {
+.notifications {
     position: fixed;
-    top: 25px;
-    right: 25px;
-    max-width: 300px;
-    background: #fff;
-    padding: 0.5rem;
-    border-radius: 4px;
-    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1023;
-    animation: slideInRight 0.3s ease-in-out forwards,
-    fadeOut 0.5s ease-in-out forwards 3s;
-    transform: translateX(110%);
+    top: 30px;
+    right: 20px;
 }
 
-.toast.closing {
-    animation: slideOutRight 0.5s ease-in-out forwards;
-}
-
-.toast-progress {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: #b7b7b7;
-    animation: toastProgress 3s ease-in-out forwards;
-}
-
-.toast-content-wrapper {
+.notifications :where(.toast, .column) {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.toast-icon {
-    padding: 0.35rem 0.5rem;
-    font-size: 1.5rem;
+.notifications .toast {
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 4px;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--light);
+    justify-content: space-between;
+    animation: show_toast 0.3s ease forwards;
 }
 
-.toast-message {
-    flex: 1;
-    font-size: 0.9rem;
-    color: #000000;
-    padding: 0.5rem;
-}
-
-.toast.toast-success {
-    background: #95eab8;
-}
-
-.toast.toast-success .toast-progress {
-    background-color: #2ecc71;
-}
-
-.toast.toast-danger {
-    background: #efaca5;
-}
-
-.toast.toast-danger .toast-progress {
-    background-color: #e74c3c;
-}
-
-.toast.toast-info {
-    background: #bddaed;
-}
-
-.toast.toast-info .toast-progress {
-    background-color: #3498db;
-}
-
-.toast.toast-warning {
-    background: #ead994;
-}
-
-.toast.toast-warning .toast-progress {
-    background-color: #f1c40f;
-}
-
-@keyframes slideInRight {
+@keyframes show_toast {
     0% {
-        transform: translateX(110%);
+        transform: translateX(100%);
     }
-
-    75% {
-        transform: translateX(-10%);
+    40% {
+        transform: translateX(-5%);
     }
-
-    100% {
+    80% {
         transform: translateX(0%);
     }
+    100% {
+        transform: translateX(-10px);
+    }
 }
 
-@keyframes slideOutRight {
+.notifications .toast.hide {
+    animation: hide_toast 0.3s ease forwards;
+}
+
+@keyframes hide_toast {
     0% {
+        transform: translateX(-10px);
+    }
+    40% {
         transform: translateX(0%);
     }
-
-    25% {
-        transform: translateX(-10%);
+    80% {
+        transform: translateX(-5%);
     }
-
     100% {
-        transform: translateX(110%);
+        transform: translateX(calc(100% + 20px));
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
+.toast::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    animation: progress 5s linear forwards;
+}
 
+@keyframes progress {
     100% {
-        opacity: 0;
+        width: 0;
     }
 }
 
-@keyframes toastProgress {
-    0% {
+.toast.success::before, .btn#success {
+    background: var(--success);
+}
+
+.toast.error::before, .btn#error {
+    background: var(--warning);
+}
+
+.toast.warning::before, .btn#warning {
+    background: var(--warning);
+}
+
+.toast.info::before, .btn#info {
+    background: var(--info);
+}
+
+.toast .column i {
+    font-size: 1.75rem;
+}
+
+.toast.success .column i {
+    color: var(--success);
+}
+
+.toast.error .column i {
+    color: var(--warning);
+}
+
+.toast.warning .column i {
+    color: var(--warning);
+}
+
+.toast.info .column i {
+    color: var(--info);
+}
+
+.toast .column span {
+    font-size: 1.07rem;
+    margin-left: 12px;
+}
+
+.toast i:last-child {
+    color: #aeb0d7;
+    cursor: pointer;
+}
+
+.toast i:last-child:hover {
+    color: var(--dark);
+}
+
+@media screen and (max-width: 530px) {
+    .notifications {
+        width: 95%;
+    }
+
+    .notifications .toast {
         width: 100%;
-    }
-
-    100% {
-        width: 0%;
+        font-size: 1rem;
+        margin-left: 20px;
     }
 }

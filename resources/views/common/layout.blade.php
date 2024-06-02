@@ -23,10 +23,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/venobox.min.css') }}">
 
     <!-- Main Style CSS File -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.13') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.14') }}">
 </head>
 
 <body>
+<ul class="notifications"></ul>
 <header>
     @include('common.header')
     @include('common.header_mobile')
@@ -47,9 +48,6 @@
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
 
-<div class="toast-overlay" id="toast-overlay">
-</div>
-
 <!-- ::::::::::::::All Javascripts Files here ::::::::::::::-->
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
@@ -67,7 +65,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.3') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.4') }}"></script>
 </body>
 
 </html>
