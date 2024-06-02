@@ -49,6 +49,7 @@
 <button class="material-scrolltop" type="button"></button>
 @if ($errors->any())
     <script>
+        console.log('Errors exist');
         document.addEventListener('DOMContentLoaded', function () {
             @foreach ($errors->all() as $error)
             createToast('error');
