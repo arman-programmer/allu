@@ -42,6 +42,7 @@
 </main> <!-- ::::::  End  Main Container Section  ::::::  -->
 
 @include('common.footer')
+<script src="{{ asset('assets/js/Toasts.js') }}"></script>
 <script>
     const toasts = new Toasts({
         width: 300,
@@ -109,7 +110,6 @@
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 
 <!-- Plugins JS Files -->
-<script src="{{ asset('assets/js/Toasts.js') }}"></script>
 <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('assets/js/material-scrolltop.js') }}"></script>
