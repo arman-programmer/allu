@@ -88,7 +88,7 @@
     <script>
         toasts.push({
             title: 'Инфо',
-            content: '{{ session('success') }}',
+            content: '{{ session('info') }}',
             style: 'verified'
         });
     </script>
