@@ -716,14 +716,14 @@ button.btn--block {
 @media (min-width: 992px) {
     .text-swiper-buttons {
         margin-top: 170px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }
 
 @media (min-width: 1200px) {
     .text-swiper-buttons {
         margin-top: 150px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }
 
@@ -6120,6 +6120,7 @@ hr {
     border: 1px solid #e7e7e7;
     overflow: hidden;
     transition: all 0.4s ease-out;
+    margin: 15px 0;
 }
 
 .product-grid:hover {
@@ -6142,7 +6143,6 @@ hr {
 .product-grid .product-discount-label {
     color: #fff;
     background: #0063d1;
-    font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
     padding: 2px 8px;
@@ -6248,6 +6248,7 @@ hr {
 .product-grid .title {
     text-transform: uppercase;
     margin: 0 0 15px;
+    font-size: 16px;
 }
 
 .product-grid .title a {
@@ -6271,14 +6272,4 @@ hr {
     color: #999;
     font-weight: 500;
     text-decoration: line-through;
-}
-
-.product-grid:hover .price {
-    opacity: 0;
-}
-
-@media screen and (max-width: 1200px) {
-    .product-grid {
-        margin: 0 0 30px;
-    }
 }
