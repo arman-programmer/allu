@@ -201,7 +201,7 @@
                     <div class="col-md-12">
                         <div class="product-details-tab-box m-t-50">
                             <div class="tab-content">
-                                {{ dd($product->details) }}
+                                {{ dd($product->details->isEmpty()) }}
                                 @if (!$product->details->isEmpty() || $product->details != null)
                                     <!-- Start Tab - Product Details -->
                                     <div class="tab-pane show active" id="product-dis">
