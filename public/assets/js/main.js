@@ -881,10 +881,6 @@ function showDefaultImage(img) {
  * Toaster
  ******************************************************/
 
-const notifications = document.querySelector(".notifications"),
-    buttons = document.querySelectorAll(".buttons .btn");
-
-// Object containing details for different types of toasts
 const toastDetails = {
     timer: 5000,
     success: {
@@ -903,13 +899,13 @@ const toastDetails = {
         icon: 'fa-circle-info',
         text: 'Info: This is an information toast.',
     }
-}
+};
 
 const removeToast = (toast) => {
     toast.classList.add("hide");
     if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
     setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
-}
+};
 
 const createToast = (id) => {
     // Getting the icon and text for the toast based on the id passed
@@ -922,7 +918,7 @@ const createToast = (id) => {
                          <span>${text}</span>
                       </div>
                       <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
-    notifications.appendChild(toast); // Append the toast to the notification ul
+    document.querySelector('.notifications').appendChild(toast); // Append the toast to the notification ul
     // Setting a timeout to remove the toast after the specified duration
     toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
-}
+};

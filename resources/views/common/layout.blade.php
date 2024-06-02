@@ -47,7 +47,15 @@
 
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
-
+@if ($errors->any())
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            @foreach ($errors->all() as $error)
+            createToast('error');
+            @endforeach
+        });
+    </script>
+@endif
 <!-- ::::::::::::::All Javascripts Files here ::::::::::::::-->
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
@@ -65,7 +73,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.4') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.5') }}"></script>
 </body>
 
 </html>
