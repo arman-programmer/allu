@@ -115,8 +115,7 @@
                             @if (!empty($sub))
                                 @foreach ($sub as $category)
                                     <!-- Start Single Default Product -->
-                                    <div
-                                        class="product__box product__box--default product__box--border-hover text-center float-left float-4">
+                                    <div class="col-6 col-md-4 col-lg-3">
                                         <div class="product__img-box">
                                             <a href="{{ route('products.category', ['id' => $category->id]) }}"
                                                class="product__img--link">
