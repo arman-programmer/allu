@@ -115,7 +115,7 @@ class CartController extends Controller
                 ->where('product_id', $request->product_id)
                 ->delete();
         }
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Товар удалён с корзины!');
     }
 
     public function clearCart(Request $request)
@@ -126,6 +126,6 @@ class CartController extends Controller
             $user_id = auth()->id();
             Cart::where('user_id', $user_id)->delete();
         }
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Корзина очищена!');
     }
 }

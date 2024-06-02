@@ -84,5 +84,14 @@
         });
     </script>
 @endif
+@if (session('info'))
+    <script>
+        toasts.push({
+            title: 'Инфо',
+            content: '{{ session('success') }}',
+            style: 'verified'
+        });
+    </script>
+@endif
 </body>
 </html>

@@ -71,7 +71,7 @@ class AuthController extends Controller
         // Очищаем куки
         $request->session()->forget('cart');
         $confirm->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Вы вошли в аккаунт!');
     }
 
     public function confirmPage(Request $request)
@@ -115,12 +115,12 @@ class AuthController extends Controller
         $phone = $user_confirm->phone;
         $user_confirm->delete();
         $this->userConfirmSave($phone);
-        return redirect()->route('confirm');
+        return redirect()->route('confirm')->with('success', 'Код отправлен повторно!');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Вы вышли с аккаунта');
     }
 }
