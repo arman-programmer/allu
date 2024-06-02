@@ -38,7 +38,15 @@
 <!-- ::::::  Start  Main Container Section  ::::::  -->
 <main id="main-container" class="main-container">
     <div class="container">
-        <ul class="notifications"></ul>
+        <ul class="notifications">
+            <li class="toast error">
+                <div class="column">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span>Error: This is an error toast.</span>
+                </div>
+                <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
+            </li>
+        </ul>
         @yield('main_content')
     </div>
 </main> <!-- ::::::  End  Main Container Section  ::::::  -->
