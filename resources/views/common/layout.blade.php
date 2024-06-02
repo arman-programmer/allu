@@ -25,8 +25,16 @@
     <!-- Main Style CSS File -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.14') }}">
 </head>
-
 <body>
+<ul class="notifications">
+    <li class="toast error">
+        <div class="column">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <span>Error: This is an error toast.</span>
+        </div>
+        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
+    </li>
+</ul>
 <header>
     @include('common.header')
     @include('common.header_mobile')
@@ -38,15 +46,6 @@
 <!-- ::::::  Start  Main Container Section  ::::::  -->
 <main id="main-container" class="main-container">
     <div class="container">
-        <ul class="notifications">
-            <li class="toast error">
-                <div class="column">
-                    <i class="fa-solid fa-circle-xmark"></i>
-                    <span>Error: This is an error toast.</span>
-                </div>
-                <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
-            </li>
-        </ul>
         @yield('main_content')
     </div>
 </main> <!-- ::::::  End  Main Container Section  ::::::  -->
