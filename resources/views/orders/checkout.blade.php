@@ -98,7 +98,7 @@
                 <div class="text-danger">{{ $message }}</div>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        createToast("error");
+                        createToast("warning");
                     });
                 </script>
                 @enderror
