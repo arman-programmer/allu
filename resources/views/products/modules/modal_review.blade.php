@@ -50,6 +50,11 @@
                                         </p>
                                         @error('stars')
                                         <div class="text-danger m-t-10">{{ $message }}</div>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                showToast("{{ $message }}", "danger", 5000);
+                                            });
+                                        </script>
                                         @enderror
                                     </div>
                                     @if (Auth::user()->name === null)
@@ -63,11 +68,6 @@
                                         <textarea id="form-review" name="text" rows="5"></textarea>
                                         @error('text')
                                         <div class="text-danger m-t-10">{{ $message }}</div>
-                                        <script>
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                showToast("{{ $message }}", "danger", 5000);
-                                            });
-                                        </script>
                                         @enderror
                                     </div>
                                     <div
