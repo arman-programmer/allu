@@ -137,6 +137,8 @@
                                         </div> <!-- End Single Default Product -->
                                     @endforeach
                                 @endif
+                            </div>
+                            <div class="row">
                                 @foreach($products as $product)
                                     <div class="col-6 col-md-4 col-lg-3">
                                         <div class="product-grid">
