@@ -87,7 +87,7 @@
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.8') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.9') }}"></script>
 </body>
 
 </html>
