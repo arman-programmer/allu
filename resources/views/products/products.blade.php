@@ -229,7 +229,14 @@
                     .then(data => {
                         if (data.success) {
                             alert(data.message);
-                            // Дополнительные действия по обновлению корзины
+                            toasts.push({
+                                title: 'Успешно!',
+                                content: '{{ session('success') }}',
+                                @if(session('success') == "Товар добавлен в корзину!")
+                                link: "{{ route('cart') }}",
+                                @endif
+                                style: 'success'
+                            });
                         }
                     })
                     .catch(error => {
