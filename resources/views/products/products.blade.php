@@ -176,7 +176,7 @@
                                         method="post">
                                         @csrf
                                         <button type="submit"
-                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
+                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-b-10">
                                             в корзину
                                         </button>
                                     </form>

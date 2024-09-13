@@ -105,8 +105,9 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
-                                                           href="{{ route('product', ['id' => $product->id]) }}">
-                                                            Открыть
+                                                           href="{{ route('product', ['id' => $product->id]) }}"
+                                                           target="_blank">
+                                                            Перейти
                                                         </a>
                                                         <form id="delete-form-{{ $product->id }}"
                                                               action="{{ route('admin.product.delete', ['id' => $product->id]) }}"
