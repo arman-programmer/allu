@@ -18,6 +18,7 @@ use App\Http\Middleware\CheckAdminRole;
 use App\Http\Middleware\CheckConfirm;
 use App\Http\Middleware\CheckLoginConfirm;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiProductController;
 
 Route::middleware('guest')->group(function () {
     Route::middleware([CheckLoginConfirm::class])->group(function () {
@@ -103,3 +104,8 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin/country/add', [CountryAdminController::class, 'add'])->name('admin.country.add');
     Route::post('/admin/country/delete/{id}', [CountryAdminController::class, 'delete'])->name('admin.country.delete');
 });
+
+Route::get('/api/products', [ApiProductController::class, 'index']);
+Route::post('/api/products', [ApiProductController::class, 'store']);
+Route::put('/api/product/{id}', [ApiProductController::class, 'update']);
+Route::delete('/api/product/{id}', [ApiProductController::class, 'destroy']);
