@@ -82,9 +82,7 @@
                                     </div>
                                     <p>из панели управления вашей учетной записи вы можете легко
                                         проверять и просматривать свои
-                                        <a id="pills-orders-tab" data-toggle="pill"
-                                           href="#pills-orders" role="tab" aria-controls="pills-orders"
-                                           aria-selected="false">недавние заказы</a>, управлять
+                                        <a href="#">недавние заказы</a>, управлять
                                         <a href="#">адресами доставки</a>, а также изменять свой
                                         <a href="#">пароль</a> и
                                         <a href="#">почту</a>
@@ -125,9 +123,7 @@
                                                     @endphp
                                                     <td>{{ $totalSum }} тг.</td>
                                                     <td>
-                                                        <a id="pills-order-tab" data-toggle="pill"
-                                                           href="#pills-order" role="tab" aria-controls="pills-order"
-                                                           aria-selected="false">Показать</a>
+                                                        <a href="#">Показать</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -234,114 +230,6 @@
                                                         Сохранить изменения
                                                     </button>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-order" role="tabpanel"
-                                 aria-labelledby="pills-order-tab">
-                                <!-- Page body -->
-                                <div class="page-body">
-                                    <div class="container-xl">
-                                        <div class="card card-lg">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <p class="h3">Company</p>
-                                                        <address>
-                                                            Street Address<br>
-                                                            State, City<br>
-                                                            Region, Postal Code<br>
-                                                            ltd@example.com
-                                                        </address>
-                                                    </div>
-                                                    <div class="col-6 text-end">
-                                                        <p class="h3">Client</p>
-                                                        <address>
-                                                            Street Address<br>
-                                                            State, City<br>
-                                                            Region, Postal Code<br>
-                                                            ctr@example.com
-                                                        </address>
-                                                    </div>
-                                                    <div class="col-12 my-5">
-                                                        <h1>Invoice INV/001/15</h1>
-                                                    </div>
-                                                </div>
-                                                <table class="table table-transparent table-responsive">
-                                                    <thead>
-                                                    <tr>
-                                                        <th class="text-center" style="width: 1%"></th>
-                                                        <th>Product</th>
-                                                        <th class="text-center" style="width: 1%">Qnt</th>
-                                                        <th class="text-end" style="width: 1%">Unit</th>
-                                                        <th class="text-end" style="width: 1%">Amount</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tr>
-                                                        <td class="text-center">1</td>
-                                                        <td>
-                                                            <p class="strong mb-1">Logo Creation</p>
-                                                            <div class="text-secondary">Logo and business cards design
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            1
-                                                        </td>
-                                                        <td class="text-end">$1.800,00</td>
-                                                        <td class="text-end">$1.800,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">2</td>
-                                                        <td>
-                                                            <p class="strong mb-1">Online Store Design &amp;
-                                                                Development</p>
-                                                            <div class="text-secondary">Design/Development for all
-                                                                popular modern browsers
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            1
-                                                        </td>
-                                                        <td class="text-end">$20.000,00</td>
-                                                        <td class="text-end">$20.000,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">3</td>
-                                                        <td>
-                                                            <p class="strong mb-1">App Design</p>
-                                                            <div class="text-secondary">Promotional mobile application
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            1
-                                                        </td>
-                                                        <td class="text-end">$3.200,00</td>
-                                                        <td class="text-end">$3.200,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="4" class="strong text-end">Subtotal</td>
-                                                        <td class="text-end">$25.000,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="4" class="strong text-end">Vat Rate</td>
-                                                        <td class="text-end">20%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="4" class="strong text-end">Vat Due</td>
-                                                        <td class="text-end">$5.000,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="4"
-                                                            class="font-weight-bold text-uppercase text-end">Total Due
-                                                        </td>
-                                                        <td class="font-weight-bold text-end">$30.000,00</td>
-                                                    </tr>
-                                                </table>
-                                                <p class="text-secondary text-center mt-5">Thank you very much for doing
-                                                    business with us. We look forward to working with
-                                                    you again!</p>
                                             </div>
                                         </div>
                                     </div>
