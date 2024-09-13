@@ -34,17 +34,13 @@
                     @foreach($products as $product)
                         <tr>
                             <td class="product-thumbnail">
-
                                 <a href="{{ route('product', ['id' => $product['id']]) }}">
-                                    @if($product -> images->isNotEmpty())
-                                        @foreach($product -> images as $image)
-                                            @if($product->thumb == $image->count)
-                                                <img class="img-fluid" src="{{ $image->link }}" alt="">
-                                            @endif
-                                        @endforeach
+                                    @if($product->images->isNotEmpty() && $product->images->first())
+                                        <img class="img-fluid"
+                                             src="{{ $product->images->first()->link }}" alt="">
                                     @else
-                                        <img class="product__img" src="{{ asset('assets/placeholder.svg') }}"
-                                             alt="">
+                                        <img class="img-fluid"
+                                             src="{{ asset('assets/placeholder.svg') }}" alt="">
                                     @endif
                                 </a>
                             </td>

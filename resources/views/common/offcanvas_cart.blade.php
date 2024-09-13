@@ -13,19 +13,12 @@
                     <div class="offcanvas-add-cart__img-box pos-relative">
                         <a href="{{ route('product', $product->id) }}"
                            class="offcanvas-add-cart__img-link img-responsive">
-                            @if($product -> images->isNotEmpty())
-                                @foreach($product -> images as $image)
-                                    @if($product->thumb == $image->count)
-                                        @if($product->stock <= 0)
-                                            <img src="{{ asset($image->link) }}" alt=""
-                                                 class="add-cart__img grayscale">
-                                        @else
-                                            <img src="{{ asset($image->link) }}" alt="" class="add-cart__img">
-                                        @endif
-                                    @endif
-                                @endforeach
+                            @if($product->images->isNotEmpty() && $product->images->first())
+                                <img class="img-fluid"
+                                     src="{{ $product->images->first()->link }}" alt="">
                             @else
-                                <img src="{{ asset('assets/placeholder.svg') }}" alt="" class="add-cart__img">
+                                <img class="img-fluid"
+                                     src="{{ asset('assets/placeholder.svg') }}" alt="">
                             @endif
                         </a>
                         <span class="offcanvas-add-cart__item-count pos-absolute">{{ $product->quantity }} x</span>
