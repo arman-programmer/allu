@@ -72,9 +72,7 @@
                 <div class="sort-box m-b-15">
                     <!-- Start Sort Left Side -->
                     <div class="sort-box__left">
-                        <div class="sort-box__tab">
-                            <i class="icon-grid"></i>
-                        </div>
+                        <i class="icon-grid"></i>
                         @if($products->count() == 1)
                             <span>Отображается {{ $products->count() }} товар из {{ $products->total() }}.</span>
                         @elseif($products->count() > 1 ?? $products->count() < 5)

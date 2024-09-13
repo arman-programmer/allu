@@ -1757,10 +1757,6 @@ button.btn--block {
     margin-bottom: 20px;
 }
 
-.sort-box__left span {
-    margin-left: 55px;
-}
-
 @media (min-width: 768px) {
     .sort-box__left {
         margin-bottom: 0;
@@ -6114,7 +6110,7 @@ hr {
 
 .product-grid {
     text-align: center;
-    border-radius: 14px;
+    border-radius: 3px;
     border: 1px solid #e7e7e7;
     overflow: hidden;
     transition: all 0.4s ease-out;
