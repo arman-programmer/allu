@@ -94,17 +94,9 @@
                            id="input-datalist"
                            placeholder="Улица, дом, номер квартиры" value="{{ old('address') }}">
                     <datalist id="list-addresses">
-                        <option>Asia/Aden</option>
-                        <option>Asia/Aqtau</option>
-                        <option>Asia/Baghdad</option>
-                        <option>Asia/Barnaul</option>
-                        <option>Asia/Chita</option>
-                        <option>Asia/Dhaka</option>
-                        <option>Asia/Famagusta</option>
-                        <option>Asia/Hong_Kong</option>
-                        <option>Asia/Jayapura</option>
-                        <option>Asia/Kuala_Lumpur</option>
-                        <option>Asia/Jakarta</option>
+                        @foreach($addresses as $address)
+                            <option>{{ $address }}</option>
+                        @endforeach
                     </datalist>
                 </div>
                 @error('address')
