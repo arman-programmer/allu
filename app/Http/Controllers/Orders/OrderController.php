@@ -8,6 +8,7 @@ use App\Http\Traits\GetCartTrait;
 use App\Http\Traits\LoginConfirm;
 use App\Models\Account\Addresses;
 use App\Models\Account\Cart;
+use App\Models\Account\User;
 use App\Models\City;
 use App\Models\Orders\OrderProducts;
 use App\Models\Orders\Orders;
@@ -42,11 +43,13 @@ class OrderController extends Controller
         }
         $cities = City::pluck('name', 'id');
         $current_city = City::find($this->getCurrentCity())->name;
+        $addresses = User::where('id', Auth::id())->with(['addresses']);
         return view('orders.checkout', compact(
             'products',
             'total',
             'cities',
-            'current_city'
+            'current_city',
+            'addresses'
         ));
     }
 

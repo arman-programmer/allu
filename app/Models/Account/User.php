@@ -20,4 +20,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Account\Session', 'id', 'user_id');
     }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Models\Account\Addresses', 'user_id', 'id');
+    }
 }

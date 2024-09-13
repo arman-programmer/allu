@@ -210,8 +210,8 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
+                                    <label class="form-label">Выбрать главного </label>
                                     <div class="mb-3">
-                                        <label class="form-label">Выбрать главного </label>
                                         <div id="photoGallery" class="row g-2 g-md-3">
 
                                         </div>

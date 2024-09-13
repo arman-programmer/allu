@@ -90,9 +90,22 @@
                             @endforeach
                         </div>
                     </div>
-                    <input name="address" type="address" class="form-control" list="list-timezone"
+                    <input name="address" type="address" class="form-control" list="list-addresses"
                            id="input-datalist"
                            placeholder="Улица, дом, номер квартиры" value="{{ old('address') }}">
+                    <datalist id="list-addresses">
+                        <option>Asia/Aden</option>
+                        <option>Asia/Aqtau</option>
+                        <option>Asia/Baghdad</option>
+                        <option>Asia/Barnaul</option>
+                        <option>Asia/Chita</option>
+                        <option>Asia/Dhaka</option>
+                        <option>Asia/Famagusta</option>
+                        <option>Asia/Hong_Kong</option>
+                        <option>Asia/Jayapura</option>
+                        <option>Asia/Kuala_Lumpur</option>
+                        <option>Asia/Jakarta</option>
+                    </datalist>
                 </div>
                 @error('address')
                 <div class="text-danger">{{ $message }}</div>
@@ -119,3 +132,8 @@
         </div>
     </form>
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', e => {
+        $('#input-datalist').autocomplete()
+    }, false);
+</script>
