@@ -28,6 +28,7 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
+
         if (!Auth::check()) {
             $cart = $request->session()->get('cart', []);
             if (isset($cart[$request->product_id])) {
@@ -38,6 +39,7 @@ class CartController extends Controller
                     "quantity" => $request->quantity,
                 ];
             }
+
             $request->session()->put('cart', $cart);
         } else {
             // Получаем текущую корзину пользователя из БД или создаем новую, если она отсутствует
@@ -50,9 +52,8 @@ class CartController extends Controller
             $userCart->quantity = $userCart->exists ? $userCart->quantity + $request->quantity : $request->quantity;
             $userCart->save();
         }
+        return redirect()->back()->with('success', 'Товар добавлен в корзину!');
 
-        // Возвращаем JSON-ответ
-        return response()->json(['success' => true, 'message' => 'Товар добавлен в корзину!']);
     }
 
 

@@ -173,11 +173,10 @@
                                     </div>
                                     <form
                                         action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                        method="post" class="add-to-cart-form">
+                                        method="post">
                                         @csrf
-                                        <button type="button"
-                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight add-to-cart-btn m-t-10 m-b-10"
-                                                data-product-id="{{ $product->id }}" data-quantity="1">
+                                        <button type="submit"
+                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
                                             в корзину
                                         </button>
                                     </form>
@@ -191,38 +190,3 @@
         </div>
     </div>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-
-        addToCartButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                const productId = this.getAttribute('data-product-id');
-                const quantity = this.getAttribute('data-quantity');
-
-                fetch(`/cart/add/${productId}/${quantity}`, {  // Динамически подставляем параметры
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                        "Content-Type": "application/json"
-                    }
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            toasts.push({
-                                title: 'Успешно!',
-                                content: data.message,
-                                link: "{{ route('cart') }}",
-                                style: 'success'
-                            });
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Ошибка:", error);
-                    });
-            });
-        });
-    });
-
-</script>
