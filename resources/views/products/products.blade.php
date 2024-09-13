@@ -218,22 +218,18 @@
                 const productId = this.getAttribute('data-product-id');
                 const quantity = this.getAttribute('data-quantity');
 
-                fetch("{{ route('cart.add') }}", {
+                fetch(`/cart/add/${productId}/${quantity}`, {  // Динамически подставляем параметры
                     method: "POST",
                     headers: {
                         "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                         "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        product_id: productId,
-                        quantity: quantity
-                    })
+                    }
                 })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            alert(data.message); // Вы можете заменить это на любое уведомление, например, модальное окно.
-                            // Здесь можно обновить корзину или показать уведомление
+                            alert(data.message);
+                            // Дополнительные действия по обновлению корзины
                         }
                     })
                     .catch(error => {
