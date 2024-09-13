@@ -83,7 +83,7 @@
                                     <p>из панели управления вашей учетной записи вы можете легко
                                         проверять и просматривать свои
                                         <a id="pills-orders-tab" data-toggle="pill"
-                                           href="#pills-orders" role="tab" aria-controls="pills-order"
+                                           href="#pills-orders" role="tab" aria-controls="pills-orders"
                                            aria-selected="false">недавние заказы</a>, управлять
                                         <a href="#">адресами доставки</a>, а также изменять свой
                                         <a href="#">пароль</a> и
@@ -125,7 +125,9 @@
                                                     @endphp
                                                     <td>{{ $totalSum }} тг.</td>
                                                     <td>
-                                                        <a href="#" data-toggle="modal">Показать</a>
+                                                        <a id="pills-order-tab" data-toggle="pill"
+                                                           href="#pills-order" role="tab" aria-controls="pills-order"
+                                                           aria-selected="false">Показать</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
