@@ -108,7 +108,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach(array_reverse($orders) as $order)
+                                            @foreach($orders as $order)
                                                 <tr>
                                                     <td>{{ $loop -> iteration }}</td>
                                                     @php
