@@ -119,7 +119,13 @@
                                                     @endphp
                                                     <td>{{ $formattedDate }}</td>
                                                     <td>{{ $order -> status }}</td>
-                                                    <td>{{ $order -> orderProducts }}</td>
+                                                    @php
+                                                        $totalSum = 0;
+                                                        foreach ($order -> orderProducts as $item) {
+                                                            $totalSum += $item['price'] * $item['quantity'];
+                                                        }
+                                                    @endphp
+                                                    <td>{{ $totalSum }} тг.</td>
                                                     <td>
                                                         <a href="#" data-toggle="modal">Показать</a>
                                                     </td>
