@@ -120,8 +120,7 @@
                                                 <div class="product-image">
                                                     <a href="{{ route('products.category', ['id' => $category->id]) }}"
                                                        class="image">
-                                                        <img class="pic-1" src="images/img-1.jpg"
-                                                             alt="{{$category->name}}">
+                                                        <img class="pic-1" src="{{ $category->thumb }}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-content">
