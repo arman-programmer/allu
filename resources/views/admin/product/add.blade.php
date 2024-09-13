@@ -156,15 +156,8 @@
                                 <div class="col-xl-6">
                                     <div class="mb-3">
                                         <label class="form-label">Выбрать главного </label>
-                                        <div class="row g-2 g-md-3">
-                                            <div class="col-6">
-                                                <a data-fslightbox="gallery"
-                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
-                                                    <!-- Photo -->
-                                                    <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg)"></div>
-                                                </a>
-                                            </div>
+                                        <div id="photoGallery" class="row g-2 g-md-3">
+
                                         </div>
                                     </div>
                                 </div>
@@ -181,16 +174,11 @@
                     <form id="uploadForm" enctype="multipart/form-data" class="mb-3 mt-3">
                         <input type="file" name="file" id="file" class="form-control">
                     </form>
-
                     <div id="progressBar"
                          style="width: 100%; background-color: #f3f3f3; height: 20px; border-radius: 5px; overflow: hidden;">
                         <div id="progressBarFill" style="width: 0%; height: 100%; background-color: #4caf50;"></div>
                     </div>
-
                     <div id="uploadStatus"></div>
-                    <img id="uploadedImage" src="" alt="Uploaded Image"
-                         style="display: none; max-width: 100px; margin-top: 10px;">
-
                 </div>
             </div>
         </div>
@@ -218,8 +206,22 @@
                     var response = JSON.parse(xhr.responseText);
                     if (response.success) {
                         document.getElementById('uploadStatus').innerHTML = 'Файл успешно загружен.';
-                        document.getElementById('uploadedImage').src = response.file;
-                        document.getElementById('uploadedImage').style.display = 'block';
+
+                        // Добавление нового изображения в галерею
+                        var photoGallery = document.getElementById('photoGallery');
+                        var newPhotoHtml = `
+                    <div class="col-6">
+                        <a data-fslightbox="gallery" href="${response.file}">
+                            <div class="img-responsive img-responsive-1x1 rounded-3 border"
+                                 style="background-image: url(${response.file})"></div>
+                        </a>
+                    </div>
+                `;
+                        photoGallery.insertAdjacentHTML('beforeend', newPhotoHtml);
+
+                        // Обновление lightbox для новой фотографии
+                        refreshFsLightbox();
+
                     } else {
                         document.getElementById('uploadStatus').innerHTML = 'Ошибка: ' + response.error;
                     }
