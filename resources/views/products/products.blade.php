@@ -208,38 +208,3 @@
         </div>
     </div>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-
-        addToCartButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                const productId = this.getAttribute('data-product-id');
-                const quantity = this.getAttribute('data-quantity');
-
-                fetch("{{ route('cart.add') }}", {
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        product_id: productId,
-                        quantity: quantity
-                    })
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert(data.message); // Вы можете заменить это на любое уведомление, например, модальное окно.
-                            // Здесь можно обновить корзину или показать уведомление
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Ошибка:", error);
-                    });
-            });
-        });
-    });
-
-</script>
