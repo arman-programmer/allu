@@ -159,23 +159,23 @@
                                         <div class="row g-2 g-md-3">
                                             <div class="col-6">
                                                 <a data-fslightbox="gallery"
-                                                   href="./static/photos/elegant-home-office-with-golden-accessories.jpg">
+                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
                                                     <!-- Photo -->
                                                     <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(./static/photos/elegant-home-office-with-golden-accessories.jpg)"></div>
+                                                         style="background-image: url(https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg)"></div>
                                                 </a>
                                             </div>
                                             <div class="col-6">
                                                 <a data-fslightbox="gallery"
-                                                   href="./static/photos/stylish-workplace-with-computer-at-home.jpg">
+                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
                                                     <!-- Photo -->
                                                     <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(./static/photos/stylish-workplace-with-computer-at-home.jpg)"></div>
+                                                         style="background-image: url(https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg)"></div>
                                                 </a>
                                             </div>
                                             <div class="col-6">
                                                 <a data-fslightbox="gallery"
-                                                   href="./static/photos/group-of-people-sightseeing-in-the-city.jpg">
+                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
                                                     <!-- Photo -->
                                                     <div class="img-responsive img-responsive-1x1 rounded-3 border"
                                                          style="background-image: url(./static/photos/group-of-people-sightseeing-in-the-city.jpg)"></div>
@@ -183,7 +183,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <a data-fslightbox="gallery"
-                                                   href="./static/photos/color-palette-guide-sample-colors-catalog-.jpg">
+                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
                                                     <!-- Photo -->
                                                     <div class="img-responsive img-responsive-1x1 rounded-3 border"
                                                          style="background-image: url(./static/photos/color-palette-guide-sample-colors-catalog-.jpg)"></div>
