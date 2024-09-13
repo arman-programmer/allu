@@ -57,7 +57,7 @@
                     @endif
                 </div>
                 <div class="page-not-found text-center m-t-30">
-                    <img class="banner__img" src="{{ asset('assets/mushroom.jpg') }}" alt="">
+                    <img src="{{ asset('assets/mushroom.jpg') }}" alt="">
                     @if (!empty($search))
                         <p>По вашему запросу "{{ $search }}" ничего не найдено :(</p>
                     @else
