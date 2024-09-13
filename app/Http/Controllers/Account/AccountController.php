@@ -14,7 +14,9 @@ class AccountController extends Controller
     public function index()
     {
         $user = Auth::id();
-        $orders = Orders::with(['orderProducts'])->where('user_id', $user);
+        $orders = Orders::where('user_id', $user)
+            ->with('orderProducts')
+            ->get();
         $addresses = Addresses::where('user_id', $user)->get();
         return view('account.account', compact(
             'addresses',
