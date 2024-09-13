@@ -1728,7 +1728,7 @@ button.btn--block {
 *****************************/
 .sort-box {
     border: 1px solid #dee2e6;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
@@ -1751,14 +1751,6 @@ button.btn--block {
 
 .sort-box__left span, .sort-box__right span {
     display: inline-block;
-}
-
-.sort-box__left {
-    margin-bottom: 20px;
-}
-
-.sort-box__right span {
-    margin-right: 20px;
 }
 
 .sort-box__tab-list li {
@@ -3297,6 +3289,7 @@ input[type=radio].shipping-select:checked::after {
     background: transparent;
     position: relative;
     color: #333;
+    margin: 0;
 }
 
 .user-set-role__button img {
@@ -6234,7 +6227,6 @@ hr {
 }
 
 .product-grid .title {
-    margin: 0 0 15px;
     font-size: 16px;
 }
 

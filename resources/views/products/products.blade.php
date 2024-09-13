@@ -71,7 +71,7 @@
                 <!-- ::::::  Start Sort Box Section  ::::::  -->
                 <div class="sort-box m-b-15">
                     <!-- Start Sort Left Side -->
-                    <div class="sort-box__left">
+                    <div class="sort-box__left m-t-20">
                         @if($products->count() == 1)
                             <span>Отображается {{ $products->count() }} товар из {{ $products->total() }}.</span>
                         @elseif($products->count() > 1 ?? $products->count() < 5)
@@ -81,7 +81,7 @@
                         @endif
                     </div> <!-- Start Sort Left Side -->
 
-                    <div class="sort-box__right">
+                    <div class="sort-box__right m-r-20 m-t-20">
                         <span>Сортировать:</span>
                         <div class="sort-box__option">
                             <label class="select-sort__arrow">
@@ -176,7 +176,7 @@
                                         method="post" class="add-to-cart-form">
                                         @csrf
                                         <button type="button"
-                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight add-to-cart-btn"
+                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight add-to-cart-btn m-t-10 m-b-10"
                                                 data-product-id="{{ $product->id }}" data-quantity="1">
                                             в корзину
                                         </button>
