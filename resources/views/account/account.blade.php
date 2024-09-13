@@ -28,8 +28,9 @@
                                        aria-selected="true"><i class="fas fa-tachometer-alt"></i> Панель управления</a>
                                 </li>
                                 <li>
-                                    <a id="pills-order-tab" class="link--icon-left my-account-list" data-toggle="pill"
-                                       href="#pills-order" role="tab" aria-controls="pills-order" aria-selected="false"><i
+                                    <a id="pills-orders-tab" class="link--icon-left my-account-list" data-toggle="pill"
+                                       href="#pills-orders" role="tab" aria-controls="pills-order"
+                                       aria-selected="false"><i
                                             class="fas fa-shopping-cart"></i> История заказов</a>
                                 </li>
                                 <li>
@@ -81,8 +82,8 @@
                                     </div>
                                     <p>из панели управления вашей учетной записи вы можете легко
                                         проверять и просматривать свои
-                                        <a id="pills-order-tab" data-toggle="pill"
-                                           href="#pills-order" role="tab" aria-controls="pills-order"
+                                        <a id="pills-orders-tab" data-toggle="pill"
+                                           href="#pills-orders" role="tab" aria-controls="pills-order"
                                            aria-selected="false">недавние заказы</a>, управлять
                                         <a href="#">адресами доставки</a>, а также изменять свой
                                         <a href="#">пароль</a> и
@@ -91,7 +92,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="pills-order" role="tabpanel"
+                            <div class="tab-pane fade" id="pills-orders" role="tabpanel"
                                  aria-labelledby="pills-orders-tab">
                                 <div class="my-account-order account-wrapper">
                                     <h4 class="account-title">Заказы</h4>
