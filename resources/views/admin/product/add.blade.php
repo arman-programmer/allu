@@ -234,14 +234,75 @@
             });
 
             // Настройка запроса
-            xhr.open('POST', '/upload', true); // Замените '/upload' на правильный маршрут в вашем приложении.
-            xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+            xhr.open('POST', '{{ route('upload.file') }}', true);
+            xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
 
             // Отправка данных
             xhr.send(formData);
         });
 
     </script>
+    {{--    <script>--}}
+    {{--        $(document).ready(function () {--}}
+    {{--            $('#uploadForm').on('change', function (e) {--}}
+    {{--                e.preventDefault();--}}
+
+    {{--                let formData = new FormData(this);--}}
+    {{--                $.ajax({--}}
+    {{--                    url: '{{ route('upload.file') }}',--}}
+    {{--                    type: 'POST',--}}
+    {{--                    data: formData,--}}
+    {{--                    processData: false,--}}
+    {{--                    contentType: false,--}}
+    {{--                    headers: {--}}
+    {{--                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+    {{--                    },--}}
+    {{--                    xhr: function () {--}}
+    {{--                        let xhr = new window.XMLHttpRequest();--}}
+    {{--                        xhr.upload.addEventListener('progress', function (e) {--}}
+    {{--                            if (e.lengthComputable) {--}}
+    {{--                                let percentComplete = e.loaded / e.total * 100;--}}
+    {{--                                $('#progressBar div').width(percentComplete + '%');--}}
+    {{--                            }--}}
+    {{--                        }, false);--}}
+    {{--                        return xhr;--}}
+    {{--                    },--}}
+    {{--                    success: function (response) {--}}
+    {{--                        let imageCount = $('.form-imagecheck-input').length + 1;--}}
+
+    {{--                        let newDiv = $('<div>', {class: 'col-6 col-sm-4'});--}}
+    {{--                        let newLabel = $('<label>', {class: 'form-imagecheck mb-2'});--}}
+    {{--                        let newInputRadio = $('<input>', {--}}
+    {{--                            name: 'thumb_id',--}}
+    {{--                            type: 'radio',--}}
+    {{--                            value: imageCount,--}}
+    {{--                            class: 'form-imagecheck-input'--}}
+    {{--                        });--}}
+    {{--                        let newInputHidden = $('<input>', {--}}
+    {{--                            type: 'hidden',--}}
+    {{--                            name: 'image-' + imageCount,--}}
+    {{--                            value: response.file--}}
+    {{--                        });--}}
+    {{--                        let newSpan = $('<span>', {class: 'form-imagecheck-figure'});--}}
+    {{--                        let newImg = $('<img>', {--}}
+    {{--                            src: response.file,--}}
+    {{--                            alt: 'Uploaded Image',--}}
+    {{--                            class: 'form-imagecheck-image'--}}
+    {{--                        });--}}
+
+    {{--                        newSpan.append(newImg);--}}
+    {{--                        newLabel.append(newInputRadio).append(newSpan);--}}
+    {{--                        newDiv.append(newLabel).append(newInputHidden);--}}
+    {{--                        $('#imageContainer').append(newDiv);--}}
+    {{--                    },--}}
+    {{--                    error: function (response) {--}}
+    {{--                        alert("Ошибка при закгрузке");--}}
+    {{--                    }--}}
+    {{--                });--}}
+    {{--            });--}}
+    {{--        });--}}
+    {{--    </script>--}}
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('input-container');
