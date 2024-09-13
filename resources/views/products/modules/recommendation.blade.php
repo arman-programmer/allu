@@ -43,7 +43,7 @@
                                             </form>
                                         </div>
                                         <div class="product__price m-t-10">
-                                            <span class="product__price-reg">{{ $recommendation->price }}</span>
+                                            <span class="product__price-reg">{{ $recommendation->price }} тг.</span>
                                         </div>
                                         <a href="{{ route('product', $recommendation->id) }}"
                                            class="product__link product__link--underline product__link--weight-light">

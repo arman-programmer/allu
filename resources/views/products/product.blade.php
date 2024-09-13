@@ -31,15 +31,10 @@
                     <div class="col-md-6">
                         <div class="product-gallery-box m-b-30">
                             <div class="product-image--large overflow-hidden">
-                                @if($product -> images->isNotEmpty())
-                                    @foreach($product -> images as $image)
-                                        @if($product->thumb == $image->count)
-                                            <img class="img-fluid" id="img-zoom" src="{{ $image->link }}" alt="">
-                                        @endif
-                                    @endforeach
+                                @if($product->images->isNotEmpty() && $product->images->first())
+                                    <img class="img-fluid" src="{{ $product->images->first()->link }}" alt="">
                                 @else
-                                    <img class="img-fluid" id="img-zoom" src="{{ asset('assets/placeholder.svg') }}"
-                                         alt="">
+                                    <img class="img-fluid" src="{{ asset('assets/placeholder.svg') }}" alt="">
                                 @endif
                             </div>
                             @if($product -> images->isNotEmpty())

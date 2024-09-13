@@ -27,7 +27,7 @@ class ProductsController extends Controller
             ->where('status', 1)
             ->where('city_id', $current_city)
             ->orderBy($sortField, $sortDirection)
-            ->with('reviews')
+            ->with(['images', 'reviews'])
             ->paginate(16);
         $categories = Category::where('status', 1)->get();
         $category = $categories->where('id', $id)->first();

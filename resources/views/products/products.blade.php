@@ -144,7 +144,13 @@
                                         <div class="product-grid">
                                             <div class="product-image">
                                                 <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
-                                                    <img class="pic-1" src="images/img-1.jpg" alt="{{$product->name}}">
+                                                    @if($product->images->isNotEmpty() && $product->images->first())
+                                                        <img class="img-fluid"
+                                                             src="{{ $product->images->first()->link }}" alt="">
+                                                    @else
+                                                        <img class="img-fluid"
+                                                             src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                                    @endif
                                                 </a>
                                                 @if ($product->old_price != null && $product->old_price > $product->price)
                                                     @php
