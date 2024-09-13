@@ -212,31 +212,14 @@
                                 <div class="col-xl-6">
                                     <div class="mb-3">
                                         <label class="form-label">Выбрать главного </label>
-                                        <div class="row g-2" id="imageContainer">
+                                        <div id="photoGallery" class="row g-2 g-md-3">
+
+                                        </div>
+                                        <div class="row g-2 g-md-3">
                                             @foreach($product->images as $image)
-                                                <div class="col-6 col-sm-4">
-                                                    <label class="form-imagecheck mb-2">
-                                                        @if($product->thumb == $loop->iteration)
-                                                            <input
-                                                                name="thumb_id" type="radio"
-                                                                value="{{ $loop->iteration }}"
-                                                                class="form-imagecheck-input" checked>
-                                                        @else
-                                                            <input
-                                                                name="thumb_id" type="radio"
-                                                                value="{{ $loop->iteration }}"
-                                                                class="form-imagecheck-input">
-                                                        @endif
-                                                        <span class="form-imagecheck-figure">
-                                                        <img
-                                                            src="{{ $image->link }}"
-                                                            alt="Uploaded Image"
-                                                            class="form-imagecheck-image">
-                                                    </span>
-                                                    </label>
-                                                    <input
-                                                        type="hidden" name="image-{{ $loop->iteration }}"
-                                                        value="{{ $image->link }}">
+                                                <div class="col-6">
+                                                    <img src="{{ $image->link }}"
+                                                         class="img-responsive img-responsive-1x1 rounded-3 border"/>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -255,73 +238,76 @@
                     <form id="uploadForm" enctype="multipart/form-data" class="mb-3 mt-3">
                         <input type="file" name="file" id="file" class="form-control">
                     </form>
-                    <div id="progressBar">
-                        <div></div>
+                    <div id="progressBar"
+                         style="width: 100%; background-color: #f3f3f3; height: 20px; border-radius: 5px; overflow: hidden;">
+                        <div id="progressBarFill" style="width: 0%; height: 100%; background-color: #4caf50;"></div>
                     </div>
+                    <div id="uploadStatus"></div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#uploadForm').on('change', function (e) {
-                e.preventDefault();
+        document.getElementById('file').addEventListener('change', function () {
+            var fileInput = document.getElementById('file');
+            var formData = new FormData();
+            formData.append('file', fileInput.files[0]);
 
-                let formData = new FormData(this);
-                $.ajax({
-                    url: '{{ route('upload.file') }}',
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    xhr: function () {
-                        let xhr = new window.XMLHttpRequest();
-                        xhr.upload.addEventListener('progress', function (e) {
-                            if (e.lengthComputable) {
-                                let percentComplete = e.loaded / e.total * 100;
-                                $('#progressBar div').width(percentComplete + '%');
-                            }
-                        }, false);
-                        return xhr;
-                    },
-                    success: function (response) {
-                        let imageCount = $('.form-imagecheck-input').length + 1;
+            var xhr = new XMLHttpRequest();
 
-                        let newDiv = $('<div>', {class: 'col-6 col-sm-4'});
-                        let newLabel = $('<label>', {class: 'form-imagecheck mb-2'});
-                        let newInputRadio = $('<input>', {
-                            name: 'thumb_id',
-                            type: 'radio',
-                            value: imageCount,
-                            class: 'form-imagecheck-input'
-                        });
-                        let newInputHidden = $('<input>', {
-                            type: 'hidden',
-                            name: 'image-' + imageCount,
-                            value: response.file
-                        });
-                        let newSpan = $('<span>', {class: 'form-imagecheck-figure'});
-                        let newImg = $('<img>', {
-                            src: response.file,
-                            alt: 'Uploaded Image',
-                            class: 'form-imagecheck-image'
-                        });
+            // Обновление прогресс-бара
+            xhr.upload.addEventListener('progress', function (e) {
+                if (e.lengthComputable) {
+                    var percentComplete = (e.loaded / e.total) * 100;
+                    document.getElementById('progressBarFill').style.width = percentComplete + '%';
+                }
+            }, false);
 
-                        newSpan.append(newImg);
-                        newLabel.append(newInputRadio).append(newSpan);
-                        newDiv.append(newLabel).append(newInputHidden);
-                        $('#imageContainer').append(newDiv);
-                    },
-                    error: function (response) {
-                        alert("Ошибка при закгрузке");
+            // Обработка успешного ответа
+            xhr.addEventListener('load', function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        document.getElementById('uploadStatus').innerHTML = 'Файл успешно загружен.';
+
+                        // Добавление нового изображения в галерею
+                        var photoGallery = document.getElementById('photoGallery');
+                        var newPhotoHtml = `
+                    <div class="col-6">
+                        <a data-fslightbox="gallery" href="${response.file}">
+                            <div class="img-responsive img-responsive-1x1 rounded-3 border"
+                                 style="background-image: url(${response.file})"></div>
+                        </a>
+                        <input type="hidden" name="image-${Date.now()}" value="${response.file}">
+                    </div>
+                `;
+                        photoGallery.insertAdjacentHTML('beforeend', newPhotoHtml);
+
+                        // Обновление lightbox для новой фотографии
+                        refreshFsLightbox();
+
+                    } else {
+                        document.getElementById('uploadStatus').innerHTML = 'Ошибка: ' + response.error;
                     }
-                });
+                } else {
+                    document.getElementById('uploadStatus').innerHTML = 'Ошибка загрузки файла.';
+                }
             });
+
+            // Обработка ошибок
+            xhr.addEventListener('error', function () {
+                document.getElementById('uploadStatus').innerHTML = 'Ошибка при отправке запроса.';
+            });
+
+            // Настройка запроса
+            xhr.open('POST', '{{ route('upload.file') }}', true);
+            xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+
+            // Отправка данных
+            xhr.send(formData);
         });
+
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
