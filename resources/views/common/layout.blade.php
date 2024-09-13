@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/venobox.min.css') }}">
 
     <!-- Main Style CSS File -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.18') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.19') }}">
 </head>
 <body>
 <header>
