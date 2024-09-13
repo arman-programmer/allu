@@ -109,6 +109,11 @@
                                                            target="_blank">
                                                             Перейти
                                                         </a>
+                                                        <a class="dropdown-item"
+                                                           href="{{ route('admin.product.edit', ['id' => $product->id]) }}"
+                                                           target="_blank">
+                                                            Редактировать
+                                                        </a>
                                                         <form id="delete-form-{{ $product->id }}"
                                                               action="{{ route('admin.product.delete', ['id' => $product->id]) }}"
                                                               method="post">

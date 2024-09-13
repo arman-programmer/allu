@@ -154,7 +154,7 @@ class ProductAdminController extends Controller
         $product = Products::find($id);
         $product->status = 1;
         $product->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Продукт включен');
     }
 
     public function off($id)
@@ -162,7 +162,7 @@ class ProductAdminController extends Controller
         $product = Products::find($id);
         $product->status = 0;
         $product->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Продукт отключен');
     }
 
     public function delete($id)
@@ -193,7 +193,7 @@ class ProductAdminController extends Controller
                 $size->delete();
             }
         }
-        return redirect()->back()->with('success', 'Продукт успешно удален');
+        return redirect()->back()->with('success', 'Продукт удален');
     }
 
     public function upload(Request $request)

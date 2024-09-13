@@ -17,11 +17,12 @@
 <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
 <div class="page">
     @include('admin.common.header')
-    
+
     <div class="page-wrapper">
         @yield('main_content')
     </div>
 </div>
+<script src="{{ asset('assets/js/Toasts.js?v=1.0') }}"></script>
 <!-- Libs JS -->
 <script src="{{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}" defer></script>
 <script src="{{ asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js') }}" defer></script>
@@ -802,5 +803,38 @@
     });
     // @formatter:on
 </script>
+@if ($errors->any())
+    <script>
+        @foreach ($errors->all() as $error)
+        toasts.push({
+            title: 'Ошибка',
+            content: '{{ $error }}',
+            style: 'error'
+        });
+        @endforeach
+    </script>
+@endif
+
+@if (session('success'))
+    <script>
+        toasts.push({
+            title: 'Успешно!',
+            content: '{{ session('success') }}',
+            @if(session('success') == "Товар добавлен в корзину!")
+            link: "{{ route('cart') }}",
+            @endif
+            style: 'success'
+        });
+    </script>
+@endif
+@if (session('info'))
+    <script>
+        toasts.push({
+            title: 'Инфо',
+            content: '{{ session('info') }}',
+            style: 'verified'
+        });
+    </script>
+@endif
 </body>
 </html>
