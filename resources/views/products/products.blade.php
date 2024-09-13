@@ -82,7 +82,7 @@
                     </div> <!-- Start Sort Left Side -->
 
                     <div class="sort-box__right m-r-20 m-t-20">
-                        <span>Сортировать:</span>
+                        <span class="m-r-15">Сортировать:</span>
                         <div class="sort-box__option">
                             <label class="select-sort__arrow">
                                 <select name="select-sort" class="select-sort">
@@ -126,7 +126,7 @@
                 @endif
                 <div class="row">
                     @foreach($products as $product)
-                        <div class="col-6 col-md-4 col-lg-3">
+                        <div class="col-6 col-sm-4 col-lg-3">
                             <div class="product-grid">
                                 <div class="product-image">
                                     <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
