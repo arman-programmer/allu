@@ -187,15 +187,15 @@
                                                 @endif
                                                 {{ $product->price }} тг.
                                             </div>
-                                            <form
-                                                action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                                method="post">
-                                                @csrf
-                                                <button type="submit"
-                                                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
-                                                    В корзину
-                                                </button>
-                                            </form>
+                                            {{--                                            <form--}}
+                                            {{--                                                action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"--}}
+                                            {{--                                                method="post">--}}
+                                            {{--                                                @csrf--}}
+                                            {{--                                                <button type="submit"--}}
+                                            {{--                                                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">--}}
+                                            {{--                                                    В корзину--}}
+                                            {{--                                                </button>--}}
+                                            {{--                                            </form>--}}
                                         </div>
                                     </div>
                                 </div>
