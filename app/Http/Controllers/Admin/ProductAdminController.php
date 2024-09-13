@@ -121,7 +121,7 @@ class ProductAdminController extends Controller
         $requestData = $request->all();
 
         // Установка начального значения счетчика
-        $maxCount = ProductImages::where('product_id', $productId)->max('count');
+        $maxCount = ProductImages::where('product_id', $product->id)->max('count');
         $count = ($maxCount !== null) ? $maxCount + 1 : 1;
 
         foreach ($requestData as $key => $value) {
@@ -131,7 +131,7 @@ class ProductAdminController extends Controller
                 $imageLink = $value;
 
                 // Проверка наличия изображения в базе данных
-                $existingImage = ProductImages::where('product_id', $productId)
+                $existingImage = ProductImages::where('product_id', $product->id)
                     ->where('link', $imageLink)
                     ->first();
 
@@ -142,7 +142,7 @@ class ProductAdminController extends Controller
 
                 // Создание новой записи для изображения
                 $productImage = new ProductImages();
-                $productImage->product_id = $productId;
+                $productImage->product_id = $product->id;
                 $productImage->link = $imageLink;
                 $productImage->count = $count++; // Увеличение счетчика и его присвоение
                 $productImage->save();
