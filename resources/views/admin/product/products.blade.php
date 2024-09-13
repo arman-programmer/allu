@@ -54,14 +54,10 @@
                                         <td>
                                             <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}"
                                                class="d-flex py-1 align-items-center">
-                                                @if($product -> images->isNotEmpty())
-                                                    @foreach($product -> images as $image)
-                                                        @if($product->thumb == $image->count)
-                                                            <span class="avatar me-2"
-                                                                  style="background-image: url('{{ $image->link }}')">
-                                                        </span>
-                                                        @endif
-                                                    @endforeach
+                                                @if($product->images->isNotEmpty() && $product->images->first())
+                                                    <span class="avatar me-2"
+                                                          style="background-image: url('{{ $product->images->first()->link }}')">
+                                                    </span>
                                                 @else
                                                     <span class="avatar me-2"
                                                           style="background-image: url('{{ asset('assets/placeholder.svg') }}')">
