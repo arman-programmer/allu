@@ -218,8 +218,11 @@
                                         <div class="row g-2 g-md-3">
                                             @foreach($product->images as $image)
                                                 <div class="col-6">
-                                                    <img src="{{ $image->link }}"
-                                                         class="img-responsive img-responsive-1x1 rounded-3 border"/>
+                                                    <a data-fslightbox="gallery"
+                                                       href="{{ $image->link }}">
+                                                        <div class="img-responsive img-responsive-1x1 rounded-3 border"
+                                                             style="background-image: url({{ $image->link }})"></div>
+                                                    </a>
                                                 </div>
                                             @endforeach
                                         </div>
