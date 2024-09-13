@@ -69,7 +69,6 @@ class ProductAdminController extends Controller
         $product->category_id = $request->input('category');
         $product->country_id = $request->input('country');
         $product->city_id = $request->input('city');
-        $product->thumb = $request->input('thumb_id');
         $product->manufacturer_id = $request->input('manufacturer');
         $product->status = $request->input('status');
         $product->save();
