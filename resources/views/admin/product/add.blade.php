@@ -165,30 +165,6 @@
                                                          style="background-image: url(https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg)"></div>
                                                 </a>
                                             </div>
-                                            <div class="col-6">
-                                                <a data-fslightbox="gallery"
-                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
-                                                    <!-- Photo -->
-                                                    <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg)"></div>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a data-fslightbox="gallery"
-                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
-                                                    <!-- Photo -->
-                                                    <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(./static/photos/group-of-people-sightseeing-in-the-city.jpg)"></div>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a data-fslightbox="gallery"
-                                                   href="https://i.pinimg.com/564x/35/c3/14/35c314aaf65abd5c7a4ce439c7887e9d.jpg">
-                                                    <!-- Photo -->
-                                                    <div class="img-responsive img-responsive-1x1 rounded-3 border"
-                                                         style="background-image: url(./static/photos/color-palette-guide-sample-colors-catalog-.jpg)"></div>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,15 +181,67 @@
                     <form id="uploadForm" enctype="multipart/form-data" class="mb-3 mt-3">
                         <input type="file" name="file" id="file" class="form-control">
                     </form>
-                    <div id="progressBar">
-                        <div></div>
+
+                    <div id="progressBar"
+                         style="width: 100%; background-color: #f3f3f3; height: 20px; border-radius: 5px; overflow: hidden;">
+                        <div id="progressBarFill" style="width: 0%; height: 100%; background-color: #4caf50;"></div>
                     </div>
+
+                    <div id="uploadStatus"></div>
+                    <img id="uploadedImage" src="" alt="Uploaded Image"
+                         style="display: none; max-width: 100px; margin-top: 10px;">
+
                 </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('file').addEventListener('change', function () {
+            var fileInput = document.getElementById('file');
+            var formData = new FormData();
+            formData.append('file', fileInput.files[0]);
 
+            var xhr = new XMLHttpRequest();
+
+            // Обновление прогресс-бара
+            xhr.upload.addEventListener('progress', function (e) {
+                if (e.lengthComputable) {
+                    var percentComplete = (e.loaded / e.total) * 100;
+                    document.getElementById('progressBarFill').style.width = percentComplete + '%';
+                }
+            }, false);
+
+            // Обработка успешного ответа
+            xhr.addEventListener('load', function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        document.getElementById('uploadStatus').innerHTML = 'Файл успешно загружен.';
+                        document.getElementById('uploadedImage').src = response.file;
+                        document.getElementById('uploadedImage').style.display = 'block';
+                    } else {
+                        document.getElementById('uploadStatus').innerHTML = 'Ошибка: ' + response.error;
+                    }
+                } else {
+                    document.getElementById('uploadStatus').innerHTML = 'Ошибка загрузки файла.';
+                }
+            });
+
+            // Обработка ошибок
+            xhr.addEventListener('error', function () {
+                document.getElementById('uploadStatus').innerHTML = 'Ошибка при отправке запроса.';
+            });
+
+            // Настройка запроса
+            xhr.open('POST', '/upload', true); // Замените '/upload' на правильный маршрут в вашем приложении.
+            xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+
+            // Отправка данных
+            xhr.send(formData);
+        });
+
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('input-container');
