@@ -113,9 +113,13 @@
                                             @foreach($orders as $order)
                                                 <tr>
                                                     <td>{{ $loop -> iteration }}</td>
-                                                    <td>{{ $order -> created_at }}</td>
+                                                    @php
+                                                        $datetime = new DateTime($order -> created_at);
+                                                        $formattedDate = $datetime->format('d.m.y\г H:i');
+                                                    @endphp
+                                                    <td>{{ $formattedDate }}</td>
                                                     <td>{{ $order -> status }}</td>
-                                                    <td>42500тг</td>
+                                                    <td>{{ $order -> orderProducts }}</td>
                                                     <td>
                                                         <a href="#" data-toggle="modal">Показать</a>
                                                     </td>
