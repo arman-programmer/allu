@@ -759,19 +759,7 @@
             });
         }, 1000);
     });
-
-    /******************************************************
-     *  Product Gallery - Image Zoom
-     ******************************************************/
-    $("#img-zoom").elevateZoom({
-        gallery: "gallery-zoom",
-        galleryActiveClass: "zoom-active",
-        constrainSize: 274,
-        zoomType: "lens",
-        containLensZoom: true,
-    });
-
-
+    
     /******************************************************
      * Blog Slider - Single Slide
      ******************************************************/
