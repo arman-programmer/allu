@@ -112,32 +112,6 @@
                 <div class="product-tab-area">
                     <div class="tab-content ">
                         <div class="tab-pane show clearfix active" id="sort-grid">
-                            <div class="row">
-                                @if (!empty($sub))
-                                    @foreach ($sub as $category)
-                                        <!-- Start Single Default Product -->
-                                        <div class="col-6 col-md-4 col-lg-3">
-                                            <div class="product__img-box">
-                                                <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                                   class="product__img--link">
-                                                    <img class="product__img" src="
-                                                @if ($category->thumb)
-                                                    {{ $category->thumb }}
-                                                @else
-                                                    {{ asset('assets/placeholder.svg') }}
-                                                @endif
-                                                " loading="lazy"
-                                                         alt="{{$category->name}}">
-                                                </a>
-                                            </div>
-                                            <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                               class="product__link product__link--underline product__link--weight-light m-t-15">
-                                                {{$category->name}}
-                                            </a>
-                                        </div> <!-- End Single Default Product -->
-                                    @endforeach
-                                @endif
-                            </div>
                             @if (!empty($sub))
                                 <div class="row">
                                     @foreach ($sub as $category)
@@ -152,8 +126,12 @@
                                                 </div>
                                                 <div class="product-content">
                                                     <h5 class="title">
-                                                        <a href="{{ route('products.category', ['id' => $category->id]) }}">{{$category->name}}</a>
+                                                        <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
                                                     </h5>
+                                                    <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10 m-b-10">{{ $category->name }}
+                                                        В корзину
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
