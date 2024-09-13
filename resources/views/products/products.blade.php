@@ -228,13 +228,10 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            alert(data.message);
                             toasts.push({
                                 title: 'Успешно!',
-                                content: '{{ session('success') }}',
-                                @if(session('success') == "Товар добавлен в корзину!")
+                                content: data.success,
                                 link: "{{ route('cart') }}",
-                                @endif
                                 style: 'success'
                             });
                         }
