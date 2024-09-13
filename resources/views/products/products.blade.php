@@ -129,8 +129,8 @@
                                                         <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
                                                     </h5>
                                                     <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10 m-b-10">{{ $category->name }}
-                                                        В корзину
+                                                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10 m-b-10">
+                                                        Перейти
                                                     </a>
                                                 </div>
                                             </div>

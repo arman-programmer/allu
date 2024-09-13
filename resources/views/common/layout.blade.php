@@ -51,17 +51,17 @@
 <script src="{{ asset('assets/js/modernizr-3.7.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
-<!-- Plugins JS Files -->
 <script src="{{ asset('assets/js/Toasts.js?v=1.0') }}"></script>
 <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('assets/js/material-scrolltop.js') }}"></script>
+
+<script src="{{ asset('assets/js/main.js?v=1.11') }}"></script>
+
+<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('assets/js/price_range_script.js') }}"></script>
 <script src="{{ asset('assets/js/in-number.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.elevateZoom-3.0.8.min.js') }}"></script>
+{{--<script src="{{ asset('assets/js/jquery.elevateZoom-3.0.8.min.js') }}"></script>--}}
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
-<!-- Main js file that contents all jQuery plugins activation. -->
-<script src="{{ asset('assets/js/main.js?v=1.11') }}"></script>
 
 @if ($errors->any())
     <script>
