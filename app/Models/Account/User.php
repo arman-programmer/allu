@@ -23,6 +23,6 @@ class User extends Authenticatable
 
     public function addresses()
     {
-        return $this->hasMany('App\Models\Account\Addresses', 'user_id', 'id');
+        return $this->hasMany('App\Models\Account\Addresses', 'user_id');
     }
 }
