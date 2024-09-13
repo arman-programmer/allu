@@ -23,16 +23,6 @@ class OrderController extends Controller
     use LoginConfirm;
     use GetCartTrait;
 
-    public function follow($id)
-    {
-        $order = Orders::where('id', $id)->first();
-        $products = OrderProducts::where('order_id', $id)->get();
-        return view('orders.follow', compact(
-            'order',
-            'products'
-        ));
-    }
-
     public function checkout()
     {
         $products = $this->getCartItems();

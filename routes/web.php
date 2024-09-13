@@ -50,7 +50,6 @@ Route::post('/cart/update/', [CartController::class, 'update'])->name('cart.upda
 
 Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [OrderController::class, 'create'])->name('checkout.create');
-Route::get('/checkout/follow/{id}', [OrderController::class, 'follow'])->name('checkout.follow');
 
 Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
 Route::get('/post/{id}', [PostsController::class, 'post'])->name('post');
