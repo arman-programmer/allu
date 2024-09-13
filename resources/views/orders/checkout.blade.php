@@ -93,11 +93,6 @@
                     <input name="address" type="address" class="form-control" list="list-addresses"
                            id="input-datalist"
                            placeholder="Улица, дом, номер квартиры" value="{{ old('address') }}">
-                    <datalist id="list-addresses">
-                        @foreach($addresses as $address)
-                            <option>{{ $address }}</option>
-                        @endforeach
-                    </datalist>
                 </div>
                 @error('address')
                 <div class="text-danger">{{ $message }}</div>
@@ -124,8 +119,4 @@
         </div>
     </form>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', e => {
-        $('#input-datalist').autocomplete()
-    }, false);
-</script>
+
