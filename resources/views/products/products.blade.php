@@ -73,18 +73,7 @@
                     <!-- Start Sort Left Side -->
                     <div class="sort-box__left">
                         <div class="sort-box__tab">
-                            <ul class="sort-box__tab-list nav">
-                                <li>
-                                    <a class="sort-nav-link active" data-toggle="tab" href="#sort-grid">
-                                        <i class="icon-grid"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="sort-nav-link" data-toggle="tab" href="#sort-list">
-                                        <i class="icon-list"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <i class="icon-grid"></i>
                         </div>
                         @if($products->count() == 1)
                             <span>Отображается {{ $products->count() }} товар из {{ $products->total() }}.</span>
@@ -108,103 +97,99 @@
                         </div>
                     </div>
                 </div> <!-- ::::::  Start Sort Box Section  ::::::  -->
-                <div class="product-tab-area">
-                    <div class="tab-content ">
-                        @if (!empty($sub))
-                            <div class="row">
-                                @foreach ($sub as $category)
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="product-grid">
-                                            <div class="product-image">
-                                                <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                                   class="image">
-                                                    @if($category->thumb)
-                                                        <img class="pic-1" src="{{ $category->thumb }}" alt="">
-                                                    @else
-                                                        <img class="img-fluid"
-                                                             src="{{ asset('assets/placeholder.svg') }}" alt="">
-                                                    @endif
-                                                </a>
-                                            </div>
-                                            <div class="product-content">
-                                                <h5 class="title">
-                                                    <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
-                                                </h5>
-                                                <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                                   class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10 m-b-10">
-                                                    Перейти
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                        <div class="row">
-                            @foreach($products as $product)
-                                <div class="col-6 col-md-4 col-lg-3">
-                                    <div class="product-grid">
-                                        <div class="product-image">
-                                            <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
-                                                @if($product->images->isNotEmpty() && $product->images->first())
-                                                    <img class="img-fluid"
-                                                         src="{{ $product->images->first()->link }}" alt="">
-                                                @else
-                                                    <img class="img-fluid"
-                                                         src="{{ asset('assets/placeholder.svg') }}" alt="">
-                                                @endif
-                                            </a>
-                                            @if ($product->old_price != null && $product->old_price > $product->price)
-                                                @php
-                                                    $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
-                                                @endphp
-                                                <span
-                                                    class="product-discount-label">{{ number_format($discount, 0) }} %</span>
+                @if (!empty($sub))
+                    <div class="row">
+                        @foreach ($sub as $category)
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="product-grid">
+                                    <div class="product-image">
+                                        <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                           class="image">
+                                            @if($category->thumb)
+                                                <img class="pic-1" src="{{ $category->thumb }}" alt="">
+                                            @else
+                                                <img class="img-fluid"
+                                                     src="{{ asset('assets/placeholder.svg') }}" alt="">
                                             @endif
-                                        </div>
-                                        <div class="product-content">
-                                            @php
-                                                $averageRating = round($product->reviews->avg('stars'), 2);
-                                            @endphp
-                                            <ul class="rating">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    @if ($i <= $averageRating)
-                                                        <li class="fas fa-star"></li>
-                                                    @else
-                                                        <li class="far fa-star"></li>
-                                                    @endif
-                                                @endfor
-                                                <li class="far">{{ $averageRating }}
-                                                    ({{ $product->reviews->count()}})
-                                                </li>
-                                            </ul>
-                                            <h5 class="title">
-                                                <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
-                                            </h5>
-                                            <div class="price">
-                                                @if($product->old_price != null)
-                                                    <span>{{ $product->old_price }} тг.</span>
-                                                @endif
-                                                {{ $product->price }} тг.
-                                            </div>
-                                            <form
-                                                action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                                method="post" class="add-to-cart-form">
-                                                @csrf
-                                                <button type="button"
-                                                        class="btn btn--box btn--small btn--blue btn--uppercase btn--weight add-to-cart-btn"
-                                                        data-product-id="{{ $product->id }}" data-quantity="1">
-                                                    в корзину
-                                                </button>
-                                            </form>
-                                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="product-content">
+                                        <h5 class="title">
+                                            <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                                        </h5>
+                                        <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                           class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10 m-b-10">
+                                            Перейти
+                                        </a>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
-                    {{ $products->links('common.paginator') }}
+                @endif
+                <div class="row">
+                    @foreach($products as $product)
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
+                                        @if($product->images->isNotEmpty() && $product->images->first())
+                                            <img class="img-fluid"
+                                                 src="{{ $product->images->first()->link }}" alt="">
+                                        @else
+                                            <img class="img-fluid"
+                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                        @endif
+                                    </a>
+                                    @if ($product->old_price != null && $product->old_price > $product->price)
+                                        @php
+                                            $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
+                                        @endphp
+                                        <span
+                                            class="product-discount-label">{{ number_format($discount, 0) }} %</span>
+                                    @endif
+                                </div>
+                                <div class="product-content">
+                                    @php
+                                        $averageRating = round($product->reviews->avg('stars'), 2);
+                                    @endphp
+                                    <ul class="rating">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $averageRating)
+                                                <li class="fas fa-star"></li>
+                                            @else
+                                                <li class="far fa-star"></li>
+                                            @endif
+                                        @endfor
+                                        <li class="far">{{ $averageRating }}
+                                            ({{ $product->reviews->count()}})
+                                        </li>
+                                    </ul>
+                                    <h5 class="title">
+                                        <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
+                                    </h5>
+                                    <div class="price">
+                                        @if($product->old_price != null)
+                                            <span>{{ $product->old_price }} тг.</span>
+                                        @endif
+                                        {{ $product->price }} тг.
+                                    </div>
+                                    <form
+                                        action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
+                                        method="post" class="add-to-cart-form">
+                                        @csrf
+                                        <button type="button"
+                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight add-to-cart-btn"
+                                                data-product-id="{{ $product->id }}" data-quantity="1">
+                                            в корзину
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
+                {{ $products->links('common.paginator') }}
             @endif
         </div>
     </div>
@@ -230,7 +215,7 @@
                         if (data.success) {
                             toasts.push({
                                 title: 'Успешно!',
-                                content: data.success,
+                                content: data.message,
                                 link: "{{ route('cart') }}",
                                 style: 'success'
                             });
