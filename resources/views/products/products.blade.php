@@ -138,6 +138,28 @@
                                     @endforeach
                                 @endif
                             </div>
+                            @if (!empty($sub))
+                                <div class="row">
+                                    @foreach ($sub as $category)
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="product-grid">
+                                                <div class="product-image">
+                                                    <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                                       class="image">
+                                                        <img class="pic-1" src="images/img-1.jpg"
+                                                             alt="{{$category->name}}">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <h5 class="title">
+                                                        <a href="{{ route('products.category', ['id' => $category->id]) }}">{{$category->name}}</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             <div class="row">
                                 @foreach($products as $product)
                                     <div class="col-6 col-md-4 col-lg-3">
@@ -150,7 +172,8 @@
                                                     @php
                                                         $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
                                                     @endphp
-                                                    <span class="product-discount-label">{{ number_format($discount, 0) }} %</span>
+                                                    <span
+                                                        class="product-discount-label">{{ number_format($discount, 0) }} %</span>
                                                 @endif
                                             </div>
                                             <div class="product-content">
@@ -192,89 +215,90 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div>
-                        <div class="tab-pane shop-list" id="sort-list">
-                            @foreach ($products as $product)
-                                <!-- Start Single List Product -->
-                                <div class="product__box product__box--list">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-4">
-                                            <div class="product__img-box m-b-20">
-                                                <a href="{{ route('product', ['id' => $product->id]) }}"
-                                                   class="product__img--link">
-                                                    @if($product -> images->isNotEmpty())
-                                                        @foreach($product -> images as $image)
-                                                            @if($product->thumb == $image->count)
-                                                                @if($product->stock <= 0)
-                                                                    <img class="product__img grayscale"
-                                                                         src="{{ $image->link }}"
-                                                                         alt="">
-                                                                @else
-                                                                    <img class="product__img" src="{{ $image->link }}"
-                                                                         alt="">
+                            <div class="tab-pane shop-list" id="sort-list">
+                                @foreach ($products as $product)
+                                    <!-- Start Single List Product -->
+                                    <div class="product__box product__box--list">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-4">
+                                                <div class="product__img-box m-b-20">
+                                                    <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                       class="product__img--link">
+                                                        @if($product -> images->isNotEmpty())
+                                                            @foreach($product -> images as $image)
+                                                                @if($product->thumb == $image->count)
+                                                                    @if($product->stock <= 0)
+                                                                        <img class="product__img grayscale"
+                                                                             src="{{ $image->link }}"
+                                                                             alt="">
+                                                                    @else
+                                                                        <img class="product__img"
+                                                                             src="{{ $image->link }}"
+                                                                             alt="">
+                                                                    @endif
                                                                 @endif
-                                                            @endif
-                                                        @endforeach
-                                                    @else
-                                                        <img class="product__img"
-                                                             src="{{ asset('assets/placeholder.svg') }}"
-                                                             alt="">
+                                                            @endforeach
+                                                        @else
+                                                            <img class="product__img"
+                                                                 src="{{ asset('assets/placeholder.svg') }}"
+                                                                 alt="">
+                                                        @endif
+                                                    </a>
+                                                    @if ($product->old_price != null && $product->old_price > $product->price)
+                                                        @php
+                                                            $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
+                                                        @endphp
+                                                        <span class="product__tag product__tag--discount"> {{ number_format($discount, 0) }} %</span>
                                                     @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-5 pos-relative">
+                                                <div class="border-right pos-absolute"></div>
+                                                <div class="product__price">
+                                                    @if($product->old_price != null)
+                                                        <span
+                                                            class="product__price-del">{{ $product->old_price }} тг</span>
+                                                    @endif
+                                                    <span class="product__price-reg">{{ $product->price }} тг</span>
+                                                    @if($product->stock == 0)
+                                                        <span class="product__price"> Нет в наличии</span>
+                                                    @endif
+                                                </div>
+                                                <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                   class="product__link product__link--underline product__link--weight-light m-t-15">
+                                                    {{ $product->name }}
                                                 </a>
-                                                @if ($product->old_price != null && $product->old_price > $product->price)
-                                                    @php
-                                                        $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
-                                                    @endphp
-                                                    <span class="product__tag product__tag--discount"> {{ number_format($discount, 0) }} %</span>
-                                                @endif
+                                                <div class="product__desc m-t-25 m-b-30">
+                                                    <p>{{ Str::limit($product->description, 320) }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-3">
+                                                <div>
+                                                    <ul class="shop__list-link">
+                                                        <form
+                                                            action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button type="submit"
+                                                                    class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
+                                                                в корзину
+                                                            </button>
+                                                        </form>
+                                                        {{--                                                    <li><a href="wishlist.html"--}}
+                                                        {{--                                                           class="link--gray link--icon-left shop__wishlist-icon m-b-5"><i--}}
+                                                        {{--                                                                class="icon-heart"></i>Нравиться</a></li>--}}
+                                                        <!-- <li><a href="#modalQuickView" data-toggle="modal" class="link--gray link--icon-left shop__quickview-icon"><i class="icon-eye"></i>Быстрый просмотр</a></li> -->
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-5 pos-relative">
-                                            <div class="border-right pos-absolute"></div>
-                                            <div class="product__price">
-                                                @if($product->old_price != null)
-                                                    <span class="product__price-del">{{ $product->old_price }} тг</span>
-                                                @endif
-                                                <span class="product__price-reg">{{ $product->price }} тг</span>
-                                                @if($product->stock == 0)
-                                                    <span class="product__price"> Нет в наличии</span>
-                                                @endif
-                                            </div>
-                                            <a href="{{ route('product', ['id' => $product->id]) }}"
-                                               class="product__link product__link--underline product__link--weight-light m-t-15">
-                                                {{ $product->name }}
-                                            </a>
-                                            <div class="product__desc m-t-25 m-b-30">
-                                                <p>{{ Str::limit($product->description, 320) }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-3">
-                                            <div>
-                                                <ul class="shop__list-link">
-                                                    <form
-                                                        action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <button type="submit"
-                                                                class="btn btn--box btn--small btn--blue btn--uppercase btn--weight">
-                                                            в корзину
-                                                        </button>
-                                                    </form>
-                                                    {{--                                                    <li><a href="wishlist.html"--}}
-                                                    {{--                                                           class="link--gray link--icon-left shop__wishlist-icon m-b-5"><i--}}
-                                                    {{--                                                                class="icon-heart"></i>Нравиться</a></li>--}}
-                                                    <!-- <li><a href="#modalQuickView" data-toggle="modal" class="link--gray link--icon-left shop__quickview-icon"><i class="icon-eye"></i>Быстрый просмотр</a></li> -->
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- Start Single List Product -->
-                            @endforeach
+                                    </div> <!-- Start Single List Product -->
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
-                {{ $products->links('common.paginator') }}
-            @endif
-        </div> <!-- Start Rightside - Content -->
-    </div>
+                    {{ $products->links('common.paginator') }}
+                    @endif
+                </div> <!-- Start Rightside - Content -->
+        </div>
 @endsection
