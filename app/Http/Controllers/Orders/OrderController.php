@@ -44,6 +44,7 @@ class OrderController extends Controller
         $cities = City::pluck('name', 'id');
         $current_city = City::find($this->getCurrentCity())->name;
         $addresses = User::where('id', Auth::id())->with(['addresses']);
+        dd($addresses);
         return view('orders.checkout', compact(
             'products',
             'total',
