@@ -108,7 +108,7 @@ class OrderController extends Controller
             $this->userConfirmSave($request->phone);
             return redirect()->route('confirm')->with('info', 'Подтвердите номер');
         }
-        return redirect()->route('home', ['id' => $order->id])->with('success', 'Ваш заказ успешно сформирован!');
+        return redirect()->route('home', ['id' => $order->id])->with('success', 'Ваш заказ успешно сформирован!')->with('info', 'Вы можете следить за статусом в личном кабинете!');
     }
 
 }
