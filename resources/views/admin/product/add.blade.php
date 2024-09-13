@@ -215,6 +215,7 @@
                             <div class="img-responsive img-responsive-1x1 rounded-3 border"
                                  style="background-image: url(${response.file})"></div>
                         </a>
+                        <input type="hidden" name="image-${Date.now()}" value="${response.file}">
                     </div>
                 `;
                         photoGallery.insertAdjacentHTML('beforeend', newPhotoHtml);

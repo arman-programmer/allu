@@ -117,17 +117,21 @@ class ProductAdminController extends Controller
         $size->save();
 
 
+        // Получение всех данных из запроса
         $requestData = $request->all();
 
-        $maxCount = ProductImages::where('product_id', $product->id)->max('count');
+        // Установка начального значения счетчика
+        $maxCount = ProductImages::where('product_id', $productId)->max('count');
         $count = ($maxCount !== null) ? $maxCount + 1 : 1;
+
         foreach ($requestData as $key => $value) {
+            // Поиск ключей, начинающихся с 'image-'
             if (strpos($key, 'image-') === 0) {
-                // Получение ссылки на изображение
+                // Получение URL изображения
                 $imageLink = $value;
 
                 // Проверка наличия изображения в базе данных
-                $existingImage = ProductImages::where('product_id', $product->id)
+                $existingImage = ProductImages::where('product_id', $productId)
                     ->where('link', $imageLink)
                     ->first();
 
@@ -138,14 +142,14 @@ class ProductAdminController extends Controller
 
                 // Создание новой записи для изображения
                 $productImage = new ProductImages();
-                $productImage->product_id = $product->id;
+                $productImage->product_id = $productId;
                 $productImage->link = $imageLink;
-                $productImage->count = $count++; // увеличение счетчика и его присвоение
+                $productImage->count = $count++; // Увеличение счетчика и его присвоение
                 $productImage->save();
             }
         }
 
-        return redirect()->route('admin.products');
+        return redirect()->route('admin.products')->with('success', 'Продукт создан');
     }
 
     public function on($id)
