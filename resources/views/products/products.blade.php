@@ -120,7 +120,7 @@
                                                 <div class="product-image">
                                                     <a href="{{ route('products.category', ['id' => $category->id]) }}"
                                                        class="image">
-                                                        @if($category->thumb->isNotEmpty())
+                                                        @if($category->thumb)
                                                             <img class="pic-1" src="{{ $category->thumb }}" alt="">
                                                         @else
                                                             <img class="img-fluid"
