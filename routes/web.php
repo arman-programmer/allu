@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManufacturerAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\ReviewAdminController;
+use App\Http\Controllers\Api\ApiCategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Account\AuthController;
 use App\Http\Controllers\Account\CartController;
@@ -105,7 +106,10 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/country/delete/{id}', [CountryAdminController::class, 'delete'])->name('admin.country.delete');
 });
 
-Route::get('/api/products', [ApiProductController::class, 'index'])->name('api.index');
-Route::post('/api/products', [ApiProductController::class, 'store'])->name('api.store');
-Route::put('/api/product/{id}', [ApiProductController::class, 'update'])->name('api.update');
-Route::delete('/api/product/{id}', [ApiProductController::class, 'destroy'])->name('api.destroy');
+Route::get('/api/products', [ApiProductController::class, 'read']);
+Route::post('/api/product', [ApiProductController::class, 'create']);
+Route::put('/api/product/{id}', [ApiProductController::class, 'update']);
+Route::delete('/api/product/{id}', [ApiProductController::class, 'destroy']);
+
+Route::get('/api/categories', [ApiCategoryController::class, 'read']);
+Route::post('/api/category', [ApiCategoryController::class, 'create']);
