@@ -13,7 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except: [
-            'http://allu.kz/api/products'
+            'http://allu.kz/api/product',
+            'http://allu.kz/api/category'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

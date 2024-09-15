@@ -106,10 +106,10 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/country/delete/{id}', [CountryAdminController::class, 'delete'])->name('admin.country.delete');
 });
 
-Route::get('/api/products', [ApiProductController::class, 'read']);
+Route::get('/api/product', [ApiProductController::class, 'read']);
 Route::post('/api/product', [ApiProductController::class, 'create']);
 Route::put('/api/product/{id}', [ApiProductController::class, 'update']);
 Route::delete('/api/product/{id}', [ApiProductController::class, 'destroy']);
 
-Route::get('/api/categories', [ApiCategoryController::class, 'read']);
-Route::post('/api/categories', [ApiCategoryController::class, 'create']);
+Route::get('/api/category', [ApiCategoryController::class, 'read']);
+Route::post('/api/category', [ApiCategoryController::class, 'create']);
