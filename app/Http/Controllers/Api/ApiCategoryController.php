@@ -22,6 +22,6 @@ class ApiCategoryController extends Controller
         $category->sub = $request->sub;
         $category->status = 0;
         $category->save();
-        return response()->json($category->id, 201);
+        return response()->json($category, 201);
     }
 }
