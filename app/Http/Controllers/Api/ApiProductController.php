@@ -15,8 +15,7 @@ class ApiProductController extends Controller
 
     public function store(Request $request)
     {
-        $product = Products::create($request->all());
-        return response()->json($product, 201);
+        return response()->json($request, 201);
     }
 
     public function update(Request $request, $id)
