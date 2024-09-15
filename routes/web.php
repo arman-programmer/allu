@@ -112,4 +112,4 @@ Route::put('/api/product/{id}', [ApiProductController::class, 'update']);
 Route::delete('/api/product/{id}', [ApiProductController::class, 'destroy']);
 
 Route::get('/api/categories', [ApiCategoryController::class, 'read']);
-Route::post('/api/category', [ApiCategoryController::class, 'create']);
+Route::post('/api/categories', [ApiCategoryController::class, 'create']);
