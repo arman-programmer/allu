@@ -16,13 +16,12 @@ class ApiCategoryController extends Controller
 
     public function create(Request $request)
     {
-        $product = new Products();
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->stock = rand(5, 100);
-        $product->city_id = 1;
-        $product->status = 0;
-        $product->save();
-        return response()->json($product, 201);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->thumb = $request->thumb;
+        $category->sub = $request->sub;
+        $category->status = 0;
+        $category->save();
+        return response()->json($category->id, 201);
     }
 }
