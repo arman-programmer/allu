@@ -121,17 +121,17 @@
 
     $('.menu-content').each(function () {
         var $ul = $(this),
-            $lis = $ul.find('.menu-item:gt(7)'),
+            $lis = $ul.find('.menu-item:gt(12)'),
             isExpanded = $ul.hasClass('expanded');
         $lis[isExpanded ? 'show' : 'hide']();
 
         if ($lis.length > 0) {
             $ul
-                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>') + '</li>')
+                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><span><i class="icon-minus-square"></i>Скрыть</span></a>' : '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>') + '</li>')
                     .on('click', function (event) {
                         var isExpanded = $ul.hasClass('expanded');
                         event.preventDefault();
-                        $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>');
+                        $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="icon-plus-square"></i>Больше категории</span></a>' : '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>');
                         $ul.toggleClass('expanded');
                         $lis.toggle(300);
                     }));
