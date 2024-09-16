@@ -6101,6 +6101,7 @@ hr {
     overflow: hidden;
     transition: all 0.4s ease-out;
     margin: 15px 0;
+    padding: 10px 10px 0 10px;
 }
 
 .product-grid:hover {
@@ -6206,8 +6207,8 @@ hr {
 }
 
 .product-grid .product-content {
-    padding: 10px 10px 0 10px;
     position: relative;
+    margin-top: 10px;
 }
 
 .product-grid .rating {

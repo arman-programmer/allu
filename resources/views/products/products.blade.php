@@ -48,6 +48,9 @@
         <!-- Start Rightside - Content -->
         <div class="col-lg-9">
             @if (!empty($sub))
+                <div class="section-content">
+                    <h5 class="section-content__title">Подкатегории:</h5>
+                </div>
                 <div class="row">
                     @foreach ($sub as $category)
                         <div class="col-6 col-md-4 col-lg-3">
@@ -88,12 +91,12 @@
                 <div class="page-not-found text-center m-t-30">
                     <img src="{{ asset('assets/mushroom.jpg') }}" alt="">
                     @if (!empty($search))
-                        <p>По вашему запросу "{{ $search }}" ничего не найдено :(</p>
+                        <p class="m-t-20">По вашему запросу "{{ $search }}" ничего не найдено :(</p>
                     @else
-                        <p>В каталоге нет ни одного товара :(</p>
+                        <p class="m-t-20">В каталоге нет ни одного товара :(</p>
                     @endif
                     <a href="{{ URL::previous() }}"
-                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight color-white m-t-10">
+                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight color-white">
                         Назад
                     </a>
                 </div>
