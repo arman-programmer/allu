@@ -96,14 +96,8 @@
             {{--                    </div>--}}
             {{--                </div>--}}
             {{--            </div> <!-- ::::::  End banner Section  ::::::  -->--}}
-            <!-- ::::::  Start  Product Style - Default Section [2column]  ::::::  -->
-            <div class="row">
-                <div class="col-12">
-                    <div
-                        class="section-content section-content--border d-md-flex align-items-center justify-content-between m-b-30">
-                        <h5 class="section-content__title">Категории товаров: </h5>
-                    </div>
-                </div>
+            <div class="section-content">
+                <h5 class="section-content__title">Все категории товаров:</h5>
             </div>
             <div class="row">
                 @foreach ($categories as $category)

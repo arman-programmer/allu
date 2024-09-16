@@ -6227,7 +6227,8 @@ hr {
 
 .product-grid .title {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .product-grid .title a {
