@@ -115,28 +115,28 @@
     /**********************
      * Vertical Menu
      ***********************/
-    // $('.header-menu-vertical .menu-title').on('click', function (event) {
-    //   $('.header-menu-vertical .menu-content').slideToggle(500);
-    // });
+    $('.header-menu-vertical .menu-title').on('click', function (event) {
+        $('.header-menu-vertical .menu-content').slideToggle(500);
+    });
 
-    // $('.menu-content').each(function () {
-    //     var $ul = $(this),
-    //         $lis = $ul.find('.menu-item:gt(7)'),
-    //         isExpanded = $ul.hasClass('expanded');
-    //     $lis[isExpanded ? 'show' : 'hide']();
+    $('.menu-content').each(function () {
+        var $ul = $(this),
+            $lis = $ul.find('.menu-item:gt(7)'),
+            isExpanded = $ul.hasClass('expanded');
+        $lis[isExpanded ? 'show' : 'hide']();
 
-    //     if ($lis.length > 0) {
-    //         $ul
-    //             .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>') + '</li>')
-    //                 .on('click',function (event) {
-    //                     var isExpanded = $ul.hasClass('expanded');
-    //                     event.preventDefault();
-    //                     $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>');
-    //                     $ul.toggleClass('expanded');
-    //                     $lis.toggle(300);
-    //                 }));
-    //     }
-    // });
+        if ($lis.length > 0) {
+            $ul
+                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>') + '</li>')
+                    .on('click', function (event) {
+                        var isExpanded = $ul.hasClass('expanded');
+                        event.preventDefault();
+                        $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="icon-plus-square"></i>More Categories</span></a>' : '<a href="javascript:;"><span><i class="icon-minus-square"></i>Close Categories</span></a>');
+                        $ul.toggleClass('expanded');
+                        $lis.toggle(300);
+                    }));
+        }
+    });
 
     /*--------------------
     Category more toggle
@@ -759,7 +759,7 @@
             });
         }, 1000);
     });
-    
+
     /******************************************************
      * Blog Slider - Single Slide
      ******************************************************/
