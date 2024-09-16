@@ -17,7 +17,7 @@ class ApiProductController extends Controller
 
     public function create(Request $request)
     {
-        $category = Category::where('name', $request->category)->get();
+        $category = Category::where('name', $request->category)->first();;
         $product = new Products();
         $product->name = $request->name;
         $product->price = $request->price;
