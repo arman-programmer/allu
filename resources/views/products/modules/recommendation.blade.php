@@ -19,21 +19,16 @@
                                         <div class="product__img-box">
                                             <a href="{{ route('product', $recommendation->id) }}"
                                                class="product__img--link">
-                                                @if($recommendation -> images->isNotEmpty())
-                                                    @foreach($recommendation -> images as $image)
-                                                        @if($recommendation->thumb == $image->count)
-                                                            <img class="product__img" src="{{ $image->link }}"
-                                                                 alt="{{ $recommendation->name }}">
-                                                        @endif
-                                                    @endforeach
+                                                @if($recommendation->images->isNotEmpty() && $recommendation->images->first())
+                                                    <img class="product__img"
+                                                         src="{{ $recommendation->images->first()->link }}" alt="">
                                                 @else
                                                     <img class="product__img"
-                                                         src="{{ asset('assets/placeholder.svg') }}"
-                                                         alt="{{ $recommendation->name }}">
+                                                         src="{{ asset('assets/placeholder.svg') }}" alt="">
                                                 @endif
                                             </a>
                                             <form
-                                                action="{{ route('cart.add', ['product_id' => $product->id, 'quantity' => 1]) }}"
+                                                action="{{ route('cart.add', ['product_id' => $recommendation->id, 'quantity' => 1]) }}"
                                                 method="post">
                                                 @csrf
                                                 <button type="submit"
