@@ -47,11 +47,10 @@
         </div> <!-- End Left Sidebar -->
         <!-- Start Rightside - Content -->
         <div class="col-lg-9">
-            @if (!empty($sub))
+            @if ($sub->count() == 0)
                 <div class="section-content">
                     <h5 class="section-content__title">Подкатегории:</h5>
                 </div>
-                @dd($sub)
                 <div class="row">
                     @foreach ($sub as $category)
                         <div class="col-6 col-md-4 col-lg-3">
