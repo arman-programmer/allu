@@ -6208,7 +6208,6 @@ hr {
 
 .product-grid .product-content {
     position: relative;
-    margin-top: 10px;
 }
 
 .product-grid .rating {
@@ -6228,6 +6227,7 @@ hr {
 
 .product-grid .title {
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .product-grid .title a {
