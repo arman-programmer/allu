@@ -47,7 +47,7 @@
         </div> <!-- End Left Sidebar -->
         <!-- Start Rightside - Content -->
         <div class="col-lg-9">
-            @if ($sub->count() == 0)
+            @if ($sub->count() != 0)
                 <div class="section-content">
                     <h5 class="section-content__title">Подкатегории:</h5>
                 </div>
