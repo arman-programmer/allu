@@ -71,7 +71,7 @@ class AuthController extends Controller
         // Очищаем куки
         $request->session()->forget('cart');
         $confirm->delete();
-        $previousUrl = url()->previous();
+        $previousUrl = url();
         dd($previousUrl);
         return redirect()->back()->with('success', 'Вы вошли в аккаунт!');
     }
