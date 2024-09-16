@@ -74,11 +74,18 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-
+        $current_city = $this->getCurrentCity();
+        $sortField = $request->input('sort_field', 'id');
+        $sortDirection = $request->input('sort_direction', 'asc');
         $products = Products::where('name', 'like', "%$search%")
-            ->orWhere('description', 'like', "%$search%")->where('status', 1)
+            ->orWhere('description', 'like', "%$search%")
+            ->where('status', 1)
+            ->where('city_id', $current_city)
+            ->orderBy($sortField, $sortDirection)
+            ->with(['images', 'reviews'])
             ->paginate(16);
-        return view('products.products', compact('products', 'search'));
+        $categories = Category::where('status', 1)->get();
+        return view('products.products', compact('products', 'categories', 'search'));
     }
 
     public function country($id)

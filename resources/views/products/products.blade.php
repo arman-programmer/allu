@@ -47,38 +47,40 @@
         </div> <!-- End Left Sidebar -->
         <!-- Start Rightside - Content -->
         <div class="col-lg-9">
-            @if ($sub->count() != 0)
-                <div class="section-content">
-                    <h5 class="section-content__title">Подкатегории:</h5>
-                </div>
-                <div class="row">
-                    @foreach ($sub as $category)
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="product-grid">
-                                <div class="product-image">
-                                    <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                       class="image">
-                                        @if($category->thumb)
-                                            <img class="pic-1" src="{{ $category->thumb }}" alt="">
-                                        @else
-                                            <img class="img-fluid"
-                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
-                                        @endif
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="title">
-                                        <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
-                                    </h5>
-                                    <a href="{{ route('products.category', ['id' => $category->id]) }}"
-                                       class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
-                                        Перейти
-                                    </a>
+            @if (!request()->is('products/search*'))
+                @if ($sub->count() != 0)
+                    <div class="section-content">
+                        <h5 class="section-content__title">Подкатегории:</h5>
+                    </div>
+                    <div class="row">
+                        @foreach ($sub as $category)
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="product-grid">
+                                    <div class="product-image">
+                                        <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                           class="image">
+                                            @if($category->thumb)
+                                                <img class="pic-1" src="{{ $category->thumb }}" alt="">
+                                            @else
+                                                <img class="img-fluid"
+                                                     src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                            @endif
+                                        </a>
+                                    </div>
+                                    <div class="product-content">
+                                        <h5 class="title">
+                                            <a href="{{ route('products.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                                        </h5>
+                                        <a href="{{ route('products.category', ['id' => $category->id]) }}"
+                                           class="btn btn--box btn--small btn--blue btn--uppercase btn--weight m-t-10">
+                                            Перейти
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
+                @endif
             @endif
             @if ($products->count() == 0)
                 <div class="section-content">
