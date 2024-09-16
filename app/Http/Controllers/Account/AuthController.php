@@ -72,7 +72,7 @@ class AuthController extends Controller
         $request->session()->forget('cart');
         $confirm->delete();
         $previousUrl = url()->previous();
-        dd($previousUrl)
+        dd($previousUrl);
         return redirect()->back()->with('success', 'Вы вошли в аккаунт!');
     }
 
