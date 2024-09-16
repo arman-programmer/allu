@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugin/venobox.min.css') }}">
 
     <!-- Main Style CSS File -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.21') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css?v=1.22') }}">
 </head>
 <body>
 <header>
@@ -61,7 +61,7 @@
 {{--<script src="{{ asset('assets/js/jquery.elevateZoom-3.0.8.min.js') }}"></script>--}}
 <script src="{{ asset('assets/js/venobox.min.js') }}"></script>
 
-<script src="{{ asset('assets/js/main.js?v=1.13') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=1.14') }}"></script>
 @if ($errors->any())
     <script>
         @foreach ($errors->all() as $error)
