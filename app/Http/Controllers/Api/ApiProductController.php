@@ -23,7 +23,7 @@ class ApiProductController extends Controller
         $product->city_id = 1;
         $product->status = 0;
         $product->save();
-        $count = 0;
+        $count = 1;
         foreach ($request->images as $image) {
             $productImage = new ProductImages();
             $productImage->product_id = $product->id;
