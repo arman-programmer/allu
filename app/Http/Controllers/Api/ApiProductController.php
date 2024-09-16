@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Products\ProductImages;
 use App\Models\Products\Products;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,15 @@ class ApiProductController extends Controller
         $product->city_id = 1;
         $product->status = 0;
         $product->save();
-        return response()->json($product, 201);
+        $count = 0;
+        foreach ($request->images as $image) {
+            $productImage = new ProductImages();
+            $productImage->product_id = $product->id;
+            $productImage->link = $image;
+            $productImage->count = $count++;
+            $productImage->save();
+        }
+        return response()->json($product->id, 201);
     }
 
     public function update(Request $request, $id)
