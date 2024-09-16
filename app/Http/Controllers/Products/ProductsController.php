@@ -23,15 +23,27 @@ class ProductsController extends Controller
         $current_city = $this->getCurrentCity();
         $sortField = $request->input('sort_field', 'id');
         $sortDirection = $request->input('sort_direction', 'asc');
+        $sub = Category::where('sub', $id)->get();
         $products = Products::where('category_id', $id)
             ->where('status', 1)
             ->where('city_id', $current_city)
             ->orderBy($sortField, $sortDirection)
             ->with(['images', 'reviews'])
             ->paginate(16);
+        if ($products->isEmpty()) {
+            // Получаем все ID субкатегорий
+            $subCategoryIds = Category::where('sub', $id)->pluck('id');
+
+            // Получаем продукты из всех субкатегорий
+            $products = Products::whereIn('category_id', $subCategoryIds)
+                ->where('status', 1)
+                ->where('city_id', $current_city)
+                ->orderBy($sortField, $sortDirection)
+                ->with(['images', 'reviews'])
+                ->paginate(16);
+        }
         $categories = Category::where('status', 1)->get();
         $category = $categories->where('id', $id)->first();
-        $sub = Category::where('sub', $id)->get();
         return view('products.products', compact('products', 'categories', 'sub', 'category'));
     }
 
