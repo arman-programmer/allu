@@ -29,7 +29,7 @@ class OrderController extends Controller
         $total = $products[1];
         $products = $products[0];
         if ($products == null) {
-            return redirect()->route('cart');
+            return redirect()->route('home');
         }
         $cities = City::pluck('name', 'id');
         $current_city = City::find($this->getCurrentCity())->name;

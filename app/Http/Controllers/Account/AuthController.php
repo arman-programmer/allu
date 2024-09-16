@@ -71,9 +71,7 @@ class AuthController extends Controller
         // Очищаем куки
         $request->session()->forget('cart');
         $confirm->delete();
-        $previousUrl = url()->previous();
-        dd($previousUrl);
-        return redirect()->back()->with('success', 'Вы вошли в аккаунт!');
+        return redirect()->route('checkout')->with('success', 'Вы вошли в аккаунт!');
     }
 
     public function confirmPage(Request $request)
