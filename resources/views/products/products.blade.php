@@ -192,18 +192,4 @@
             @endif
         </div>
     </div>
-    <script>
-        document.querySelectorAll('#gallery-zoom .zoom-active').forEach(function (thumbnail) {
-            thumbnail.addEventListener('click', function (event) {
-                event.preventDefault();
-                // Получаем URL выбранного изображения
-                var newImageSrc = this.getAttribute('data-image');
-                // Находим элемент главного изображения
-                var mainImage = document.querySelector('.product-image--large img');
-                // Заменяем src главного изображения на выбранный
-                mainImage.setAttribute('src', newImageSrc);
-            });
-        });
-
-    </script>
 @endsection
