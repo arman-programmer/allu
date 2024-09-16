@@ -97,44 +97,39 @@
             {{--                </div>--}}
             {{--            </div> <!-- ::::::  End banner Section  ::::::  -->--}}
             <!-- ::::::  Start  Product Style - Default Section [2column]  ::::::  -->
-            <div class="product product--1 swiper-outside-arrow-hover">
-                <div class="row">
-                    <div class="col-12">
-                        <div
-                            class="section-content section-content--border d-md-flex align-items-center justify-content-between m-b-30">
-                            <h5 class="section-content__title">Категории товаров: </h5>
-                        </div>
+            <div class="row">
+                <div class="col-12">
+                    <div
+                        class="section-content section-content--border d-md-flex align-items-center justify-content-between m-b-30">
+                        <h5 class="section-content__title">Категории товаров: </h5>
                     </div>
                 </div>
             </div>
-            <div class="product-tab-area">
-                <div class="tab-content ">
-                    <div class="tab-pane show active clearfix" id="sort-grid">
-                        @foreach ($categories as $category)
-                            @if (empty($category->sub))
-                                <!-- Start Single Default Product -->
-                                <div
-                                    class="product__box product__box--default product__box--border-hover text-center float-left float-4">
-                                    <div class="product__img-box">
-                                        <a href="{{ route('products.category', $category->id) }}"
-                                           class="product__img--link">
-                                            @if (!empty($category->thumb))
-                                                <img class="product__img" src="{{ $category->thumb }}" alt="">
-                                            @else
-                                                <img class="product__img" src="{{ asset('assets/placeholder.svg') }}"
-                                                     alt="">
-                                            @endif
-                                        </a>
-                                    </div>
-                                    <a href="shop"
-                                       class="product__link product__link--underline product__link--weight-light m-t-15">
-                                        {{ $category->name }}
+            <div class="row">
+                @foreach ($categories as $category)
+                    @if (empty($category->sub))
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="{{ route('products.category', $category->id) }}"
+                                       class="image">
+                                        @if($category->thumb)
+                                            <img class="pic-1" src="{{ $category->thumb }}" alt="">
+                                        @else
+                                            <img class="img-fluid"
+                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
+                                        @endif
                                     </a>
-                                </div> <!-- End Single Default Product -->
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="title">
+                                        <a href="{{ route('products.category', $category->id) }}">{{ $category->name }}</a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
