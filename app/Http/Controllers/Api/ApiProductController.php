@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Products\Category;
 use App\Models\Products\ProductImages;
 use App\Models\Products\Products;
 use Illuminate\Http\Request;
@@ -16,9 +17,11 @@ class ApiProductController extends Controller
 
     public function create(Request $request)
     {
+        $category = Category::where('name', $request->category)->get();
         $product = new Products();
         $product->name = $request->name;
         $product->price = $request->price;
+        $product->category_id = $category->id;
         $product->stock = rand(5, 100);
         $product->city_id = 1;
         $product->status = 0;
