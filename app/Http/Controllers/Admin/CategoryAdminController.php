@@ -13,7 +13,7 @@ class CategoryAdminController extends Controller
     {
         $categories = Category::withCount('products')
             ->get();
-        return view('admin.categories', compact('categories'));
+        return view('admin.product.categories', compact('categories'));
     }
 
     public function on($id)
