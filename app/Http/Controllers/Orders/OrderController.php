@@ -33,7 +33,7 @@ class OrderController extends Controller
         }
         $cities = City::pluck('name', 'id');
         $current_city = City::find($this->getCurrentCity())->name;
-        return view('orders.checkout', compact(
+        return view('order.checkout', compact(
             'products',
             'total',
             'cities',

@@ -76,7 +76,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::get('/admin/users/', [AdminController::class, 'users'])->name('admin.users');
     Route::get('/admin/users/online', [AdminController::class, 'online'])->name('admin.users.online');
 
-    Route::get('/admin/orders', [OrderAdminController::class, 'orders'])->name('admin.orders');
+    Route::get('/admin/order', [OrderAdminController::class, 'orders'])->name('admin.order');
 
     Route::get('/admin/products', [ProductAdminController::class, 'products'])->name('admin.products');
     Route::get('/admin/product/add/', [ProductAdminController::class, 'add'])->name('admin.product.add');
