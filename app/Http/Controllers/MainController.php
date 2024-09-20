@@ -16,10 +16,12 @@ class MainController extends Controller
 {
     public function home()
     {
-        $categories = Category::where('status', 1)->with('subCategory')->get();
+        $categories = Category::where('status', 1)->with('subcategories')->get();
         $posts = Posts::latest()->take(3)->get();
+
         return view('home', compact('categories', 'posts'));
     }
+
 
     // TODO: normalize call
     public function call(Request $request)
