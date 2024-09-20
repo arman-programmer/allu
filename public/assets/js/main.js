@@ -111,33 +111,6 @@
 
     mobileOffCanvasUserPanel();
 
-
-    /**********************
-     * Vertical Menu
-     ***********************/
-    $('.header-menu-vertical .menu-title').on('click', function (event) {
-        $('.header-menu-vertical .menu-content').slideToggle(500);
-    });
-
-    $('.menu-content').each(function () {
-        var $ul = $(this),
-            $lis = $ul.find('.menu-item:gt(12)'),
-            isExpanded = $ul.hasClass('expanded');
-        $lis[isExpanded ? 'show' : 'hide']();
-
-        if ($lis.length > 0) {
-            $ul
-                .append($('<li class="expand">' + (isExpanded ? '<a href="javascript:;"><span><i class="icon-minus-square"></i>Скрыть</span></a>' : '<a href="javascript:;"><span><i class="icon-plus-square"></i>Больше категории</span></a>') + '</li>')
-                    .on('click', function (event) {
-                        var isExpanded = $ul.hasClass('expanded');
-                        event.preventDefault();
-                        $(this).html(isExpanded ? '<a href="javascript:;"><span><i class="icon-plus-square"></i>Больше категории</span></a>' : '<a href="javascript:;"><span><i class="icon-minus-square"></i>Скрыть</span></a>');
-                        $ul.toggleClass('expanded');
-                        $lis.toggle(300);
-                    }));
-        }
-    });
-
     /*--------------------
     Category more toggle
     ----------------------*/

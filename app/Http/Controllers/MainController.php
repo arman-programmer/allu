@@ -16,11 +16,12 @@ class MainController extends Controller
 {
     public function home()
     {
-        $categories = Category::where('status', 1)->get();
+        $categories = Category::where('status', 1)->with('sub')->get();
         $posts = Posts::latest()->take(3)->get();
         return view('home', compact('categories', 'posts'));
     }
 
+    // TODO: normalize call
     public function call(Request $request)
     {
         $phone = mb_substr(preg_replace("/[^0-9]/", "", $request->phone), 1);

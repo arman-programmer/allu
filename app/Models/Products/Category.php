@@ -9,7 +9,7 @@ class Category extends Model
     protected $table = 'product_categories';
     protected $fillable = ['name', 'thumb', 'sub', 'status'];
 
-    public function subCategory()
+    public function sub()
     {
         return $this->belongsTo(Category::class, 'sub');
     }
