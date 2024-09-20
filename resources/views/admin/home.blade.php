@@ -997,7 +997,13 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="mb-3">Using Storage <strong>6854.45 MB </strong>of 8 GB</p>
+                                    <p class="mb-3">
+                                        Using Storage
+                                        <strong>
+                                            @php disk_free_space('/'); @endphp MB
+                                        </strong>
+                                        of 8 GB
+                                    </p>
                                     <div class="progress progress-separated mb-3">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 44%"
                                              aria-label="Regular"></div>
