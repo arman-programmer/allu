@@ -3,7 +3,7 @@
     <h4 class="menu-title link--icon-left"><i class="far fa-align-left"></i> Каталог</h4>
     <ul class="menu-content">
         @foreach ($categories as $category)
-            @if (empty($category->sub))
+            @if (empty($category->subCategory))
                 <li class="menu-item">
                     <a href="{{ route('products.category', $category->id) }}">{{ $category->name }} </a>
                 </li>
@@ -17,9 +17,9 @@
                     <ul class="sub-menu sub-menu-2">
                         <li>
                             <ul class="submenu-item">
-                                @foreach($category->sub as $subCategory)
+                                @foreach($subCategory as $sub)
                                     <li>
-                                        <a href="{{ route('products.category', $subCategory->id) }}">{{ $subCategory->name }}</a>
+                                        <a href="{{ route('products.category', $sub->id) }}">{{ $sub->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>

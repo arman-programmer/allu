@@ -16,7 +16,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        $categories = Category::where('status', 1)->with('sub')->get();
+        $categories = Category::where('status', 1)->with('subCategory')->get();
         $posts = Posts::latest()->take(3)->get();
         return view('home', compact('categories', 'posts'));
     }
