@@ -17,7 +17,7 @@
                     <ul class="sub-menu sub-menu-2">
                         <li>
                             <ul class="submenu-item">
-                                @foreach($subCategory as $sub)
+                                @foreach($category->subCategory as $sub)
                                     <li>
                                         <a href="{{ route('products.category', $sub->id) }}">{{ $sub->name }}</a>
                                     </li>
