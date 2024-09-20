@@ -31,7 +31,7 @@
                     </div>
                     <div class="contact-info-dec">
                         <span>Сайт:</span>
-                        <a href="https://allu.kz/">allu.kz</a>
+                        <a href="https://allu.kz/">https://allu.kz/</a>
                     </div>
                 </div>
                 <div class="single-contact-info">

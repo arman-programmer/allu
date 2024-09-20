@@ -16,8 +16,8 @@
 <body>
 <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
 <div class="page">
+    @include('admin.common.header_mobile')
     @include('admin.common.header')
-
     <div class="page-wrapper">
         @yield('main_content')
     </div>
