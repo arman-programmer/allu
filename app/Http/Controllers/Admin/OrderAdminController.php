@@ -11,7 +11,7 @@ class OrderAdminController extends Controller
     public function orders()
     {
         $orders = Orders::with('address.city', 'user')->get();
-        return view('admin.orders.order', compact(
+        return view('admin.order.orders', compact(
             'orders',
         ));
     }
