@@ -88,7 +88,13 @@
                                             <span class="badge bg-success me-1"></span> {{ $order->status }}
                                         </td>
                                         <td>
-                                            $887
+                                            @php
+                                                $totalSum = 0;
+                                                foreach ($order -> orderProducts as $item) {
+                                                    $totalSum += $item['price'] * $item['quantity'];
+                                                }
+                                            @endphp
+                                            {{ $totalSum }}
                                         </td>
                                         <td class="text-end">
                                             <div class="dropdown">
