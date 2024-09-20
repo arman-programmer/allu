@@ -17,11 +17,9 @@
             <div class="about-single m-t-30">
                 <h3 class="title title--small title--regular">Способы доставок:</h3>
                 <div class="para__content">
-                    <ul>
-                        <li class="ul">
-                            Бесплатная доставка в течение дня по городу Алматы
-                        </li>
-                    </ul>
+                    <p class="para__text">
+                        Бесплатная доставка в течение дня по городу Алматы
+                    </p>
                     <p class="para__text">
                         Интернет-магазин ALLU.kz гарантирует своевременную и
                         безопасную доставку своих товаров до двери.
@@ -33,9 +31,9 @@
             <div class="about-single m-t-30">
                 <h3 class="title title--small title--regular">Способы оплаты:</h3>
                 <div class="para__content">
-                    <ul>
-                        <li class="ul">Оплата наличными при получении товара.</li>
-                    </ul>
+                    <p class="para__text">
+                        Оплата наличными при получении товара.
+                    </p>
                     <p class="para__text">
                         Вы будете оплачивать за товар только после его получения и осмотра
                     </p>

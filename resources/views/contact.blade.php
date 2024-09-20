@@ -21,6 +21,7 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div class="contact-info-dec">
+                        <span>Номер телефона:</span>
                         <a href="tel://+77719093655">+7 771 909 36 55</a>
                     </div>
                 </div>
