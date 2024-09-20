@@ -69,8 +69,8 @@
                                             {{ $category->products_count }} шт.
                                         </td>
                                         <td>
-                                            @if($category->subCategory)
-                                                <div>{{ $category->subCategory->name }}</div>
+                                            @if($category->sub)
+                                                <div>{{ $category->sub }}</div>
                                             @endif
                                         </td>
                                         <td class="text-secondary">
