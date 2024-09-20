@@ -1000,7 +1000,10 @@
                                     <p class="mb-3">
                                         Using Storage
                                         <strong>
-                                            @php $usedMemoryMB = round(memory_get_usage() / 1024 / 1024, 2); @endphp MB
+                                            @php
+                                                $usedMemoryMB = round(memory_get_usage() / 1024 / 1024, 2);
+                                            echo $usedMemoryMB;
+                                            @endphp MB
                                         </strong>
                                         of 8 GB
                                     </p>
