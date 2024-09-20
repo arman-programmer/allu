@@ -1000,7 +1000,7 @@
                                     <p class="mb-3">
                                         Using Storage
                                         <strong>
-                                            @php disk_free_space('/'); @endphp MB
+                                            @php $usedMemoryMB = round(memory_get_usage() / 1024 / 1024, 2); @endphp MB
                                         </strong>
                                         of 8 GB
                                     </p>
