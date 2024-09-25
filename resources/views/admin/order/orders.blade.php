@@ -74,15 +74,7 @@
                                             {{ $order->comment ?? null }}
                                         </td>
                                         <td>
-                                            @php
-                                                $datetime = $order->created_at;
-                                                $dateTimeObj = new DateTime($datetime);
-                                                $date = $dateTimeObj->format('d.m.y');
-                                                $time = $dateTimeObj->format('H:i');
-                                            @endphp
-                                            {{ $date }}
-                                            <br>
-                                            {{ $time }}
+                                            {{ date("d.m.y H:i", $order->created_at) ?? null }}
                                         </td>
                                         <td>
                                             <span class="badge bg-success me-1"></span> {{ $order->status }}

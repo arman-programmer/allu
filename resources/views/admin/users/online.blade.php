@@ -49,7 +49,7 @@
                                         </td>
 
                                         <td>
-                                            {{ date("d.m.y H:i", $online->last_activity) ?? null}}
+                                            {{ date("d.m.y H:i", $online->last_activity) ?? null }}
                                         </td>
                                         <td>
                                             {{ $online->user->name ?? null }}
