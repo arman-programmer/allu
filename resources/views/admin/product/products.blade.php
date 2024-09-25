@@ -114,14 +114,12 @@
                                                            target="_blank">
                                                             Редактировать
                                                         </a>
-                                                        <form id="delete-form-{{ $product->id }}"
-                                                              action="{{ route('admin.product.delete', ['id' => $product->id]) }}"
-                                                              method="post">
+                                                        <form id="delete-form" action="#" method="post">
                                                             @csrf
                                                             <button type="button" class="dropdown-item"
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#modal-danger"
-                                                                    onclick="setDeleteProductId({{ $product->id }}, '{{ $product->name }}')">
+                                                                    onclick="setDeleteRoute('{{ route('admin.product.delete', ['id' => $product->id]) }}')">
                                                                 Удалить
                                                             </button>
                                                         </form>
@@ -197,18 +195,17 @@
         </div>
     </div>
     <script>
-        let deleteProductId = null;
+        let deleteRoute = null;
 
-        function setDeleteProductId(productId, productName) {
-            deleteProductId = productId;
-            document.getElementById('product-name').textContent = productName;
+        function setDeleteRoute(route) {
+            deleteRoute = route;
         }
 
         document.getElementById('confirm-delete-btn').addEventListener('click', function () {
-            if (deleteProductId) {
-                document.getElementById('delete-form-' + deleteProductId).submit();
+            if (deleteRoute) {
+                document.getElementById('delete-form').action = deleteRoute;
+                document.getElementById('delete-form').submit();
             }
         });
-
     </script>
 @endsection
