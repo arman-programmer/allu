@@ -14,8 +14,7 @@
                     <path d="M12 17h.01"/>
                 </svg>
                 <h3>Вы уверены?</h3>
-                <div class="text-secondary">Вы действительно хотите удалить продукт
-                    <br/><span id="product-name"></span>?
+                <div class="text-secondary">Вы действительно хотите удалить?
                     <br/>
                     Это действие нельзя будет отменить.
                 </div>
