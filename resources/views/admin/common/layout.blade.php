@@ -21,6 +21,7 @@
     <div class="page-wrapper">
         @yield('main_content')
     </div>
+    @include('admin.common.confirm_modal')
 </div>
 <script src="{{ asset('assets/js/Toasts.js?v=1.0') }}"></script>
 <!-- Libs JS -->
