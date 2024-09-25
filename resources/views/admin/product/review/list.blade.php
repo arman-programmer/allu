@@ -1,6 +1,6 @@
 @extends('admin.common.layout')
 @section('title')
-    Главная
+    Отзывы
 @endsection
 
 @section('main_content')
@@ -55,7 +55,11 @@
                                             <span class="text-secondary">{{ $review->id }}</span>
                                         </td>
                                         <td>
-                                            <a href="{{ route('product', parameters: ['id' => $review->product->id]) }}">{{ $review->product->name ?? null }}</a>
+                                            @if ($review->product)
+                                                <a href="{{ route('product', ['id' => $review->product->id]) }}">{{ $review->product->name }}</a>
+                                            @else
+                                                <span class="text-danger">Удаленный товар</span>
+                                            @endif
                                         </td>
                                         <td>
                                             {{ $review->user->name ?? null }}
