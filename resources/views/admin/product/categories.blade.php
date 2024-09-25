@@ -94,9 +94,15 @@
                                                            href="{{ route('products.category', ['id' => $category->id]) }}">
                                                             Открыть
                                                         </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            Удалить
-                                                        </a>
+                                                        <form id="delete-form" action="#" method="post">
+                                                            @csrf
+                                                            <button type="button" class="dropdown-item"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#modal-danger"
+                                                                    onclick="setDeleteRoute('{{ route('admin.category.delete', ['id' => $order->id]) }}')">
+                                                                Удалить
+                                                            </button>
+                                                        </form>
                                                         @if($category->status == 1)
                                                             <form
                                                                 action="{{ route('admin.category.off', ['id' => $category->id]) }}"

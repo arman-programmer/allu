@@ -95,6 +95,7 @@ Route::middleware([CheckAdminRole::class])->group(function () {
     Route::post('/admin/product/review/delete/{id}', [ReviewAdminController::class, 'delete'])->name('admin.product.review.delete');
 
     Route::get('/admin/categories', [CategoryAdminController::class, 'index'])->name('admin.categories');
+    Route::post('/admin/category/delete/{id}', [CategoryAdminController::class, 'delete'])->name('admin.category.delete');
     Route::post('/admin/category/on/{id}', [CategoryAdminController::class, 'on'])->name('admin.category.on');
     Route::post('/admin/category/off/{id}', [CategoryAdminController::class, 'off'])->name('admin.category.off');
 

@@ -29,6 +29,16 @@ class CategoryAdminController extends Controller
         $category = Category::find($id);
         $category->status = 0;
         $category->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Категория отключена');
     }
+
+    public function delete($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        Products::where('category_id', $id)->update(['category_id' => null]);
+
+        return redirect()->back()->with('success', 'Категория удалена');
+    }
+
 }
