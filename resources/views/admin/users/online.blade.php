@@ -1,6 +1,6 @@
 @extends('admin/common/layout')
 @section('title')
-    Главная
+    Онлайн
 @endsection
 
 @section('main_content')
@@ -47,8 +47,9 @@
                                         <td>
                                             {{ $online->ip_address ?? null }}
                                         </td>
+
                                         <td>
-                                            {{ date("Y-m-d H:i:s", $online->last_activity) ?? null}}
+                                            {{ date("d.m.y H:i", $online->last_activity) ?? null}}
                                         </td>
                                         <td>
                                             {{ $online->user->name ?? null }}

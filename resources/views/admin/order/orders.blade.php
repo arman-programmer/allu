@@ -1,6 +1,6 @@
 @extends('admin/common/layout')
 @section('title')
-    Главная
+    Заказы
 @endsection
 
 @section('main_content')
