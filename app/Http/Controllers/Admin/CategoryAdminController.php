@@ -37,7 +37,7 @@ class CategoryAdminController extends Controller
         $category = Category::find($id);
         $category->delete();
         Products::where('category_id', $id)->update(['category_id' => null]);
-
+        Category::where('sub', $id)->update(['sub' => null]);
         return redirect()->back()->with('success', 'Категория удалена');
     }
 
