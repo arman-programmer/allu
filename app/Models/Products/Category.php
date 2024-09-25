@@ -21,6 +21,6 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->hasOne(Category::class, 'id', 'sub');
+        return $this->hasOne(Category::class, 'sub', 'id');
     }
 }
