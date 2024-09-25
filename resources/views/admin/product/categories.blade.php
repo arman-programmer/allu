@@ -99,7 +99,7 @@
                                                             <button type="button" class="dropdown-item"
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#modal-danger"
-                                                                    onclick="setDeleteRoute('{{ route('admin.category.delete', ['id' => $order->id]) }}')">
+                                                                    onclick="setDeleteRoute('{{ route('admin.category.delete', ['id' => $category->id]) }}')">
                                                                 Удалить
                                                             </button>
                                                         </form>
