@@ -12,7 +12,7 @@ class CategoryAdminController extends Controller
     public function index()
     {
         $categories = Category::withCount('products')
-            ->get();
+            ->with('parent')->get();
         return view('admin.product.categories', compact('categories'));
     }
 
