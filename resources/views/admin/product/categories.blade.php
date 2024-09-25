@@ -70,7 +70,7 @@
                                         </td>
                                         <td>
                                             @if($category->sub)
-                                                <div>{{ $category->parent->name }}</div>
+                                                <div>{{ $category->parent->id }}</div>
                                             @endif
                                         </td>
                                         <td class="text-secondary">
