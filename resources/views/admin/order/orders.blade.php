@@ -103,11 +103,12 @@
                                                     Действия
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end" style="">
-                                                    <form
-                                                        action=""
-                                                        method="post">
+                                                    <form id="delete-form" action="#" method="post">
                                                         @csrf
-                                                        <button type="submit" class="dropdown-item">
+                                                        <button type="button" class="dropdown-item"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#modal-danger"
+                                                                onclick="setDeleteRoute('{{ route('admin.order.delete', ['id' => $order->id]) }}')">
                                                             Удалить
                                                         </button>
                                                     </form>
