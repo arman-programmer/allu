@@ -69,7 +69,7 @@
                                             {{ $category->products_count }} шт.
                                         </td>
                                         <td>
-                                            @if($category->sub)
+                                            @if($category->parent)
                                                 <div>{{ $category->parent->name }}</div>
                                             @endif
                                         </td>
