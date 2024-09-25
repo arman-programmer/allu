@@ -21,6 +21,7 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->hasOne(Category::class, 'sub', 'id');
+        return $this->belongsTo(Category::class, 'sub', 'id');
     }
+
 }
