@@ -372,16 +372,16 @@
                             <h5 class="your-order-total-right"> тг</h5>
                         </div>
                     </div>
-                    <div class="cart-table-button m-t-20">
+                    <div class="row justify-content-space-between">
                         <div class="cart-table-button--left">
                             <a href="{{ route('account') }}"
-                               class="btn btn--box btn--large btn--gray btn--uppercase btn--weight m-t-20">
+                               class="btn btn--box btn--blue m-t-20">
                                 Назад
                             </a>
                         </div>
                         <div class="cart-table-button--right">
                             <form>
-                                <button class="btn btn--box btn--large btn--gray btn--uppercase btn--weight m-t-20">
+                                <button class="btn btn--box btn--blue m-t-20">
                                     Отменить заказ
                                 </button>
                             </form>
