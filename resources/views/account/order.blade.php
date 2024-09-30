@@ -177,7 +177,7 @@
                                     {{--                                        </li>--}}
                                     {{--                                    </ul>--}}
                                     <h5 class="title">
-                                        <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
+                                        <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->product->name}}</a>
                                     </h5>
                                     <div class="price">
                                         @if($product->old_price != null)
@@ -227,14 +227,14 @@
                         <p class="font-weight-bold">Order<br>Arrived</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <button class="btn btn--box btn--small btn--uppercase btn--blue">
-                    Назад
-                </button>
-                <button class="btn btn--box btn--small btn--uppercase btn--blue">
-                    Вперуд
-                </button>
+                <div class="row">
+                    <button class="btn btn--box btn--small btn--uppercase btn--blue">
+                        Назад
+                    </button>
+                    <button class="btn btn--box btn--small btn--uppercase btn--blue">
+                        Вперуд
+                    </button>
+                </div>
             </div>
         </div>
     </div>
