@@ -139,54 +139,56 @@
             </div>
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-6 col-sm-4 col-lg-3">
-                        <div class="product-grid">
-                            <div class="product-image">
-                                <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
-                                    @if($product->images->isNotEmpty() && $product->images->first())
-                                        <img class="img-fluid"
-                                             src="{{ $product->images->first()->link }}" alt="">
-                                    @else
-                                        <img class="img-fluid"
-                                             src="{{ asset('assets/placeholder.svg') }}" alt="">
-                                    @endif
-                                </a>
-                                @if ($product->old_price != null && $product->old_price > $product->price)
-                                    @php
-                                        $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
-                                    @endphp
-                                    <span
-                                        class="product-discount-label">{{ number_format($discount, 0) }} %</span>
-                                @endif
-                            </div>
-                            <div class="product-content">
-                                @php
-                                    $averageRating = round($product->reviews->avg('stars'), 2);
-                                @endphp
-                                <ul class="rating">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        @if ($i <= $averageRating)
-                                            <li class="fas fa-star"></li>
+                    @if($product)
+                        <div class="col-6 col-sm-4 col-lg-3">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
+                                        @if($product->images->isNotEmpty() && $product->images->first())
+                                            <img class="img-fluid"
+                                                 src="{{ $product->images->first()->link }}" alt="">
                                         @else
-                                            <li class="far fa-star"></li>
+                                            <img class="img-fluid"
+                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
                                         @endif
-                                    @endfor
-                                    <li class="far">{{ $averageRating }}
-                                        ({{ $product->reviews->count()}})
-                                    </li>
-                                </ul>
-                                <h5 class="title">
-                                    <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
-                                </h5>
-                                <div class="price">
-                                    @if($product->old_price != null)
-                                        <span>{{ $product->old_price }} тг.</span>
+                                    </a>
+                                    @if ($product->old_price != null && $product->old_price > $product->price)
+                                        @php
+                                            $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
+                                        @endphp
+                                        <span
+                                            class="product-discount-label">{{ number_format($discount, 0) }} %</span>
                                     @endif
-                                    {{ $product->price }} тг.
+                                </div>
+                                <div class="product-content">
+                                    @php
+                                        $averageRating = round($product->reviews->avg('stars'), 2);
+                                    @endphp
+                                    <ul class="rating">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $averageRating)
+                                                <li class="fas fa-star"></li>
+                                            @else
+                                                <li class="far fa-star"></li>
+                                            @endif
+                                        @endfor
+                                        <li class="far">{{ $averageRating }}
+                                            ({{ $product->reviews->count()}})
+                                        </li>
+                                    </ul>
+                                    <h5 class="title">
+                                        <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
+                                    </h5>
+                                    <div class="price">
+                                        @if($product->old_price != null)
+                                            <span>{{ $product->old_price }} тг.</span>
+                                        @endif
+                                        {{ $product->price }} тг.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
             </div>
             <!-- Add class 'active' to progress -->
