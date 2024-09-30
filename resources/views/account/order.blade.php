@@ -98,7 +98,7 @@
         }
 
         .tracking-item-pending:last-child {
-            padding-bottom: 4rem;
+            padding-bottom: 2rem;
         }
 
         .tracking-item-pending .tracking-date {
@@ -370,6 +370,21 @@
                         <div class="your-order-total d-flex justify-content-between">
                             <h5 class="your-order-total-left">Общая сумма:</h5>
                             <h5 class="your-order-total-right"> тг</h5>
+                        </div>
+                    </div>
+                    <div class="cart-table-button m-t-20">
+                        <div class="cart-table-button--left">
+                            <a href="{{ route('account') }}"
+                               class="btn btn--box btn--large btn--gray btn--uppercase btn--weight m-t-20">
+                                Назад
+                            </a>
+                        </div>
+                        <div class="cart-table-button--right">
+                            <form>
+                                <button class="btn btn--box btn--large btn--gray btn--uppercase btn--weight m-t-20">
+                                    Отменить заказ
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
