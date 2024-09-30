@@ -257,18 +257,19 @@
                         <div class="tracking-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard">
+                                 stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-poo">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M10 12h.01"/>
+                                <path d="M14 12h.01"/>
+                                <path d="M10 16a3.5 3.5 0 0 0 4 0"/>
                                 <path
-                                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
-                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                    d="M11 4c2 0 3.5 1.5 3.5 4l.164 0a2.5 2.5 0 0 1 2.196 3.32a3 3 0 0 1 1.615 3.063a3 3 0 0 1 -1.299 5.607l-.176 0h-10a3 3 0 0 1 -1.474 -5.613a3 3 0 0 1 1.615 -3.062a2.5 2.5 0 0 1 2.195 -3.32l.164 0c1.5 0 2.5 -2 1.5 -4z"/>
                             </svg>
                         </div>
-                        <div class="tracking-content">В обработке<span>09.09.2024, 10:00am</span></div>
+                        <div class="tracking-content">Принят / Упаковывается<span>09.09.2024, 10:00</span></div>
                     </div>
                     <div class="tracking-item">
-                        <div class="tracking-icon status-intransit">
+                        <div class="tracking-icon status-current blinker">
                             <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true"
                                  data-prefix="fas" data-icon="circle" role="img"
                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
@@ -280,14 +281,13 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round"
-                                 class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard">
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-hourglass-empty">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path
-                                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
-                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                                <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"/>
+                                <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"/>
                             </svg>
                         </div>
-                        <div class="tracking-content">В обработке<span>09.09.2024, 10:00am</span></div>
+                        <div class="tracking-content">Собран / Ждет курьера<span>09.09.2024, 10:00am</span></div>
                     </div>
                     <div class="tracking-item-pending">
                         <div class="tracking-icon status-intransit">
@@ -301,18 +301,14 @@
                         <div class="tracking-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="icon icon-tabler icons-tabler-outline icon-tabler-map-2">
+                                 stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-car">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"/>
-                                <path d="M9 4v13"/>
-                                <path d="M15 7v5.5"/>
-                                <path
-                                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"/>
-                                <path d="M19 18v.01"/>
+                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                                <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"/>
                             </svg>
                         </div>
-                        <div class="tracking-content">Доставлен<span>12.05.2025, 05:00</span>
+                        <div class="tracking-content">В пути / У курьера<span>12.05.2025, 05:00</span>
                         </div>
                     </div>
                     <div class="tracking-item-pending">
@@ -327,15 +323,12 @@
                         <div class="tracking-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="icon icon-tabler icons-tabler-outline icon-tabler-map-2">
+                                 stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sofa">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"/>
-                                <path d="M9 4v13"/>
-                                <path d="M15 7v5.5"/>
                                 <path
-                                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"/>
-                                <path d="M19 18v.01"/>
+                                    d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v5a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-5a2 2 0 0 1 2 -2z"/>
+                                <path d="M4 11v-3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v3"/>
+                                <path d="M12 5v9"/>
                             </svg>
                         </div>
                         <div class="tracking-content">Доставлен<span>12.05.2025, 05:00</span>
