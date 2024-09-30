@@ -143,15 +143,15 @@
                         <div class="col-6 col-sm-4 col-lg-3">
                             <div class="product-grid">
                                 <div class="product-image">
-                                    <a href="{{ route('product', ['id' => $product->id]) }}" class="image">
-                                        @if($product->images->isNotEmpty() && $product->images->first())
-                                            <img class="img-fluid"
-                                                 src="{{ $product->images->first()->link }}" alt="">
-                                        @else
-                                            <img class="img-fluid"
-                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">
-                                        @endif
-                                    </a>
+                                    {{--                                    <a href="{{ route('product', ['id' => $product->id]) }}" class="image">--}}
+                                    {{--                                        @if($product->images->isNotEmpty() && $product->images->first())--}}
+                                    {{--                                            <img class="img-fluid"--}}
+                                    {{--                                                 src="{{ $product->images->first()->link }}" alt="">--}}
+                                    {{--                                        @else--}}
+                                    {{--                                            <img class="img-fluid"--}}
+                                    {{--                                                 src="{{ asset('assets/placeholder.svg') }}" alt="">--}}
+                                    {{--                                        @endif--}}
+                                    {{--                                    </a>--}}
                                     @if ($product->old_price != null && $product->old_price > $product->price)
                                         @php
                                             $discount = (($product->price - $product->old_price) / $product->old_price) * 100;
