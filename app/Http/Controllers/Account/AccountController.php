@@ -17,13 +17,13 @@ class AccountController extends Controller
         $user = Auth::id();
         $orders = Orders::where('user_id', $user)
             ->with('orderProducts')
-            ->get();
+            ->get()
+            ->reverse(); // Реверсируем порядок заказов
+
         $addresses = Addresses::where('user_id', $user)->get();
-        return view('account.account', compact(
-            'addresses',
-            'orders'
-        ));
+        return view('account.account', compact('addresses', 'orders'));
     }
+
 
     public function edit(Request $request)
     {
@@ -61,7 +61,7 @@ class AccountController extends Controller
             $products = OrderProducts::where('order_id', $id)->get();
             return view('account.order', compact('order', 'products'));
         } else {
-            return redirect()->route('account');
+            return redirect()->route('account')->with('info', 'Такого заказа не существует!');
         }
     }
 
