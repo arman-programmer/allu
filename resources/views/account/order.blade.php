@@ -217,8 +217,8 @@
     </style>
     <div class="row">
         <div class="col-lg-6">
-            <div class="section-content">
-                <h5 class="section-content__title">Оплата и доставка</h5>
+            <div class="section-content m-b-30">
+                <h5 class="section-content__title">Заказ</h5>
             </div>
             <div id="tracking-pre"></div>
             <div id="tracking">
@@ -232,10 +232,18 @@
                                       d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
                             </svg>
                         </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Order Placed<span>09 Aug 2025, 10:00am</span></div>
+                        <div class="tracking-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path
+                                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                            </svg>
+                        </div>
+                        <div class="tracking-content">В обработке<span>09.09.2024, 10:00am</span></div>
                     </div>
                     <div class="tracking-item">
                         <div class="tracking-icon status-intransit">
@@ -246,10 +254,18 @@
                                       d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
                             </svg>
                         </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Order Confirmed<span>09 Aug 2025, 10:30am</span></div>
+                        <div class="tracking-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path
+                                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                            </svg>
+                        </div>
+                        <div class="tracking-content">В обработке<span>09.09.2024, 10:00am</span></div>
                     </div>
                     <div class="tracking-item">
                         <div class="tracking-icon status-intransit">
@@ -260,57 +276,18 @@
                                       d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
                             </svg>
                         </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Packed the product<span>09 Aug 2025, 12:00pm</span>
-                        </div>
-                    </div>
-                    <div class="tracking-item">
-                        <div class="tracking-icon status-intransit">
-                            <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true"
-                                 data-prefix="fas" data-icon="circle" role="img"
-                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                <path fill="currentColor"
-                                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
+                        <div class="tracking-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path
+                                    d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
                             </svg>
                         </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Arrived in the
-                            warehouse<span>10 Aug 2025, 02:00pm</span></div>
-                    </div>
-                    <div class="tracking-item">
-                        <div class="tracking-icon status-current blinker">
-                            <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true"
-                                 data-prefix="fas" data-icon="circle" role="img"
-                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                <path fill="currentColor"
-                                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
-                            </svg>
-                        </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Near by Courier
-                            facility<span>10 Aug 2025, 03:00pm</span></div>
-                    </div>
-
-                    <div class="tracking-item-pending">
-                        <div class="tracking-icon status-intransit">
-                            <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true"
-                                 data-prefix="fas" data-icon="circle" role="img"
-                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                <path fill="currentColor"
-                                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
-                            </svg>
-                        </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Out for Delivery<span>12 Aug 2025, 05:00pm</span>
-                        </div>
+                        <div class="tracking-content">В обработке<span>09.09.2024, 10:00am</span></div>
                     </div>
                     <div class="tracking-item-pending">
                         <div class="tracking-icon status-intransit">
@@ -321,10 +298,48 @@
                                       d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
                             </svg>
                         </div>
-                        <div class="tracking-date"><img
-                                src="https://raw.githubusercontent.com/shajo/portfolio/a02c5579c3ebe185bb1fc085909c582bf5fad802/delivery.svg"
-                                class="img-responsive" alt="order-placed"/></div>
-                        <div class="tracking-content">Delivered<span>12 Aug 2025, 09:00pm</span></div>
+                        <div class="tracking-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-map-2">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"/>
+                                <path d="M9 4v13"/>
+                                <path d="M15 7v5.5"/>
+                                <path
+                                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"/>
+                                <path d="M19 18v.01"/>
+                            </svg>
+                        </div>
+                        <div class="tracking-content">Доставлен<span>12.05.2025, 05:00</span>
+                        </div>
+                    </div>
+                    <div class="tracking-item-pending">
+                        <div class="tracking-icon status-intransit">
+                            <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true"
+                                 data-prefix="fas" data-icon="circle" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
+                            </svg>
+                        </div>
+                        <div class="tracking-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="icon icon-tabler icons-tabler-outline icon-tabler-map-2">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"/>
+                                <path d="M9 4v13"/>
+                                <path d="M15 7v5.5"/>
+                                <path
+                                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"/>
+                                <path d="M19 18v.01"/>
+                            </svg>
+                        </div>
+                        <div class="tracking-content">Доставлен<span>12.05.2025, 05:00</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -332,7 +347,7 @@
         <div class="col-lg-6">
             <div class="your-order-section">
                 <div class="section-content">
-                    <h5 class="section-content__title">Ваш заказ</h5>
+                    <h5 class="section-content__title">Информация</h5>
                 </div>
                 <div class="your-order-box gray-bg m-t-30 m-b-30">
                     <div class="your-order-product-info">
