@@ -12,102 +12,47 @@
 @endsection
 
 @section('main_content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="h3">Company</p>
-                            <address>
-                                Street Address<br>
-                                State, City<br>
-                                Region, Postal Code<br>
-                                ltd@example.com
-                            </address>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="your-order-section">
+                <div class="section-content">
+                    <h5 class="section-content__title">Ваш заказ</h5>
+                </div>
+                <div class="your-order-box gray-bg m-t-30 m-b-30">
+                    <div class="your-order-product-info">
+                        <div class="your-order-top d-flex justify-content-between">
+                            <h6 class="your-order-top-left">Товары</h6>
+                            <h6 class="your-order-top-right">Цена</h6>
                         </div>
-                        <div class="col-6 text-end">
-                            <p class="h3">Client</p>
-                            <address>
-                                Street Address<br>
-                                State, City<br>
-                                Region, Postal Code<br>
-                                ctr@example.com
-                            </address>
+                        <ul class="your-order-middle">
+                            @foreach ($products as $product)
+                                <li class="d-flex justify-content-between">
+                                        <span class="your-order-middle-left">
+                                            <a href="#">{{$product->name}}</a>
+                                        </span>
+                                    <span class="your-order-middle-right">{{$product->price}} тг</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="your-order-bottom d-flex justify-content-between">
+                            <h6 class="your-order-bottom-left">Доставка:</h6>
+                            <span class="your-order-bottom-right">Бесплатная</span>
                         </div>
-                        <div class="col-12 my-5">
-                            <h1>Invoice INV/001/15</h1>
+                        <div class="your-order-bottom d-flex justify-content-between m-t-20">
+                            <h6 class="your-order-bottom-left">Оплата:</h6>
+                            <span class="your-order-bottom-right">Наличными при получении товара</span>
+                        </div>
+                        <div class="your-order-total d-flex justify-content-between">
+                            <h5 class="your-order-total-left">Общая сумма:</h5>
+                            <h5 class="your-order-total-right">{{ $total }} тг</h5>
                         </div>
                     </div>
-                    <table class="table table-transparent table-responsive">
-                        <thead>
-                        <tr>
-                            <th class="text-center" style="width: 1%"></th>
-                            <th>Product</th>
-                            <th class="text-center" style="width: 1%">Qnt</th>
-                            <th class="text-end" style="width: 1%">Unit</th>
-                            <th class="text-end" style="width: 1%">Amount</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center">1</td>
-                            <td>
-                                <p class="strong mb-1">Logo Creation</p>
-                                <div class="text-secondary">Logo and business cards design</div>
-                            </td>
-                            <td class="text-center">
-                                1
-                            </td>
-                            <td class="text-end">$1.800,00</td>
-                            <td class="text-end">$1.800,00</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">2</td>
-                            <td>
-                                <p class="strong mb-1">Online Store Design &amp; Development</p>
-                                <div class="text-secondary">Design/Development for all popular modern browsers</div>
-                            </td>
-                            <td class="text-center">
-                                1
-                            </td>
-                            <td class="text-end">$20.000,00</td>
-                            <td class="text-end">$20.000,00</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">3</td>
-                            <td>
-                                <p class="strong mb-1">App Design</p>
-                                <div class="text-secondary">Promotional mobile application</div>
-                            </td>
-                            <td class="text-center">
-                                1
-                            </td>
-                            <td class="text-end">$3.200,00</td>
-                            <td class="text-end">$3.200,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="strong text-end">Subtotal</td>
-                            <td class="text-end">$25.000,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="strong text-end">Vat Rate</td>
-                            <td class="text-end">20%</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="strong text-end">Vat Due</td>
-                            <td class="text-end">$5.000,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="font-weight-bold text-uppercase text-end">Total Due</td>
-                            <td class="font-weight-bold text-end">$30.000,00</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <p class="text-secondary text-center mt-5">Thank you very much for doing business with us. We look
-                        forward to working with
-                        you again!</p>
                 </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="section-content">
+                <h5 class="section-content__title">Оплата и доставка</h5>
             </div>
         </div>
     </div>
