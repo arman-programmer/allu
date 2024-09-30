@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use App\Models\Account\Addresses;
+use App\Models\Orders\OrderProducts;
 use App\Models\Orders\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,6 +55,11 @@ class AccountController extends Controller
 
     public function order($id)
     {
-        return view('account.order');
+        $order = Orders::where('id', $id)->first();
+        $products = OrderProducts::where('order_id', $id)->get();
+        return view('account.order', compact(
+            'order',
+            'products'
+        ));
     }
 }
