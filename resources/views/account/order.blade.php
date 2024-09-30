@@ -177,7 +177,7 @@
                                     {{--                                        </li>--}}
                                     {{--                                    </ul>--}}
                                     <h5 class="title">
-                                        <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->product->name}}</a>
+                                        <a href="{{ route('product', ['id' => $product->product->id]) }}">{{$product->product->name}}</a>
                                     </h5>
                                     <div class="price">
                                         @if($product->old_price != null)
