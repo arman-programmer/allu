@@ -58,7 +58,7 @@ class AccountController extends Controller
         $order = Orders::where('id', $id)->first();
 
         if ($order && $order->user_id == Auth::id()) {
-            $products = OrderProducts::with(['product', 'products.images'])
+            $products = OrderProducts::with(['products', 'products.images'])
                 ->where('order_id', $id)
                 ->get();
 
