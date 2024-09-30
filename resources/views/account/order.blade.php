@@ -161,21 +161,21 @@
                                     @endif
                                 </div>
                                 <div class="product-content">
-                                    @php
-                                        $averageRating = round($product->reviews->avg('stars'), 2);
-                                    @endphp
-                                    <ul class="rating">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $averageRating)
-                                                <li class="fas fa-star"></li>
-                                            @else
-                                                <li class="far fa-star"></li>
-                                            @endif
-                                        @endfor
-                                        <li class="far">{{ $averageRating }}
-                                            ({{ $product->reviews->count()}})
-                                        </li>
-                                    </ul>
+                                    {{--                                    @php--}}
+                                    {{--                                        $averageRating = round($product->reviews->avg('stars'), 2);--}}
+                                    {{--                                    @endphp--}}
+                                    {{--                                    <ul class="rating">--}}
+                                    {{--                                        @for ($i = 1; $i <= 5; $i++)--}}
+                                    {{--                                            @if ($i <= $averageRating)--}}
+                                    {{--                                                <li class="fas fa-star"></li>--}}
+                                    {{--                                            @else--}}
+                                    {{--                                                <li class="far fa-star"></li>--}}
+                                    {{--                                            @endif--}}
+                                    {{--                                        @endfor--}}
+                                    {{--                                        <li class="far">{{ $averageRating }}--}}
+                                    {{--                                            ({{ $product->reviews->count()}})--}}
+                                    {{--                                        </li>--}}
+                                    {{--                                    </ul>--}}
                                     <h5 class="title">
                                         <a href="{{ route('product', ['id' => $product->id]) }}">{{$product->name}}</a>
                                     </h5>
