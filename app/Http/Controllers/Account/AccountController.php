@@ -58,11 +58,15 @@ class AccountController extends Controller
         $order = Orders::where('id', $id)->first();
 
         if ($order && $order->user_id == Auth::id()) {
-            $products = OrderProducts::where('order_id', $id)->get();
+            $products = OrderProducts::with(['product', 'product.images'])
+                ->where('order_id', $id)
+                ->get();
+
             return view('account.order', compact('order', 'products'));
         } else {
             return redirect()->route('account')->with('info', 'Такого заказа не существует!');
         }
     }
+
 
 }
