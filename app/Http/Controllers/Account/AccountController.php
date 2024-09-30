@@ -51,4 +51,9 @@ class AccountController extends Controller
         Addresses::destroy($id);
         return redirect()->back()->with('success', 'Адрес успешно удалён!');
     }
+
+    public function order($id)
+    {
+        return view('account.order');
+    }
 }

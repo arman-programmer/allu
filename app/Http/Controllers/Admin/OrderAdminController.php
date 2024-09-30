@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class OrderAdminController extends Controller
 {
-    public function order()
-    {
-        return view('account.order');
-    }
-
     public function orders()
     {
         $orders = Orders::with('address.city', 'user')->get();
