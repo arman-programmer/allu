@@ -108,7 +108,7 @@
                                             <tbody>
                                             @foreach($orders as $order)
                                                 <tr>
-                                                    <td>{{ $loop -> iteration }}</td>
+                                                    <td>{{ $order->id }}</td>
                                                     @php
                                                         $datetime = new DateTime($order -> created_at);
                                                         $formattedDate = $datetime->format('d.m.y\г H:i');
@@ -123,7 +123,7 @@
                                                     @endphp
                                                     <td>{{ $totalSum }} тг.</td>
                                                     <td>
-                                                        <a href="#">Показать</a>
+                                                        <a href="{{ route('account.order', ['id' => $order->id]) }}">Показать</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

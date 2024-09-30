@@ -18,7 +18,7 @@ class AccountController extends Controller
         $orders = Orders::where('user_id', $user)
             ->with('orderProducts')
             ->get()
-            ->reverse(); // Реверсируем порядок заказов
+            ->reverse();
 
         $addresses = Addresses::where('user_id', $user)->get();
         return view('account.account', compact('addresses', 'orders'));
