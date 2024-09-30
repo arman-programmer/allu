@@ -65,14 +65,13 @@
     @else
         <div class="offcanvas-add-cart__top m-b-40">
                 <span class="offcanvas-add-cart__top-text"><i
-                        class="icon-shopping-cart"></i> Ваша корзина пуста :(</span>
+                        class="icon-shopping-cart"></i> Ваша корзина пуста</span>
             <button class="offcanvas-close">&times;</button>
         </div>
         <div class="offcanvas-add-cart__checkout-box-bottom">
             <img class="offcanvas-add-cart__img" src="{{ asset('assets/img/empty_cart.png') }}" alt="">
-            <hr>
             <div class="offcanvas-add-cart__btn-checkout">
-                <button class="offcanvas-close btn btn--block btn--box btn--gray btn--large btn--uppercase">
+                <button class="offcanvas-close btn btn--block btn--gray">
                     Продолжить покупки
                 </button>
             </div>
