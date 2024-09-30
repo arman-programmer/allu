@@ -144,7 +144,7 @@
                             <div class="product-grid">
                                 <div class="product-content">
                                     <h5 class="title">
-                                        <a href="{{ route('product', ['id' => $product->pruduct_id]) }}">{{$product->name}}</a>
+                                        <a href="{{ route('product', ['id' => $product->product_id]) }}">{{$product->name}}</a>
                                     </h5>
                                     <p>Количество: {{ $product->quantity }}</p>
                                     <div class="price">
