@@ -44,7 +44,7 @@
                         </div>
                         <div class="your-order-total d-flex justify-content-between">
                             <h5 class="your-order-total-left">Общая сумма:</h5>
-                            <h5 class="your-order-total-right">{{ $total }} тг</h5>
+                            <h5 class="your-order-total-right"> тг</h5>
                         </div>
                     </div>
                 </div>
