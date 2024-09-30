@@ -56,10 +56,13 @@ class AccountController extends Controller
     public function order($id)
     {
         $order = Orders::where('id', $id)->first();
-        $products = OrderProducts::where('order_id', $id)->get();
-        return view('account.order', compact(
-            'order',
-            'products'
-        ));
+
+        if ($order && $order->user_id == Auth::id()) {
+            $products = OrderProducts::where('order_id', $id)->get();
+            return view('account.order', compact('order', 'products'));
+        } else {
+            return redirect()->route('account');
+        }
     }
+
 }
