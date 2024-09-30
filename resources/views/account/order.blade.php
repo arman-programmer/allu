@@ -42,7 +42,7 @@
         }
 
         .tracking-item {
-            border-left: 4px solid #00ba0d;
+            border-left: 4px solid #0063d1;
             position: relative;
             padding: 2rem 1.5rem 0.5rem 2.5rem;
             font-size: 0.9rem;
@@ -147,12 +147,12 @@
         }
 
         .tracking-item .tracking-icon.status-intransit {
-            color: #00ba0d;
+            color: #0063d1;
             font-size: 0.6rem;
         }
 
         .tracking-item .tracking-icon.status-current {
-            color: #00ba0d;
+            color: #0063d1;
             font-size: 0.6rem;
         }
 
@@ -204,7 +204,7 @@
         }
 
         .blinker {
-            border: 14px solid #e9f8ea;
+            border: 7px solid #0055b4;
             animation: blink 1s;
             animation-iteration-count: infinite;
         }
